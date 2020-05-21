@@ -7,6 +7,7 @@ body {
  background-repeat: no-repeat;
  background-size: auto;
  font-family: 'Pontano Sans', sans-serif;
+ color: white;
 }
 
 /* ------------------------------------------------------*/
@@ -35,6 +36,8 @@ nav{
 nav .btn{
     background-color: transparent;
     border-radius: 25px;
+    height: 25px;
+    line-height: 25px;
 }
 
 nav ul a.btn{
@@ -55,16 +58,39 @@ nav ul{
 
 /* ------------------------------------------------------*/
 
+/* ----------------- Landing Page Styling ----------------- */
+
 .landing-header{
     color: white;
-    text-align: center;
     font-family: 'Alfa Slab One', cursive;
+    text-shadow: 5px 5px 1.2rem rgba(0, 0, 0, 0.8); 
 }
 
 
 .landing-buttons{
-    width:10%;
-    margin-left:45%;
-    margin-right:45%;
+    border-radius: 25px;
     background-color: transparent;
+    width: 88px;
+    height: 36px;
+    display: inline-block;
+    margin: 5px;
+}
+
+#landing-container{
+    text-align: center;
+    margin-top: 10rem;
+}
+
+.landing-paragraph{
+    text-shadow: 5px 5px 1.2rem rgba(0, 0, 0, 0.8); 
+}
+
+/* ------------------------------------------------------*/
+
+/* ----------------- Media Queries ----------------- */
+
+@media only screen and (min-width: 993px){
+    .container {
+        width: 60%;
+    }
 }

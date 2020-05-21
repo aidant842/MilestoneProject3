@@ -1,53 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!--Import Google Icon Font-->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <!-- Compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="{{url_for('static', filename = 'css/style.css')}}"
+      type="text/css"
+    />
+  </head>
 
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<!--Import Google Icon Font-->
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-	<!--Import materialize.css-->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css" />
-	<link rel="stylesheet" href="{{url_for('static', filename = 'css/style.css')}}" type="text/css" />
-</head>
+  <header>
+    <nav>
+      <div class="nav-wrapper">
+        <a href="#!" class="brand-logo">GameDB</a>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="{{url_for('home_page')}}">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Games</a></li>
+          <li><a href="#">Add Game</a></li>
+          <li><a class="waves-effect waves-light btn">Login</a></li>
+          <li><a class="waves-effect waves-light btn">Sign Up</a></li>
+        </ul>
+        <ul class="sidenav" id="mobile-demo">
+          <h3 class="navHeader">GameDB</h3>
+          <li><a href="{{url_for('home_page')}}">Home</a></li>
+          <li><a href="#">Games</a></li>
+          <li><a href="#">Add Game</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
 
-<header>
-	<nav>
-		<div class="nav-wrapper">
-			<a href="{{url_for('home_page')}}" class="brand-logo">GameDB</a>
-			<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-			<ul id="nav-mobile" class="right hide-on-med-and-down">
-				<li><a href="{{url_for('home_page')}}">Home</a></li>
-                <li><a href="#">About</a></li>
-				<li><a href="#">Games</a></li>
-				<li><a href="#">Add Game</a></li>
-                <li><a class="waves-effect waves-light btn">Login</a></li>
-                <li><a class="waves-effect waves-light btn">Sign Up</a></li>
-			</ul>
-			<ul class="side-nav" id="mobile-demo">
-				<li><a href="{{url_for('home_page')}}">Home</a></li>
-				<li><a href="#">Games</a></li>
-				<li><a href="#">Add Game</a></li>
-			</ul>
-		</div>
-	</nav>
-</header>
+  <body>
+    {% block content %} {% endblock %}
 
-<body>
-
-	{% block content %}
-	{% endblock %}
-
-	<!--Import jQuery before materialize.js-->
-	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <!--Import jQuery before materialize.js-->
+    <script
+      type="text/javascript"
+      src="https://code.jquery.com/jquery-3.2.1.min.js"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script>
-        $( document ).ready(function(){
-            $(".button-collapse").sideNav();
-        })
+      $(document).ready(function () {
+        $(".sidenav").sidenav();
+      });
     </script>
-    
-</body>
-
+  </body>
 </html>

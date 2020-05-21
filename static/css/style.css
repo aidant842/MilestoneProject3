@@ -1,8 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Pontano+Sans&display=swap');
+
+/* ----------------- Main Body Styling ----------------- */
+
 body {
- background: url("images/background.png");
+ background-image: url("images/background.png");
  background-repeat: no-repeat;
- background-size: 100% auto;
+ background-size: auto;
+ font-family: 'Pontano Sans', sans-serif;
 }
+
+/* ------------------------------------------------------*/
+
+
+/* ----------------- NavBar Styling ----------------- */
 
 nav{
     background-color: transparent;
@@ -11,16 +21,50 @@ nav{
     -webkit-box-shadow: none;
 }
 
+.brand-logo{
+    margin-left: 6rem;
+    font-family: 'Alfa Slab One', cursive;
+}
+
+@media only screen and (max-width: 992px){
+    .brand-logo{
+        margin-left: 0;
+}
+}
+
 nav .btn{
-    background-color: rgba(0, 0, 255, 0.9);
+    background-color: transparent;
     border-radius: 25px;
 }
+
+nav ul a.btn{
+    margin-top: -2px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+nav ul{
+    margin-right: 6rem;
+}
+
+.navHeader{
+    color: rgba(0,0,0,0.87);
+    text-align: center;
+     font-family: 'Alfa Slab One', cursive;
+}
+
+/* ------------------------------------------------------*/
 
 .landing-header{
     color: white;
     text-align: center;
+    font-family: 'Alfa Slab One', cursive;
 }
 
+
 .landing-buttons{
-    text-align: center;
+    width:10%;
+    margin-left:45%;
+    margin-right:45%;
+    background-color: transparent;
 }

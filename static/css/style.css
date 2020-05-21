@@ -1,0 +1,26 @@
+body {
+ background: url("images/background.png");
+ background-repeat: no-repeat;
+ background-size: 100% auto;
+}
+
+nav{
+    background-color: transparent;
+    color: white;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+}
+
+nav .btn{
+    background-color: rgba(0, 0, 255, 0.9);
+    border-radius: 25px;
+}
+
+.landing-header{
+    color: white;
+    text-align: center;
+}
+
+.landing-buttons{
+    text-align: center;
+}

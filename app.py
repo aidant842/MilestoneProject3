@@ -17,7 +17,11 @@ mongo = PyMongo(app)
 @app.route('/')
 @app.route('/home_page')
 def home_page():
-    return render_template('index.html', games=mongo.db.games.find())
+    return render_template('index.html')
+
+@app.route('/games')
+def games():
+    return render_template('games.html', games=mongo.db.games.find())
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),

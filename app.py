@@ -21,7 +21,9 @@ def home_page():
 
 @app.route('/games')
 def games():
-    return render_template('games.html', genre=mongo.db.genre.find(), games=mongo.db.games.find())
+    return render_template('games.html', genre=mongo.db.genre.find(), games=mongo.db.games.find(),
+                            age_rating=mongo.db.age_rating.find(), dev=mongo.db.developer.find(), plat=mongo.db.platform.find(),
+                            vr=mongo.db.vr_capable.find())
 
 @app.route('/games/<game_id>')
 def game_page(game_id):

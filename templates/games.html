@@ -1,69 +1,91 @@
 {% extends 'base.html' %} {% block content %}
 <div class="games-bg-container">
-<div class="games-bg">
-<!-- Container for header and breadcrumbs -->
-  <div class="container crumbs">
-    <h4 class="games-header">Games</h4>
-    <nav>
-      <div class="nav-wrapper">
-      <div class="row">
-        <div class="col s12">
-          <a href="{{url_for('home_page')}}" class="breadcrumb">Home</a>
-          <a href="{{url_for('games')}}" class="breadcrumb active">Games</a>
+  <div class="games-bg">
+    <!-- Container for header and breadcrumbs -->
+    <div class="container crumbs">
+      <h4 class="games-header">Games</h4>
+      <nav>
+        <div class="nav-wrapper">
+          <div class="row">
+            <div class="col s12">
+              <a href="{{url_for('home_page')}}" class="breadcrumb">Home</a>
+              <a href="{{url_for('games')}}" class="breadcrumb active">Games</a>
+            </div>
           </div>
         </div>
+      </nav>
+    </div>
+    <!-- Container for filter -->
+
+    <div class="filter-container">
+      <div class="options-container">
+        <div class="row">
+          <div class="input-field col s12 m6 l3">
+            <select>
+              <option value="" disabled selected>Genre</option>
+              {% for gen in genre %}
+              <option value="1">{{gen.genre_name}}</option>
+              {% endfor %}
+            </select>
+          </div>
+
+          <div class="input-field col s12 m6 l3">
+            <select>
+              <option value="" disabled selected>Age</option>
+              {% for age in age_rating %}
+              <option value="1">{{age.rating}}</option>
+              {% endfor %}
+            </select>
+          </div>
+
+          <div class="input-field col s12 m6 l3">
+            <select>
+              <option value="" disabled selected>Platform</option>
+              {% for plat in plat %}
+              <option value="1">{{plat.platform_name}}</option>
+              {% endfor %}
+            </select>
+          </div>
+
+          <div class="input-field col s12 m6 l3">
+            <select>
+              <option value="" disabled selected>Developer</option>
+              {% for dev in dev %}
+              <option value="1">{{dev.dev}}</option>
+              {% endfor %}
+            </select>
+          </div>
+          
+          <div class="input-field col s12 m6 l3">
+          <button class="btn search-button" type="submit" name="action">
+            Search
+            <i class="material-icons right">search</i>
+          </button>
+          </div>
+
+        </div>
       </div>
-    </nav>
-  </div>
-<!-- Container for filter -->
-
-  <div class="filter-container">
-  <div class="row"></div>
-  <div class="options-container">
-  <div class="row">
-  <div class="input-field col s12 m3">
-    <select>
-      <option value="" disabled selected>Genre</option>
-      {% for gen in genre %}
-      <option value="1">{{gen.genre_name}}</option>
-      {% endfor %}   
-    </select>
-  </div>
-
-
-{% for key in games %}
-  <div class="input-field col s12 m3">
-    <select>
-      <option value="" disabled selected>Age</option>
-      <option value="1">{{key.age_rating}}</option>
-    </select>
-  </div>
-
-    <div class="input-field col s12 m3">
-        <select>
-        <option value="" disabled selected>Platform</option>
-        <option value="1">{{key.platform}}</option>
-        </select>
     </div>
   </div>
-  </div>
-  </div>
 </div>
-</div>
+
 
 <div class="container card-container">
-     <div class="row">
-    <div class="col s12 m2">
+{% for key in games %}
+  <div class="row card-row">
+    <div class="col s12 m3 l2">
       <div class="card">
-        <div class="card-image">
-          <img src="{{key.image}}">
-        </div>
-        <span class="card-title">{{key.title}}</span>
+        <a class="card-link" href="{{url_for('game_page', game_id=key._id)}}">
+          <div class="card-image">
+            <img src="{{key.image}}" />
+            <span class="genre-tag">{{key.genre_name}}</span>
+          </div>
+          <span class="card-title">{{key.title}}</span>
+        </a>
       </div>
     </div>
-
   </div>
+  {% endfor %}
 </div>
 <!-- Container for cards -->
-{% endfor %}
-{% endblock %}
+ {% endblock %}

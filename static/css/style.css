@@ -1,264 +1,344 @@
-@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Pontano+Sans&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Pontano+Sans&display=swap");
 
 /* ----------------- Global Styling ----------------- */
 
 body {
- font-family: 'Pontano Sans', sans-serif;
- color: white;
+  font-family: "Pontano Sans", sans-serif;
+  color: white;
 }
 
-.logo-db, .landing-db, .side-nav-db{
-    color: rgb(224, 58, 119);
+.logo-db,
+.landing-db,
+.side-nav-db {
+  color: rgb(224, 58, 119);
 }
 
 /* ------------------------------------------------------*/
 
 /* ----------------- BreadCrumb Styling ----------------- */
 
-.breadcrumb{
-    font-size: 1rem;
+.breadcrumb {
+  font-size: 1rem;
 }
 
 .breadcrumb:before {
-    font-size: 1.2rem;
+  font-size: 1.2rem;
 }
 
-.breadcrumb:hover{
-    color: rgb(224, 58, 119);
+.breadcrumb:hover {
+  color: rgb(224, 58, 119);
 }
 
-.breadcrumb.active{
-    color: rgb(224, 58, 119);
-    text-decoration: underline;
+.breadcrumb.active {
+  color: rgb(224, 58, 119);
+  text-decoration: underline;
 }
 /* ------------------------------------------------------*/
 
-
 /* ----------------- Page Backgrounds ----------------- */
 
-.landing-bg{
-    background-image: url("images/background.png");
-    background-repeat: no-repeat;
-    background-size: auto;
+.landing-bg {
+  background-image: url("images/background.png");
+  background-repeat: no-repeat;
+  background-size: auto;
 }
 
-.games-bg{
-    background-image: url(images/back.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: absolute;
-    top: 0;
-    height: 100%;
-    width: 100%;
+.games-bg {
+  background-image: url(images/back.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
 }
-
-
 
 /* ------------------------------------------------------*/
 
 /* ----------------- NavBar Styling ----------------- */
 
-nav{
-    background-color: transparent;
-    color: white;
-    box-shadow: none;
-    -webkit-box-shadow: none;
+nav {
+  background-color: transparent;
+  color: white;
+  box-shadow: none;
+  -webkit-box-shadow: none;
 }
 
-nav ul{
-    margin-right: 6rem;
+nav ul {
+  margin-right: 6rem;
 }
 
-nav ul a{
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-rendering: optimizeLegibility;
-    font-weight: 500;
+nav ul a {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-weight: 500;
 }
 
-.brand-logo{
-    margin-left: 6rem;
-    font-family: 'Alfa Slab One', cursive;
+.brand-logo {
+  margin-left: 6rem;
+  font-family: "Alfa Slab One", cursive;
 }
 
-@media only screen and (max-width: 992px){
-    .brand-logo{
-        margin-left: 0;
-}
-}
-
-nav .btn{
-    background-color: rgba(29, 28, 28, 0.5);
-    border-radius: 25px;
-    height: 25px;
-    line-height: 25px;
-    text-transform: capitalize;
+@media only screen and (max-width: 992px) {
+  .brand-logo {
+    margin-left: 0;
+  }
 }
 
-nav .btn:hover{
-    background-color: rgb(224, 58, 119) !important;
-    color: white;
+nav .btn {
+  background-color: rgba(29, 28, 28, 0.5);
+  border-radius: 25px;
+  height: 25px;
+  line-height: 25px;
+  text-transform: capitalize;
 }
 
-nav ul a:hover{
-    color: rgb(224, 58, 119);
-    background-color: rgba(0,0,0,0) !important;
-    transition: .3s ease-in;
+nav .btn:hover {
+  background-color: rgb(224, 58, 119) !important;
+  color: white;
 }
 
-nav ul a.btn{
-    margin-top: -2px;
-    margin-left: 5px;
-    margin-right: 5px;
+nav ul a:hover {
+  color: rgb(224, 58, 119);
+  background-color: rgba(0, 0, 0, 0) !important;
+  transition: 0.3s ease-in;
 }
 
-
-.navHeader{
-    color: rgba(0,0,0,0.87);
-    text-align: center;
-     font-family: 'Alfa Slab One', cursive;
+nav ul a.btn {
+  margin-top: -2px;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
-nav .nav-wrapper{
-    z-index: 1;
+.navHeader {
+  color: rgba(0, 0, 0, 0.87);
+  text-align: center;
+  font-family: "Alfa Slab One", cursive;
+}
+
+nav .nav-wrapper {
+  z-index: 1;
 }
 
 /* ------------------------------------------------------*/
 
 /* ----------------- Landing Page Styling ----------------- */
 
-.landing-header{
-    color: white;
-    font-family: 'Alfa Slab One', cursive;
-    text-shadow: 5px 5px 1.2rem rgba(0, 0, 0, 0.8); 
+.landing-header {
+  color: white;
+  font-family: "Alfa Slab One", cursive;
+  text-shadow: 5px 5px 1.2rem rgba(0, 0, 0, 0.8);
 }
 
-
-.landing-buttons{
-    border-radius: 25px;
-    background-color: rgba(29, 28, 28, 0.5);
-    width: 88px;
-    height: 36px;
-    display: inline-block;
-    margin: 5px;
-    text-transform: capitalize;
+.landing-buttons {
+  border-radius: 25px;
+  background-color: rgba(29, 28, 28, 0.5);
+  width: 88px;
+  height: 36px;
+  display: inline-block;
+  margin: 5px;
+  text-transform: capitalize;
 }
 
-.landing-buttons:hover{
-    background-color: rgb(224, 58, 119);
+.landing-buttons:hover {
+  background-color: rgb(224, 58, 119);
 }
 
-#landing-container{
-    text-align: center;
-    margin-top: 10rem;
+#landing-container {
+  text-align: center;
+  margin-top: 10rem;
 }
 
-.landing-paragraph{
-    text-shadow: 5px 5px 1.2rem rgba(0, 0, 0, 0.8); 
-}
-
-/* ------------------------------------------------------*/
-
-
-
-/* ----------------- Media Queries ----------------- */
-
-@media only screen and (min-width: 993px){
-    .container {
-        width: 60%;
-    }
+.landing-paragraph {
+  text-shadow: 5px 5px 1.2rem rgba(0, 0, 0, 0.8);
 }
 
 /* ------------------------------------------------------*/
+
 
 
 /* ----------------- Games Page Styling ----------------- */
 
-.filter-container{
-    background-color: rgba(224, 58, 119, 1);
-    content: '';
-    display: block;
-    position: absolute;
-    width: 100%;
-    height: 60%;
-    left: 0;
-    bottom: 0;
-    opacity: 0.75;
+.filter-container {
+  background-color: rgba(224, 58, 119, 1);
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 60%;
+  left: 0;
+  bottom: 0;
+  opacity: 0.75;
 }
 
-.games-header{
-    font-family: 'Alfa Slab One', cursive;
-    margin-bottom: 0;
+.games-header {
+  font-family: "Alfa Slab One", cursive;
+  margin-bottom: 0;
 }
 
 .games-bg-container {
-    width: 100%;
-    height: 35rem;
-    position: relative;
-    top: -4.5rem;
+  width: 100%;
+  height: 35rem;
+  position: relative;
+  top: -4.5rem;
 }
 
-.container.crumbs{
-    position: absolute;
-    top: 15%;
-    left: 12%;
+.container.crumbs {
+  position: absolute;
+  top: 15%;
+  left: 12%;
+}
+
+.options-container {
+  position: absolute;
+  top: 40%;
+  left: 20%;
+  bottom: 40%;
+  right: 20%;
 }
 
 .select-wrapper input.select-dropdown {
-    border: 2px solid white;
-    color: white;
+  border: 2px solid white;
+  color: white;
 }
 
 .select-wrapper input.select-dropdown:focus {
-    border-bottom: 2px solid white;
+  border-bottom: 2px solid white;
 }
 
-.select-wrapper .caret{
-    fill: white;
+.select-wrapper .caret {
+  fill: white;
 }
 
 .dropdown-content {
-    color: white;
+  color: white;
 }
 
-.dropdown-content li>a, .dropdown-content li>span {
-    font-size: 16px;
-    display: block;
-    line-height: 22px;
-    padding: 14px 16px;
-    color: black;
+.dropdown-content li > a,
+.dropdown-content li > span {
+  font-size: 16px;
+  display: block;
+  line-height: 22px;
+  padding: 14px 16px;
+  color: black;
 }
 
-input{
-    text-align: center;
-    font-family: 'Pontano Sans', sans-serif;
-    color: white;
+input {
+  text-align: center;
+  font-family: "Pontano Sans", sans-serif;
+  color: white;
+}
+
+.input-field.col.s12 {
+  margin-left: auto;
+  left: auto;
+  right: auto;
+  margin-top: 1px;
+  margin-bottom: 1px;
+}
+
+.search-button{
+    background-color: white;
+    color: rgb(224, 58, 119);
+}
+
+.search-button:hover{
+    background-color: #312a2a;
+    color: rgb(224, 58, 119);
+}
+
+.search-button:focus{
+    background-color: #312a2a;
 }
 
 /* ---- Cards Styling ---- */
 
-.card{
-    color: black;
-    font-family: 'Alfa Slab One', cursive;
-    box-shadow: none;
+/* div.col.s12.m3.l2{
+    margin: 0 100px 0 0;
+} */
+
+.row.card-row{
+    display: inline-block;
 }
 
-.card-image{
-    -webkit-box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
-    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
-    height: 325px;
-    width: 250px;
+.card {
+  color: black;
+  font-family: "Alfa Slab One", cursive;
+  box-shadow: none;
+}
+
+.card-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.card-title{
+    white-space: nowrap;
+}
+
+.card-title:hover {
+  color: rgb(224, 58, 119);
+}
+
+.genre-tag {
+  z-index: 999;
+  position: absolute;
+  right: 10%;
+  bottom: 5%;
+  color: white;
+  font-family: "Pontano Sans", sans-serif;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+}
+
+.card-image {
+  -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+    0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+    0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+  height: 325px;
+  width: 250px;
 }
 
 .card .card-image img {
-    height: 100%;
+  height: 100%;
 }
 
-.container.card-container{
-    width: 85%;
+.container.card-container {
+  width: 85%;
 }
 
 /* -----------------------*/
 
 /* ------------------------------------------------------*/
 
+/* ----------------- Media Queries ----------------- */
+
+@media only screen and (min-width: 993px) {
+  .container {
+    width: 60%;
+  }
+}
+
+@media only screen and (max-width: 993px) {
+  .options-container {
+    position: absolute;
+    top: 30%;
+    left: 20%;
+    bottom: 40%;
+    right: 20%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .options-container {
+    position: absolute;
+    top: 5%;
+    left: 20%;
+    bottom: 40%;
+    right: 20%;
+  }
+}
+
+/* ------------------------------------------------------*/

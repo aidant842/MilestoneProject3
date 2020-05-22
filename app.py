@@ -21,7 +21,12 @@ def home_page():
 
 @app.route('/games')
 def games():
-    return render_template('games.html', games=mongo.db.games.find())
+    return render_template('games.html', genre=mongo.db.genre.find(), games=mongo.db.games.find())
+
+@app.route('/games/<game_id>')
+def game_page(game_id):
+    the_game = mongo.db.games.find_one({'_id': ObjectId(game_id)})
+    return render_template('game.html', genre=mongo.db.genre.find(), game=the_game)
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),

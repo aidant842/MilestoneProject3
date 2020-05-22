@@ -119,6 +119,10 @@ nav ul a.btn{
      font-family: 'Alfa Slab One', cursive;
 }
 
+nav .nav-wrapper{
+    z-index: 1;
+}
+
 /* ------------------------------------------------------*/
 
 /* ----------------- Landing Page Styling ----------------- */
@@ -183,7 +187,6 @@ nav ul a.btn{
 }
 
 .games-header{
-    z-index: 2;
     font-family: 'Alfa Slab One', cursive;
     margin-bottom: 0;
 }
@@ -191,7 +194,6 @@ nav ul a.btn{
 .games-bg-container {
     width: 100%;
     height: 35rem;
-    z-index: -2;
     position: relative;
     top: -4.5rem;
 }
@@ -202,4 +204,61 @@ nav ul a.btn{
     left: 12%;
 }
 
+.select-wrapper input.select-dropdown {
+    border: 2px solid white;
+    color: white;
+}
+
+.select-wrapper input.select-dropdown:focus {
+    border-bottom: 2px solid white;
+}
+
+.select-wrapper .caret{
+    fill: white;
+}
+
+.dropdown-content {
+    color: white;
+}
+
+.dropdown-content li>a, .dropdown-content li>span {
+    font-size: 16px;
+    display: block;
+    line-height: 22px;
+    padding: 14px 16px;
+    color: black;
+}
+
+input{
+    text-align: center;
+    font-family: 'Pontano Sans', sans-serif;
+    color: white;
+}
+
+/* ---- Cards Styling ---- */
+
+.card{
+    color: black;
+    font-family: 'Alfa Slab One', cursive;
+    box-shadow: none;
+}
+
+.card-image{
+    -webkit-box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+    height: 325px;
+    width: 250px;
+}
+
+.card .card-image img {
+    height: 100%;
+}
+
+.container.card-container{
+    width: 85%;
+}
+
+/* -----------------------*/
+
 /* ------------------------------------------------------*/
+

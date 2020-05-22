@@ -37,7 +37,7 @@
         <ul class="sidenav" id="mobile-demo">
           <h3 class="navHeader">Game<span class="side-nav-db">DB</span></h3>
           <li><a href="{{url_for('home_page')}}">Home</a></li>
-          <li><a href="#">Games</a></li>
+          <li><a href="{{url_for('games')}}">Games</a></li>
           <li><a href="#">Add Game</a></li>
         </ul>
       </div>
@@ -56,6 +56,7 @@
     <script>
       $(document).ready(function () {
         $(".sidenav").sidenav();
+        $('select').formSelect();
       });
     </script>
   </body>

@@ -10,7 +10,29 @@ body {
 .logo-db, .landing-db, .side-nav-db{
     color: rgb(224, 58, 119);
 }
+
 /* ------------------------------------------------------*/
+
+/* ----------------- BreadCrumb Styling ----------------- */
+
+.breadcrumb{
+    font-size: 1rem;
+}
+
+.breadcrumb:before {
+    font-size: 1.2rem;
+}
+
+.breadcrumb:hover{
+    color: rgb(224, 58, 119);
+}
+
+.breadcrumb.active{
+    color: rgb(224, 58, 119);
+    text-decoration: underline;
+}
+/* ------------------------------------------------------*/
+
 
 /* ----------------- Page Backgrounds ----------------- */
 
@@ -21,10 +43,16 @@ body {
 }
 
 .games-bg{
-    background-image: url("images/back.jpg");
+    background-image: url(images/back.jpg);
     background-repeat: no-repeat;
-    background-size: 100% 880%;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
 }
+
+
 
 /* ------------------------------------------------------*/
 
@@ -144,15 +172,34 @@ nav ul a.btn{
 
 .filter-container{
     background-color: rgba(224, 58, 119, 1);
-        content: '';
+    content: '';
     display: block;
     position: absolute;
     width: 100%;
-    height: 34.8%;
+    height: 60%;
     left: 0;
-    top: 40%;
+    bottom: 0;
     opacity: 0.75;
 }
 
+.games-header{
+    z-index: 2;
+    font-family: 'Alfa Slab One', cursive;
+    margin-bottom: 0;
+}
+
+.games-bg-container {
+    width: 100%;
+    height: 35rem;
+    z-index: -2;
+    position: relative;
+    top: -4.5rem;
+}
+
+.container.crumbs{
+    position: absolute;
+    top: 15%;
+    left: 12%;
+}
 
 /* ------------------------------------------------------*/

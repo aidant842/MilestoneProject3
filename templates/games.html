@@ -1,9 +1,34 @@
 {% extends 'base.html' %} {% block content %}
-<body class="games-bg">
-    <h2>Games</h2>
-    <div class="filter-container">
-
+<div class="games-bg-container">
+<div class="games-bg">
+<!-- Container for header and breadcrumbs -->
+  <div class="container crumbs">
+    <h4 class="games-header">Games</h4>
+    <nav>
+      <div class="nav-wrapper">
+        <div class="col s12">
+          <a href="{{url_for('home_page')}}" class="breadcrumb">Home</a>
+          <a href="{{url_for('games')}}" class="breadcrumb active">Games</a>
+        </div>
+      </div>
+    </nav>
+  </div>
+<!-- Container for filter -->
+  <div class="filter-container">
+  <div class="options-container col s3">
+    <div class="input-field col s3">
+      <select>
+        <option value="" disabled selected>Choose your option</option>
+        <option value="1">Option 1</option>
+        <option value="2">Option 2</option>
+        <option value="3">Option 3</option>
+      </select>
+      <label>Materialize Select</label>
     </div>
-</body>
-
+  </div>
+  </div>
+</div>
+</div>
+<!-- Container for cards -->
+<h1 style="color:black">games</h1>
 {% endblock %}

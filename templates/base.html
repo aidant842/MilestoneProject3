@@ -22,26 +22,30 @@
   </head>
 
   <header>
+  <div class="navbar-fixed">
     <nav>
-      <div class="nav-wrapper">
-        <a href="#!" class="brand-logo"><span>Game</span><span class="logo-db">DB</span></a>
+      <div class="nav-wrapper fix">
+        <a href="{{url_for('home_page')}}" class="brand-logo"><span>Game</span><span class="logo-db">DB</span></a>
         <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         <ul class="right hide-on-med-and-down">
           <li><a href="{{url_for('home_page')}}">Home</a></li>
           <li><a href="#">About</a></li>
           <li><a href="{{url_for('games')}}">Games</a></li>
           <li><a href="#">Add Game</a></li>
-          <li><a class="waves-effect waves-light btn">Login</a></li>
-          <li><a class="waves-effect waves-light btn">Sign Up</a></li>
+          <li><a href="{{url_for('login')}}" class="btn">Login</a></li>
+          <li><a class="btn">Sign Up</a></li>
         </ul>
         <ul class="sidenav" id="mobile-demo">
           <h3 class="navHeader">Game<span class="side-nav-db">DB</span></h3>
           <li><a href="{{url_for('home_page')}}">Home</a></li>
           <li><a href="{{url_for('games')}}">Games</a></li>
           <li><a href="#">Add Game</a></li>
+          <li><a href="{{url_for('login')}}">Login</a></li>
+          <li><a href="#">Sign Up</a></li>
         </ul>
       </div>
     </nav>
+  </div>
   </header>
 
   <body>
@@ -58,6 +62,15 @@
         $(".sidenav").sidenav();
         $('select').formSelect();
       });
+    </script>
+    <script>
+    $(function () {
+            $(document).scroll(function () {
+            var $nav = $(".nav-wrapper");
+            $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+        });
+    });
+        
     </script>
   </body>
 </html>

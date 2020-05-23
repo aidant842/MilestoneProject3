@@ -37,7 +37,7 @@ body {
 
 /* ----------------- Page Backgrounds ----------------- */
 
-.landing-bg {
+.landing-bg, .login-bg {
   background-image: url("images/background.png");
   background-repeat: no-repeat;
   background-size: auto;
@@ -117,9 +117,18 @@ nav ul a.btn {
   font-family: "Alfa Slab One", cursive;
 }
 
-nav .nav-wrapper {
-  z-index: 1;
+.nav-wrapper.fix.scrolled {
+  background-color: rgba(29, 28, 28, 0.5) !important;
+  transition: background-color 200ms linear;
 }
+
+.nav-wrapper.fix{
+     transition:background-color 200ms linear; 
+     }
+
+.navbar-fixed{
+    z-index: 999;
+}     
 
 /* ------------------------------------------------------*/
 
@@ -241,6 +250,7 @@ input {
 .search-button{
     background-color: white;
     color: rgb(224, 58, 119);
+    border-radius: 0;
 }
 
 .search-button:hover{
@@ -253,10 +263,6 @@ input {
 }
 
 /* ---- Cards Styling ---- */
-
-/* div.col.s12.m3.l2{
-    margin: 0 100px 0 0;
-} */
 
 .row.card-row{
     display: inline-block;
@@ -282,7 +288,7 @@ input {
 }
 
 .genre-tag {
-  z-index: 999;
+  z-index: 3;
   position: absolute;
   right: 10%;
   bottom: 5%;
@@ -307,6 +313,7 @@ input {
 
 .container.card-container {
   width: 85%;
+  text-align: center;
 }
 
 /* -----------------------*/
@@ -340,5 +347,43 @@ input {
     right: 20%;
   }
 }
+
+/* ------------------------------------------------------*/
+
+/* ----------------- Login Page ----------------- */
+
+.login-header{
+    text-align: center;
+    font-family: "Alfa Slab One", cursive;
+    color: black;
+    text-transform: uppercase;
+}
+
+.container.login-container{
+    width: 65%;
+    text-align: center;
+    position: relative;
+}
+
+.login-btn{
+    border-radius: 0;
+    background-color: rgb(224, 58, 119);
+    color: white;
+}
+
+.login-btn:hover{
+    background-color: #312a2a;
+    color: rgb(224, 58, 119);
+}
+
+.login-btn:focus{
+    background-color: #312a2a;
+}
+
+.create-acc{
+    position: absolute;
+    right: 0;
+}
+
 
 /* ------------------------------------------------------*/

@@ -1,3 +1,23 @@
 {% extends 'base.html' %} {% block content %}
 
+<div class="games-bg-container">
+  <div class="games-bg">
+    <!-- Container for header and breadcrumbs -->
+    <div class="container crumbs">
+      <h4 class="games-header">Games</h4>
+      <nav>
+        <div class="nav-wrapper">
+          <!-- <div class="row">
+            <div class="col s12"> -->
+              <a href="{{url_for('home_page')}}" class="breadcrumb">Home</a>
+              <a href="{{url_for('games')}}" class="breadcrumb">Games</a>
+              <a href="" class="breadcrumb active">{{game.title}}</a>
+            <!-- </div>
+          </div> -->
+        </div>
+      </nav>
+    </div>
+  </div>
+</div>
+
 {% endblock %}

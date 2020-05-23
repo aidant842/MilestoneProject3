@@ -28,7 +28,7 @@ def games():
 @app.route('/games/<game_id>')
 def game_page(game_id):
     the_game = mongo.db.games.find_one({'_id': ObjectId(game_id)})
-    return render_template('game.html', genre=mongo.db.genre.find(), game=the_game)
+    return render_template('game.html', genre=mongo.db.genre.find(), game=the_game, games=mongo.db.games.find())
 
 @app.route('/login')
 def login():

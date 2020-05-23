@@ -13,6 +13,10 @@ body {
   color: rgb(224, 58, 119);
 }
 
+button{
+    overflow: hidden;
+}
+
 /* ------------------------------------------------------*/
 
 /* ----------------- BreadCrumb Styling ----------------- */
@@ -320,6 +324,69 @@ input {
 
 /* ------------------------------------------------------*/
 
+
+
+/* ----------------- Login Page ----------------- */
+
+.login-header{
+    text-align: center;
+    font-family: "Alfa Slab One", cursive;
+    color: white;
+    text-transform: uppercase;
+    text-shadow: 5px 5px 1.2rem rgba(0, 0, 0, 0.8);
+}
+
+.login-container {
+    position: relative;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3rem;
+}
+
+
+   input:not([type]), input[type=text]:not(.browser-default), input[type=password]:not(.browser-default), input[type=email]:not(.browser-default), input[type=url]:not(.browser-default), input[type=time]:not(.browser-default), input[type=date]:not(.browser-default), input[type=datetime]:not(.browser-default), input[type=datetime-local]:not(.browser-default), input[type=tel]:not(.browser-default), input[type=number]:not(.browser-default), input[type=search]:not(.browser-default), textarea.materialize-textarea{
+       border-bottom: 1px solid rgb(224, 58, 119);
+   }
+
+   input:not([type]):focus:not([readonly]), input[type=text]:not(.browser-default):focus:not([readonly]), input[type=password]:not(.browser-default):focus:not([readonly]), input[type=email]:not(.browser-default):focus:not([readonly]), input[type=url]:not(.browser-default):focus:not([readonly]), input[type=time]:not(.browser-default):focus:not([readonly]), input[type=date]:not(.browser-default):focus:not([readonly]), input[type=datetime]:not(.browser-default):focus:not([readonly]), input[type=datetime-local]:not(.browser-default):focus:not([readonly]), input[type=tel]:not(.browser-default):focus:not([readonly]), input[type=number]:not(.browser-default):focus:not([readonly]), input[type=search]:not(.browser-default):focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]){
+       border-bottom: 1px solid rgb(224, 58, 119);
+       box-shadow: 0 1px 0 0 rgb(224, 58, 119);
+   }
+
+   input:not([type]):focus:not([readonly])+label, input[type=text]:not(.browser-default):focus:not([readonly])+label, input[type=password]:not(.browser-default):focus:not([readonly])+label, input[type=email]:not(.browser-default):focus:not([readonly])+label, input[type=url]:not(.browser-default):focus:not([readonly])+label, input[type=time]:not(.browser-default):focus:not([readonly])+label, input[type=date]:not(.browser-default):focus:not([readonly])+label, input[type=datetime]:not(.browser-default):focus:not([readonly])+label, input[type=datetime-local]:not(.browser-default):focus:not([readonly])+label, input[type=tel]:not(.browser-default):focus:not([readonly])+label, input[type=number]:not(.browser-default):focus:not([readonly])+label, input[type=search]:not(.browser-default):focus:not([readonly])+label, textarea.materialize-textarea:focus:not([readonly])+label{
+       color: rgb(224, 58, 119);
+   }
+
+.login-btn{
+    border-radius: 0;
+    background-color: rgb(224, 58, 119);
+    color: white;
+}
+
+.login-btn:hover{
+    background-color: #312a2a;
+    color: rgb(224, 58, 119);
+}
+
+.login-btn:focus{
+    background-color: #312a2a;
+}
+
+.login-form{
+    color:white;
+}
+
+.textarea.materialize-textarea{
+    border-bottom: 1px solid rgb(224, 58, 119);
+}
+
+.input-field>label {
+    color: white;
+}
+
+/* ------------------------------------------------------*/
+
 /* ----------------- Media Queries ----------------- */
 
 @media only screen and (min-width: 993px) {
@@ -348,42 +415,10 @@ input {
   }
 }
 
-/* ------------------------------------------------------*/
-
-/* ----------------- Login Page ----------------- */
-
-.login-header{
-    text-align: center;
-    font-family: "Alfa Slab One", cursive;
-    color: black;
-    text-transform: uppercase;
+@media only screen and (max-width: 388px) {
+  .login-btn {
+    font-size: 0.7rem;
+  }
 }
-
-.container.login-container{
-    width: 65%;
-    text-align: center;
-    position: relative;
-}
-
-.login-btn{
-    border-radius: 0;
-    background-color: rgb(224, 58, 119);
-    color: white;
-}
-
-.login-btn:hover{
-    background-color: #312a2a;
-    color: rgb(224, 58, 119);
-}
-
-.login-btn:focus{
-    background-color: #312a2a;
-}
-
-.create-acc{
-    position: absolute;
-    right: 0;
-}
-
 
 /* ------------------------------------------------------*/

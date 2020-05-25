@@ -1,18 +1,18 @@
 {% extends 'base.html' %} {% block content %}
 
-<div class="games-bg-container">
-  <div class="games-bg">
+<div class="game-bg-container">
+  <div class="game-bg">
     <!-- Container for header and breadcrumbs -->
     <div class="container crumbs">
-      <h4 class="games-header">Games</h4>
+      <h4 class="game-header">{{game.title}}</h4>
       <nav>
         <div class="nav-wrapper">
           <!-- <div class="row">
             <div class="col s12"> -->
-              <a href="{{url_for('home_page')}}" class="breadcrumb">Home</a>
-              <a href="{{url_for('games')}}" class="breadcrumb">Games</a>
-              <a href="" class="breadcrumb active">{{game.title}}</a>
-            <!-- </div>
+          <a href="{{url_for('home_page')}}" class="breadcrumb">Home</a>
+          <a href="{{url_for('games')}}" class="breadcrumb">Games</a>
+          <a href="" class="breadcrumb active">{{game.title}}</a>
+          <!-- </div>
           </div> -->
         </div>
       </nav>
@@ -20,4 +20,81 @@
   </div>
 </div>
 
+<!-- image -->
+<div class="container">
+  <div class="row">
+    <div class="col s12 l8">
+      <!-- Promo Content 1 goes here -->
+      <div class="image-container">
+      <div class="media-buttons-container">
+      <div>
+      <a class="btn-floating btn-large waves-effect waves-light" id="image-button"><i class="material-icons">image</i></a>
+      </div>
+      <div>
+      <a class="btn-floating btn-large waves-effect waves-light" id="video-button"><i class="material-icons">videocam</i></a>
+      </div>
+      </div>
+        <img src="{{game.image}}" alt="image of {{game.title}}" class="responsive-img" id="game-img"/>
+        <div class="video-container hidden" id="vid-con">
+        <iframe width="853" height="480" src="{{game.trailer_link}}" frameborder="0" allowfullscreen id="game-vid"></iframe>
+      </div>
+      </div>
+    </div>
+    <div class="col s12 l4">
+      <div class="details-container z-depth-2">
+        <h4 class="details-header"><span>Game</span> <span class="landing-db">Details</span></h4>
+        <ul>
+        <li class="content"> <i class="tiny material-icons">label</i> <div class="key">Genre:</div> <div class="value">{{game.genre_name}}</div></li>
+        <li class="content"> <i class="tiny material-icons">access_time</i> <div class="key">Release Date:</div> <div class="value">{{game.release_date}}</div></li>
+        <li class="content"> <i class="tiny material-icons">videogame_asset</i> <div class="key">Platform:</div> <div class="value">{{game.platform}}</div></li>
+        <li class="content"> <i class="tiny material-icons">desktop_windows</i> <div class="key">Developer:</div> <div class="value">{{game.developer}}</div></li>
+        <li class="content"> <i class="tiny material-icons">language</i> <div class="key">Languages:</div> <div class="value">{{game.languages}}</div></li>
+        <li class="content"> <i class="tiny material-icons">play_arrow</i> <div class="key">Playthrough Time:</div> <div class="value">{{game.playthrough_time}} mins</div></li>
+        <li class="content"> <i class="tiny material-icons">camera</i> <div class="key">VR Capable:</div> <div class="value">{{game.vr_capable}}</div></li>
+        <li class="content"> <i class="tiny material-icons">person</i> <div class="key">Age Rating:</div> <div class="value">{{game.age_rating}}</div></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="col s12 l6">
+        <div class="description-container z-depth-2">
+        <h4 class="description-header"><span>About </span><span class="landing-db">{{game.title}}</span></h4>
+            <p>{{game.description}}</p>
+        </div>
+    </div>
+
+    <div class="col s12 l6">
+        <div class="review-container z-depth-2">
+        <h4 class="review-header"><span>{{game.title}}</span><span class="landing-db"> review</span></h4>
+            <p>{{game.review}}</p>
+        </div>
+    </div>
+
+  </div>
+</div>
+<script>
+
+function videoToggle() {
+  document.getElementById("game-img").classList.toggle("hidden");
+}
+
+function imageToggle() {
+  document.getElementById("vid-con").classList.toggle("hidden");
+}
+
+
+document.getElementById("image-button").onclick = function(){
+    if(document.getElementById("game-img").classList.contains("hidden")){
+    videoToggle();
+    imageToggle();
+    }
+}
+
+document.getElementById("video-button").onclick = function(){
+    if(document.getElementById("vid-con").classList.contains("hidden")){
+    imageToggle();
+    videoToggle();
+    }
+}
+</script>
 {% endblock %}

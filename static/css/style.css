@@ -13,8 +13,21 @@ body {
   color: rgb(224, 58, 119);
 }
 
-button{
-    overflow: hidden;
+button {
+  overflow: hidden;
+}
+
+.container{
+    width: 90%;
+}
+
+.hidden{
+    display: none;
+}
+
+.btn-floating, .btn-floating:focus, .btn-floating:hover{
+    background-color: rgb(224, 58, 119);
+    border-radius: 0;
 }
 
 /* ------------------------------------------------------*/
@@ -41,7 +54,8 @@ button{
 
 /* ----------------- Page Backgrounds ----------------- */
 
-.landing-bg, .login-bg {
+.landing-bg,
+.login-bg {
   background-image: url("images/background.png");
   background-repeat: no-repeat;
   background-size: auto;
@@ -126,13 +140,17 @@ nav ul a.btn {
   transition: background-color 200ms linear;
 }
 
-.nav-wrapper.fix{
-     transition:background-color 200ms linear; 
-     }
+.nav-wrapper.fix {
+  transition: background-color 200ms linear;
+}
 
-.navbar-fixed{
-    z-index: 999;
-}     
+.navbar-fixed {
+  z-index: 999;
+}
+
+.sidenav li>a {
+    font-weight: 600;
+}
 
 /* ------------------------------------------------------*/
 
@@ -158,9 +176,10 @@ nav ul a.btn {
   background-color: rgb(224, 58, 119);
 }
 
-#landing-container {
+.container.landing-container {
   text-align: center;
   margin-top: 10rem;
+  width: 60%;
 }
 
 .landing-paragraph {
@@ -168,8 +187,6 @@ nav ul a.btn {
 }
 
 /* ------------------------------------------------------*/
-
-
 
 /* ----------------- Games Page Styling ----------------- */
 
@@ -251,25 +268,25 @@ input {
   margin-bottom: 1px;
 }
 
-.search-button{
-    background-color: white;
-    color: rgb(224, 58, 119);
-    border-radius: 0;
+.search-button {
+  background-color: white;
+  color: rgb(224, 58, 119);
+  border-radius: 0;
 }
 
-.search-button:hover{
-    background-color: #312a2a;
-    color: rgb(224, 58, 119);
+.search-button:hover {
+  background-color: #312a2a;
+  color: rgb(224, 58, 119);
 }
 
-.search-button:focus{
-    background-color: #312a2a;
+.search-button:focus {
+  background-color: #312a2a;
 }
 
 /* ---- Cards Styling ---- */
 
-.row.card-row{
-    display: inline-block;
+.row.card-row {
+  display: inline-block;
 }
 
 .card {
@@ -283,8 +300,8 @@ input {
   color: inherit;
 }
 
-.card-title{
-    white-space: nowrap;
+.card-title {
+  white-space: nowrap;
 }
 
 .card-title:hover {
@@ -324,76 +341,194 @@ input {
 
 /* ------------------------------------------------------*/
 
-
-
 /* ----------------- Login Page ----------------- */
 
-.login-header{
-    text-align: center;
-    font-family: "Alfa Slab One", cursive;
-    color: white;
-    text-transform: uppercase;
-    text-shadow: 5px 5px 1.2rem rgba(0, 0, 0, 0.8);
+.login-header {
+  text-align: center;
+  font-family: "Alfa Slab One", cursive;
+  color: white;
+  text-transform: uppercase;
+  text-shadow: 5px 5px 1.2rem rgba(0, 0, 0, 0.8);
 }
 
 .login-container {
-    position: relative;
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 3rem;
+  position: relative;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3rem;
 }
 
-
-   input:not([type]), input[type=text]:not(.browser-default), input[type=password]:not(.browser-default), input[type=email]:not(.browser-default), input[type=url]:not(.browser-default), input[type=time]:not(.browser-default), input[type=date]:not(.browser-default), input[type=datetime]:not(.browser-default), input[type=datetime-local]:not(.browser-default), input[type=tel]:not(.browser-default), input[type=number]:not(.browser-default), input[type=search]:not(.browser-default), textarea.materialize-textarea{
-       border-bottom: 1px solid rgb(224, 58, 119);
-   }
-
-   input:not([type]):focus:not([readonly]), input[type=text]:not(.browser-default):focus:not([readonly]), input[type=password]:not(.browser-default):focus:not([readonly]), input[type=email]:not(.browser-default):focus:not([readonly]), input[type=url]:not(.browser-default):focus:not([readonly]), input[type=time]:not(.browser-default):focus:not([readonly]), input[type=date]:not(.browser-default):focus:not([readonly]), input[type=datetime]:not(.browser-default):focus:not([readonly]), input[type=datetime-local]:not(.browser-default):focus:not([readonly]), input[type=tel]:not(.browser-default):focus:not([readonly]), input[type=number]:not(.browser-default):focus:not([readonly]), input[type=search]:not(.browser-default):focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]){
-       border-bottom: 1px solid rgb(224, 58, 119);
-       box-shadow: 0 1px 0 0 rgb(224, 58, 119);
-   }
-
-   input:not([type]):focus:not([readonly])+label, input[type=text]:not(.browser-default):focus:not([readonly])+label, input[type=password]:not(.browser-default):focus:not([readonly])+label, input[type=email]:not(.browser-default):focus:not([readonly])+label, input[type=url]:not(.browser-default):focus:not([readonly])+label, input[type=time]:not(.browser-default):focus:not([readonly])+label, input[type=date]:not(.browser-default):focus:not([readonly])+label, input[type=datetime]:not(.browser-default):focus:not([readonly])+label, input[type=datetime-local]:not(.browser-default):focus:not([readonly])+label, input[type=tel]:not(.browser-default):focus:not([readonly])+label, input[type=number]:not(.browser-default):focus:not([readonly])+label, input[type=search]:not(.browser-default):focus:not([readonly])+label, textarea.materialize-textarea:focus:not([readonly])+label{
-       color: rgb(224, 58, 119);
-   }
-
-.login-btn{
-    border-radius: 0;
-    background-color: rgb(224, 58, 119);
-    color: white;
+input:not([type]),
+input[type="text"]:not(.browser-default),
+input[type="password"]:not(.browser-default),
+input[type="email"]:not(.browser-default),
+input[type="url"]:not(.browser-default),
+input[type="time"]:not(.browser-default),
+input[type="date"]:not(.browser-default),
+input[type="datetime"]:not(.browser-default),
+input[type="datetime-local"]:not(.browser-default),
+input[type="tel"]:not(.browser-default),
+input[type="number"]:not(.browser-default),
+input[type="search"]:not(.browser-default),
+textarea.materialize-textarea {
+  border-bottom: 1px solid rgb(224, 58, 119);
 }
 
-.login-btn:hover{
-    background-color: #312a2a;
+input:not([type]):focus:not([readonly]),
+input[type="text"]:not(.browser-default):focus:not([readonly]),
+input[type="password"]:not(.browser-default):focus:not([readonly]),
+input[type="email"]:not(.browser-default):focus:not([readonly]),
+input[type="url"]:not(.browser-default):focus:not([readonly]),
+input[type="time"]:not(.browser-default):focus:not([readonly]),
+input[type="date"]:not(.browser-default):focus:not([readonly]),
+input[type="datetime"]:not(.browser-default):focus:not([readonly]),
+input[type="datetime-local"]:not(.browser-default):focus:not([readonly]),
+input[type="tel"]:not(.browser-default):focus:not([readonly]),
+input[type="number"]:not(.browser-default):focus:not([readonly]),
+input[type="search"]:not(.browser-default):focus:not([readonly]),
+textarea.materialize-textarea:focus:not([readonly]) {
+  border-bottom: 1px solid rgb(224, 58, 119);
+  box-shadow: 0 1px 0 0 rgb(224, 58, 119);
+}
+
+input:not([type]):focus:not([readonly]) + label,
+input[type="text"]:not(.browser-default):focus:not([readonly]) + label,
+input[type="password"]:not(.browser-default):focus:not([readonly]) + label,
+input[type="email"]:not(.browser-default):focus:not([readonly]) + label,
+input[type="url"]:not(.browser-default):focus:not([readonly]) + label,
+input[type="time"]:not(.browser-default):focus:not([readonly]) + label,
+input[type="date"]:not(.browser-default):focus:not([readonly]) + label,
+input[type="datetime"]:not(.browser-default):focus:not([readonly]) + label,
+input[type="datetime-local"]:not(.browser-default):focus:not([readonly])
+  + label,
+input[type="tel"]:not(.browser-default):focus:not([readonly]) + label,
+input[type="number"]:not(.browser-default):focus:not([readonly]) + label,
+input[type="search"]:not(.browser-default):focus:not([readonly]) + label,
+textarea.materialize-textarea:focus:not([readonly]) + label {
+  color: rgb(224, 58, 119);
+}
+
+.login-btn {
+  border-radius: 0;
+  background-color: rgb(224, 58, 119);
+  color: white;
+}
+
+.login-btn:hover {
+  background-color: #312a2a;
+  color: rgb(224, 58, 119);
+}
+
+.login-btn:focus {
+  background-color: #312a2a;
+}
+
+.login-form {
+  color: white;
+}
+
+.textarea.materialize-textarea {
+  border-bottom: 1px solid rgb(224, 58, 119);
+}
+
+.input-field > label {
+  color: white;
+}
+
+/* ------------------------------------------------------*/
+
+/* ----------------- Game Page Styling ----------------- */
+
+.game-bg-container {
+  width: 100%;
+  height: 20rem;
+  position: relative;
+  top: -4.5rem;
+}
+
+.game-bg {
+  background-image: url(images/game-bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.game-header {
+  margin-top: 80px;
+  font-family: "Alfa Slab One", cursive;
+  margin-bottom: 0;
+}
+
+.image-container {
+  max-width: 700px;
+  max-height: 400px;
+}
+
+.details-container {
+  color: #777777;
+  font-weight: 600;
+  padding-left: 25px;
+  padding-bottom: 20px;
+  padding-right: 25px;
+  font-family: "Alfa Slab One", cursive;
+  font-size: 0.8rem;
+  text-decoration: none;
+}
+
+.details-container ul li{
+    margin-bottom: 1rem;
+}
+
+.details-header, .description-header, .review-header {
+  color: black;
+  padding: 20px 0;
+  margin-top: 0;
+  text-transform: uppercase;
+  font-family: "Alfa Slab One", cursive;
+}
+
+.key{
+    color: rgb(224, 58, 119);
+    font-weight: 500;
+    text-transform: uppercase;
+    display: inline;
+}
+
+.value{
+    font-family: "Pontano Sans", sans-serif;
+    text-transform: capitalize;
+    display: inline;
+}
+
+ul li i.material-icons{
+    padding-right: 5px;
     color: rgb(224, 58, 119);
 }
 
-.login-btn:focus{
-    background-color: #312a2a;
+.media-buttons-container{
+    position: absolute;
+    left: 3%;
 }
 
-.login-form{
-    color:white;
-}
-
-.textarea.materialize-textarea{
-    border-bottom: 1px solid rgb(224, 58, 119);
-}
-
-.input-field>label {
-    color: white;
+.description-container, .review-container{
+  color: #777777;
+  font-weight: 600;
+  padding-left: 25px;
+  padding-bottom: 20px;
+  padding-right: 25px;
+  font-family: "Pontano Sans", sans-serif;
+  font-size: 0.8rem;
+  text-decoration: none;
+  margin-top: 4rem;
 }
 
 /* ------------------------------------------------------*/
 
 /* ----------------- Media Queries ----------------- */
-
-@media only screen and (min-width: 993px) {
-  .container {
-    width: 60%;
-  }
-}
 
 @media only screen and (max-width: 993px) {
   .options-container {

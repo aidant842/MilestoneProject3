@@ -464,8 +464,9 @@ textarea.materialize-textarea:focus:not([readonly]) + label {
 }
 
 .image-container {
-  max-width: 700px;
-  max-height: 400px;
+  position:relative;
+  /* max-width: 700px;
+  max-height: 400px; */
 }
 
 .details-container {
@@ -477,19 +478,23 @@ textarea.materialize-textarea:focus:not([readonly]) + label {
   font-family: "Alfa Slab One", cursive;
   font-size: 0.8rem;
   text-decoration: none;
+  overflow: auto;
+  min-height: 467px;
 }
 
 .details-container ul li{
     margin-bottom: 1rem;
 }
 
-.details-header, .description-header, .review-header {
+.details-header, .description-header,.review-header {
   color: black;
-  padding: 20px 0;
+  padding: 30px 0 10px 0;
   margin-top: 0;
   text-transform: uppercase;
   font-family: "Alfa Slab One", cursive;
+  /* font-size: 1.8rem; */
 }
+
 
 .key{
     color: rgb(224, 58, 119);
@@ -511,7 +516,7 @@ ul li i.material-icons{
 
 .media-buttons-container{
     position: absolute;
-    left: 3%;
+    left: auto;
 }
 
 .description-container, .review-container{
@@ -524,6 +529,19 @@ ul li i.material-icons{
   font-size: 0.8rem;
   text-decoration: none;
   margin-top: 4rem;
+  min-height: 250px;
+}
+
+ul li a.btn, ul li a.btn:hover, ul li a.btn:focus{
+    color: white;
+    background-color: rgb(224, 58, 119);
+    font-family: "Pontano Sans", sans-serif;
+    text-transform: capitalize;
+    font-weight: 400;
+}
+
+ul li a i.shop-btn{
+    color: white;
 }
 
 /* ------------------------------------------------------*/
@@ -538,6 +556,24 @@ ul li i.material-icons{
     bottom: 40%;
     right: 20%;
   }
+
+  .details-container{
+      margin-top: 4rem;
+      min-height: fit-content;
+  }
+
+}
+
+@media only screen and (max-width: 1240px){
+    .details-container, .review-container, .description-container, .image-container{
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+  } 
+
+   .details-header, .description-header, .review-header{
+      font-size: 1.6rem;
+  }
 }
 
 @media only screen and (max-width: 600px) {
@@ -550,10 +586,13 @@ ul li i.material-icons{
   }
 }
 
+
+
 @media only screen and (max-width: 388px) {
   .login-btn {
     font-size: 0.7rem;
   }
 }
+
 
 /* ------------------------------------------------------*/

@@ -26,12 +26,12 @@
     <div class="col s12 l8">
       <!-- Promo Content 1 goes here -->
       <div class="image-container">
-      <div class="media-buttons-container">
+      <div class="media-buttons-container" id="button-con">
       <div>
-      <a class="btn-floating btn-large waves-effect waves-light" id="image-button"><i class="material-icons">image</i></a>
+      <a class="btn-floating btn-small waves-effect waves-light" id="image-button"><i class="material-icons">image</i></a>
       </div>
       <div>
-      <a class="btn-floating btn-large waves-effect waves-light" id="video-button"><i class="material-icons">videocam</i></a>
+      <a class="btn-floating btn-small waves-effect waves-light" id="video-button"><i class="material-icons">videocam</i></a>
       </div>
       </div>
         <img src="{{game.image}}" alt="image of {{game.title}}" class="responsive-img" id="game-img"/>
@@ -42,7 +42,7 @@
     </div>
     <div class="col s12 l4">
       <div class="details-container z-depth-2">
-        <h4 class="details-header"><span>Game</span> <span class="landing-db">Details</span></h4>
+        <h5 class="details-header"><span>Game</span> <span class="landing-db">Details</span></h5>
         <ul>
         <li class="content"> <i class="tiny material-icons">label</i> <div class="key">Genre:</div> <div class="value">{{game.genre_name}}</div></li>
         <li class="content"> <i class="tiny material-icons">access_time</i> <div class="key">Release Date:</div> <div class="value">{{game.release_date}}</div></li>
@@ -52,20 +52,21 @@
         <li class="content"> <i class="tiny material-icons">play_arrow</i> <div class="key">Playthrough Time:</div> <div class="value">{{game.playthrough_time}} mins</div></li>
         <li class="content"> <i class="tiny material-icons">camera</i> <div class="key">VR Capable:</div> <div class="value">{{game.vr_capable}}</div></li>
         <li class="content"> <i class="tiny material-icons">person</i> <div class="key">Age Rating:</div> <div class="value">{{game.age_rating}}</div></li>
+        <li class="content"> <a class="waves-effect waves-light btn" href="{{game.shop_link}}" target="_blank"><i class="material-icons right shop-btn">shopping_cart</i>Buy Here</a></li>
         </ul>
       </div>
     </div>
 
-    <div class="col s12 l6">
+    <div class="col s12 l8">
         <div class="description-container z-depth-2">
-        <h4 class="description-header"><span>About </span><span class="landing-db">{{game.title}}</span></h4>
+        <h5 class="description-header"><span>About </span><span class="landing-db">{{game.title}}</span></h5>
             <p>{{game.description}}</p>
         </div>
     </div>
 
-    <div class="col s12 l6">
+    <div class="col s12 l4">
         <div class="review-container z-depth-2">
-        <h4 class="review-header"><span>{{game.title}}</span><span class="landing-db"> review</span></h4>
+        <h5 class="review-header"><span>{{game.title}}</span><span class="landing-db"> review</span></h5>
             <p>{{game.review}}</p>
         </div>
     </div>
@@ -95,6 +96,14 @@ document.getElementById("video-button").onclick = function(){
     imageToggle();
     videoToggle();
     }
+}
+
+function buttonToggle(){
+    document.getElementById("button-con").classList.toggle("hidden");
+}
+
+document.getElementById("vid-con").onclick = function(){
+    buttonToggle();
 }
 </script>
 {% endblock %}

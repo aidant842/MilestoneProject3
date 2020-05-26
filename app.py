@@ -38,6 +38,10 @@ def login():
 def signup():
     return render_template('signup.html')
 
+@app.route('/addGame')
+def addGame():
+    return render_template('addGame.html')
+
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
         port=int(os.environ.get('PORT')),

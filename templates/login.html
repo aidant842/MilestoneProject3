@@ -4,32 +4,30 @@
 
     <h3 class = "login-header" >Login</h3>
 
-    <div class="row">
+    
     <div class="contanier">
-    <div class="login-container">
     <div class="row">
-    <form class="offset-s4 col s4 login-form">
-      <div class="row">
+    <div class="login-container offset-l4 col s12 l4">
+    <form class="login-form">
+      
         <div class="input-field">
-          <input id="username" name="username" type="text" class="validate">
-          <label for="username">Username</label>
+          <input id="username" name="username" type="email" class="validate">
+          <label for="username">Email</label>
         </div>
-      </div>
-      <div class="row">
+     
         <div class="input-field">
           <input id="password" type="password" class="validate">
           <label for="password">Password</label>
         </div>
-      </div>
+      
       <button class="btn login-btn" type="submit" name="action">LOGIN
         <i class="material-icons right">send</i>
       </button>
-      <!-- <a href="{{url_for('signup')}}" class="create-acc">Create an account</a> -->
     </form>
   </div>
   </div>
   </div>
-  </div>
+ 
   </body>
 
 {% endblock %}

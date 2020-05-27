@@ -40,7 +40,14 @@ def signup():
 
 @app.route('/addGame')
 def addGame():
-    return render_template('addGame.html')
+    return render_template('addGame.html', genre=mongo.db.genre.find(), platform=mongo.db.platform.find(),
+                            vr=mongo.db.vr_capable.find(), age_rating=mongo.db.age_rating.find())
+
+@app.route('/insert_game', methods = ['POST'])  
+def insert_game():
+    game = mongo.db.games
+    game.insert(request.form.to_dict(), {'complete': 'false'})
+    return redirect(url_for('games'))                            
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),

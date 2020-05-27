@@ -71,6 +71,13 @@ button {
   width: 100%;
 }
 
+.addGame-bg{
+  background-image: url("images/add-game-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-attachment: fixed;
+}
+
 /* ------------------------------------------------------*/
 
 /* ----------------- NavBar Styling ----------------- */
@@ -119,7 +126,7 @@ nav .btn:hover {
 
 nav ul a:hover {
   color: rgb(224, 58, 119);
-  background-color: rgba(0, 0, 0, 0) !important;
+  background-color: rgba(0, 0, 0, 0.2) !important;
   transition: 0.3s ease-in;
 }
 
@@ -229,13 +236,13 @@ nav ul a.btn {
 }
 
 .select-wrapper input.select-dropdown {
-  border: 2px solid white;
+  /* border: 2px solid white; */
   color: white;
 }
 
-.select-wrapper input.select-dropdown:focus {
+/* .select-wrapper input.select-dropdown:focus {
   border-bottom: 2px solid white;
-}
+} */
 
 .select-wrapper .caret {
   fill: white;
@@ -255,7 +262,7 @@ nav ul a.btn {
 }
 
 input {
-  text-align: center;
+  /* text-align: center; */
   font-family: "Pontano Sans", sans-serif;
   color: white;
 }
@@ -352,7 +359,7 @@ input {
 }
 
 .login-container {
-  position: relative;
+  /* position: relative; */
   width: 80%;
   margin-left: auto;
   margin-right: auto;
@@ -360,7 +367,7 @@ input {
 }
 
 input:not([type]),
-input[type="text"]:not(.browser-default),
+/* input[type="text"]:not(.browser-default), */
 input[type="password"]:not(.browser-default),
 input[type="email"]:not(.browser-default),
 input[type="url"]:not(.browser-default),
@@ -409,18 +416,18 @@ textarea.materialize-textarea:focus:not([readonly]) + label {
   color: rgb(224, 58, 119);
 }
 
-.login-btn {
+.login-btn, .next-btn {
   border-radius: 0;
   background-color: rgb(224, 58, 119);
   color: white;
 }
 
-.login-btn:hover {
+.login-btn:hover, .next-btn:hover {
   background-color: #312a2a;
   color: rgb(224, 58, 119);
 }
 
-.login-btn:focus {
+.login-btn:focus, .next-btn:focus {
   background-color: #312a2a;
 }
 
@@ -532,7 +539,7 @@ ul li i.material-icons{
   min-height: 250px;
 }
 
-ul li a.btn, ul li a.btn:hover, ul li a.btn:focus{
+ul li a.buy-button, ul li a.buy-button:hover, ul li a.buy-button:focus{
     color: white;
     background-color: rgb(224, 58, 119);
     font-family: "Pontano Sans", sans-serif;
@@ -542,6 +549,51 @@ ul li a.btn, ul li a.btn:hover, ul li a.btn:focus{
 
 ul li a i.shop-btn{
     color: white;
+}
+
+/* ------------------------------------------------------*/
+
+/* ----------------- addGame Page styling ----------------- */
+
+
+
+.datepicker-day-button{
+    color: rgb(224, 58, 119);
+}
+
+.datepicker-date-display{
+    background-color: rgb(224, 58, 119);
+}
+
+.datepicker-day-button:focus{
+    background-color: black;
+}
+
+.datepicker-cancel, .datepicker-clear, .datepicker-today, .datepicker-done{
+    color: rgb(224, 58, 119);
+}
+
+.select-year{
+    color: black;
+}
+
+.add-form-container{
+    position: relative;
+}
+
+.add-game-header{
+    text-shadow: 5px 5px 1.2rem rgba(0, 0, 0, 0.8);
+    text-align: center;
+    font-family: "Alfa Slab One", cursive;
+}
+
+[type="checkbox"]:checked+span:not(.lever):before {
+    border-right: 2px solid rgb(224, 58, 119);
+    border-bottom: 2px solid rgb(224, 58, 119);
+}
+
+.select-wrapper input.select-dropdown:focus {
+    border-bottom: 1px solid rgb(224, 58, 119);
 }
 
 /* ------------------------------------------------------*/
@@ -589,8 +641,8 @@ ul li a i.shop-btn{
 
 
 @media only screen and (max-width: 388px) {
-  .login-btn {
-    font-size: 0.7rem;
+  .login-btn, .next-btn {
+    font-size: 0.9rem;
   }
 }
 

@@ -309,6 +309,7 @@ input {
 
 .card-title {
   white-space: nowrap;
+  text-transform: capitalize;
 }
 
 .card-title:hover {

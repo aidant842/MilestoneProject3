@@ -1,19 +1,20 @@
 {% extends 'base.html' %} {% block content %}
+
 <body class="addGame-bg">
   <div class="container">
     <div class="row">
-      <h3 class="add-game-header">Add Game</h3>
+      <h3 class="add-game-header">Edit Game</h3>
       <div class="add-form-container offset-l3 col s12 l6">
         <form action="{{ url_for('insert_game')}}" method="POST">
         
             <div class="input-field col s12">
-            <input id="title" name="title" type="text" class="validate" required="" aria-required="true" />
-            <label for="title" data-error="wrong" data-success="right">Game Title</label>
+            <input id="title" name="title" type="text" class="validate" value="{{game.title}}" />
+            <label for="title">Game Title</label>
             </div>
 
             <div class="input-field col s12">
-            <select name="genre_name" required aria-required="true">
-              <option value="" disabled selected>Genre</option>
+            <select name="genre_name">
+              <option value="" disabled selected>{{game.genre_name}}</option>
               {% for gen in genre %}
               <option value="{{gen.genre_name}}">{{gen.genre_name}}</option>
               {% endfor %}
@@ -26,13 +27,12 @@
               class="datepicker"
               id="releaseDate"
               name="release_date"
-              required="" aria-required="true"
             />
-            <label for="releaseDate" data-error="wrong" data-success="right">Release Date</label>
+            <label for="releaseDate">Release Date</label>
           </div>
 
           <div class="input-field col s12">
-            <select multiple name = "platform" required aria-required="true">
+            <select multiple name = "platform">
               <option value="" disabled selected>Platform(s)</option>
               {% for plat in platform %}
               <option value="{{plat.platform_name}}">{{plat.platform_name}}</option>
@@ -41,22 +41,22 @@
           </div>
 
           <div class="input-field col s12">
-            <input id="developer" name="developer" type="text" class="validate" required aria-required="true" />
+            <input id="developer" name="developer" type="text" class="validate" />
             <label for="developer">Developer</label>
           </div>
 
           <div class="input-field col s12">
-            <input id="language" name="languages" type="text" required aria-required="true" />
+            <input id="language" name="languages" type="text" />
             <label for="language">Language(s)</label>
           </div>
 
           <div class="input-field col s12">
-            <input id="playTime" name="playthrough_time" type="text" required aria-required="true" />
+            <input id="playTime" name="playthrough_time" type="text" />
             <label for="playTime">Playthrough Time (mins)</label>
           </div>
 
           <div class="input-field col s12">
-            <select name="vr_capable" required aria-required="true">
+            <select name="vr_capable">
               <option value="" disabled selected>VR Capable?</option>
               {% for vr in vr %}
               <option value="{{vr.vr}}">{{vr.vr}}</option>
@@ -65,7 +65,7 @@
           </div>
 
           <div class="input-field col s12">
-            <select name="age_rating" required aria-required="true">
+            <select name="age_rating">
               <option value="" disabled selected>Age Rating</option>
               {% for age in age_rating %}
               <option value="{{age.rating}}">{{age.rating}}</option>
@@ -74,28 +74,28 @@
           </div>
 
           <div class="input-field col s12">
-            <input id="buyLink" name="shop_link" type="url" required aria-required="true"/>
+            <input id="buyLink" name="shop_link" type="url" />
             <label for="buyLink">Shop Link</label>
           </div>
 
           <div class="input-field col s12">
-            <input id="image" name="image" type="text" required aria-required="true" />
+            <input id="image" name="image" type="text" />
             <label for="image">Image URL</label>
           </div>
 
           <div class="input-field col s12">
-            <input id="video" name="trailer_link" type="text" required aria-required="true"/>
+            <input id="video" name="trailer_link" type="text" />
             <label for="video">Embeded trailer link</label>
           </div>
 
           
         <div class="input-field col s12">
-          <textarea id="description" name="description" class="materialize-textarea" required aria-required="true"></textarea>
+          <textarea id="description" name="description" class="materialize-textarea"></textarea>
           <label for="description">description</label>
         </div>
 
         <div class="input-field col s12">
-          <textarea id="review" name="review" class="materialize-textarea" required aria-required="true"></textarea>
+          <textarea id="review" name="review" class="materialize-textarea"></textarea>
           <label for="review">Review</label>
         </div>
     
@@ -109,4 +109,5 @@
     </div>
   </div>
 </body>
+
 {% endblock %}

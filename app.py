@@ -47,7 +47,13 @@ def addGame():
 def insert_game():
     game = mongo.db.games
     game.insert(request.form.to_dict(), {'complete': 'false'})
-    return redirect(url_for('games'))                            
+    return redirect(url_for('games')) 
+
+@app.route('/edit_game/<game_id>')
+def edit_game(game_id):
+    the_game = mongo.db.games.find_one({'_id': ObjectId(game_id)})
+    return render_template('edit_game.html', game=the_game, genre=mongo.db.genre.find(), platform=mongo.db.platform.find(),
+                            vr=mongo.db.vr_capable.find(), age_rating=mongo.db.age_rating.find())                             
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),

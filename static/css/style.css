@@ -469,6 +469,7 @@ textarea.materialize-textarea:focus:not([readonly]) + label {
   margin-top: 80px;
   font-family: "Alfa Slab One", cursive;
   margin-bottom: 0;
+  text-transform: capitalize;
 }
 
 .image-container {

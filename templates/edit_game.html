@@ -5,7 +5,7 @@
     <div class="row">
       <h3 class="add-game-header">Edit Game</h3>
       <div class="add-form-container offset-l3 col s12 l6">
-        <form action="{{ url_for('insert_game')}}" method="POST">
+        <form action="{{ url_for('update_game', game_id=game._id)}}" method="POST">
         
             <div class="input-field col s12">
             <input id="title" name="title" type="text" class="validate" value="{{game.title}}" />
@@ -14,7 +14,7 @@
 
             <div class="input-field col s12">
             <select name="genre_name">
-              <option value="" disabled selected>{{game.genre_name}}</option>
+              <option value="{{game.genre_name}}" selected>{{game.genre_name}}</option>
               {% for gen in genre %}
               <option value="{{gen.genre_name}}">{{gen.genre_name}}</option>
               {% endfor %}
@@ -27,13 +27,14 @@
               class="datepicker"
               id="releaseDate"
               name="release_date"
+              value="{{game.release_date}}"
             />
             <label for="releaseDate">Release Date</label>
           </div>
 
           <div class="input-field col s12">
             <select multiple name = "platform">
-              <option value="" disabled selected>Platform(s)</option>
+              <option value="{{game.platform}}" selected>{{game.platform}}</option>
               {% for plat in platform %}
               <option value="{{plat.platform_name}}">{{plat.platform_name}}</option>
               {% endfor %}
@@ -41,23 +42,23 @@
           </div>
 
           <div class="input-field col s12">
-            <input id="developer" name="developer" type="text" class="validate" />
+            <input id="developer" name="developer" type="text" class="validate" value="{{game.developer}}" />
             <label for="developer">Developer</label>
           </div>
 
           <div class="input-field col s12">
-            <input id="language" name="languages" type="text" />
+            <input id="language" name="languages" type="text" value="{{game.languages}}" />
             <label for="language">Language(s)</label>
           </div>
 
           <div class="input-field col s12">
-            <input id="playTime" name="playthrough_time" type="text" />
+            <input id="playTime" name="playthrough_time" type="text" value="{{game.playthrough_time}}" />
             <label for="playTime">Playthrough Time (mins)</label>
           </div>
 
           <div class="input-field col s12">
             <select name="vr_capable">
-              <option value="" disabled selected>VR Capable?</option>
+              <option value="{{game.vr_capable}}" selected>{{game.vr_capable}}</option>
               {% for vr in vr %}
               <option value="{{vr.vr}}">{{vr.vr}}</option>
               {% endfor %}
@@ -66,7 +67,7 @@
 
           <div class="input-field col s12">
             <select name="age_rating">
-              <option value="" disabled selected>Age Rating</option>
+              <option value="{{game.age_rating}}" selected>{{game.age_rating}}</option>
               {% for age in age_rating %}
               <option value="{{age.rating}}">{{age.rating}}</option>
               {% endfor %}
@@ -74,28 +75,28 @@
           </div>
 
           <div class="input-field col s12">
-            <input id="buyLink" name="shop_link" type="url" />
+            <input id="buyLink" name="shop_link" type="url" value="{{game.shop_link}}" />
             <label for="buyLink">Shop Link</label>
           </div>
 
           <div class="input-field col s12">
-            <input id="image" name="image" type="text" />
+            <input id="image" name="image" type="text" value="{{game.image}}" />
             <label for="image">Image URL</label>
           </div>
 
           <div class="input-field col s12">
-            <input id="video" name="trailer_link" type="text" />
+            <input id="video" name="trailer_link" type="text" value="{{game.trailer_link}}" />
             <label for="video">Embeded trailer link</label>
           </div>
 
           
         <div class="input-field col s12">
-          <textarea id="description" name="description" class="materialize-textarea"></textarea>
+          <textarea id="description" name="description" class="materialize-textarea">{{game.description}}</textarea>
           <label for="description">description</label>
         </div>
 
         <div class="input-field col s12">
-          <textarea id="review" name="review" class="materialize-textarea"></textarea>
+          <textarea id="review" name="review" class="materialize-textarea">{{game.review}}</textarea>
           <label for="review">Review</label>
         </div>
     

@@ -373,10 +373,18 @@ input {
 }
 
 .login-container {
+  position: relative;
   width: 80%;
   margin-left: auto;
   margin-right: auto;
   margin-top: 3rem;
+}
+
+.account-check{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    font-size: x-small;
 }
 
 /* input:not([type]),
@@ -662,6 +670,12 @@ ul li a i.shop-btn{
   .login-btn, .next-btn {
     font-size: 0.9rem;
   }
+}
+
+@media only screen and (max-width: 410px){
+    .account-check{
+        position: relative;
+    }
 }
 
 

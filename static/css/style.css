@@ -34,6 +34,7 @@ textarea.materialize-textarea{
     color: white;
 }
 
+
 /* ------------------------------------------------------*/
 
 /* ----------------- BreadCrumb Styling ----------------- */
@@ -172,6 +173,8 @@ nav ul a.btn {
   color: white;
   font-family: "Alfa Slab One", cursive;
   text-shadow: 5px 5px 1.2rem rgba(0, 0, 0, 0.8);
+  text-align: center;
+  margin-top: 10rem;
 }
 
 .landing-buttons {
@@ -190,7 +193,6 @@ nav ul a.btn {
 
 .container.landing-container {
   text-align: center;
-  margin-top: 10rem;
   width: 60%;
 }
 
@@ -280,7 +282,7 @@ input {
   margin-bottom: 1px;
 }
 
-.options-container > .row > .input-field.col.s12 {
+.options-container .row .input-field.col.s12 {
     margin-left: auto;
     left: auto;
     right: auto;
@@ -384,7 +386,7 @@ input {
     position: absolute;
     right: 0;
     bottom: 0;
-    font-size: x-small;
+    font-size: small;
 }
 
 /* input:not([type]),
@@ -629,7 +631,7 @@ ul li a i.shop-btn{
 @media only screen and (max-width: 993px) {
   .options-container {
     position: absolute;
-    top: 50%;
+    top: 55%;
     left: 20%;
     bottom: 40%;
     right: 20%;
@@ -672,7 +674,7 @@ ul li a i.shop-btn{
   }
 }
 
-@media only screen and (max-width: 410px){
+@media only screen and (max-width: 480px){
     .account-check{
         position: relative;
     }

@@ -48,6 +48,10 @@ def game_page(game_id):
 
 @app.route('/login', methods=['POST', 'GET'])
 def login():
+
+    if 'username' in session:
+            return 'you are already logged in'
+       
     if request.method == 'POST':
         users=mongo.db.users
         user_login = users.find_one({'name': request.form.get('username')})
@@ -55,11 +59,10 @@ def login():
         if user_login:
             if check_password_hash(user_login['password'], request.form.get('password')):
                 session['username'] = request.form.get('username')
-                return 'you are logged in'
+                flash('you are logged in')
+                return redirect(url_for('home_page'))
             return 'Login Failed, please check your credentials!'
     return render_template('login.html')
-
-    
 
 @app.route('/signup', methods=['POST', 'GET'])
 def signup():
@@ -77,10 +80,20 @@ def signup():
 
     return render_template('signup.html')
 
+@app.route('/logout')
+def logout():
+    session.clear()
+    flash('You have logged out')
+    return render_template('index.html')
+
 @app.route('/addGame')
 def addGame():
-    return render_template('addGame.html', genre=mongo.db.genre.find(), platform=mongo.db.platform.find(),
+    if 'username' in session:
+        return render_template('addGame.html', genre=mongo.db.genre.find(), platform=mongo.db.platform.find(),
                             vr=mongo.db.vr_capable.find(), age_rating=mongo.db.age_rating.find())
+    else:
+        flash('you need to be logged in to add a game')
+        return redirect(url_for('home_page'))                        
 
 @app.route('/insert_game', methods=['POST'])  
 def insert_game():

@@ -30,6 +30,10 @@ button {
     border-radius: 0;
 }
 
+textarea.materialize-textarea{
+    color: white;
+}
+
 /* ------------------------------------------------------*/
 
 /* ----------------- BreadCrumb Styling ----------------- */
@@ -55,7 +59,8 @@ button {
 /* ----------------- Page Backgrounds ----------------- */
 
 .landing-bg,
-.login-bg {
+.login-bg
+ {
   background-image: url("images/background.png");
   background-repeat: no-repeat;
   background-size: auto;
@@ -229,7 +234,7 @@ nav ul a.btn {
 
 .options-container {
   position: absolute;
-  top: 40%;
+  top: 60%;
   left: 20%;
   bottom: 40%;
   right: 20%;
@@ -271,8 +276,16 @@ input {
   margin-left: auto;
   left: auto;
   right: auto;
-  margin-top: 1px;
+  margin-top: 1rem;
   margin-bottom: 1px;
+}
+
+.options-container > .row > .input-field.col.s12 {
+    margin-left: auto;
+    left: auto;
+    right: auto;
+    margin-top: 1px;
+    margin-bottom: 1px;
 }
 
 .search-button {
@@ -360,15 +373,14 @@ input {
 }
 
 .login-container {
-  /* position: relative; */
   width: 80%;
   margin-left: auto;
   margin-right: auto;
   margin-top: 3rem;
 }
 
-input:not([type]),
-/* input[type="text"]:not(.browser-default), */
+/* input:not([type]),
+input[type="text"]:not(.browser-default),
 input[type="password"]:not(.browser-default),
 input[type="email"]:not(.browser-default),
 input[type="url"]:not(.browser-default),
@@ -381,7 +393,7 @@ input[type="number"]:not(.browser-default),
 input[type="search"]:not(.browser-default),
 textarea.materialize-textarea {
   border-bottom: 1px solid rgb(224, 58, 119);
-}
+} */
 
 input:not([type]):focus:not([readonly]),
 input[type="text"]:not(.browser-default):focus:not([readonly]),
@@ -417,18 +429,18 @@ textarea.materialize-textarea:focus:not([readonly]) + label {
   color: rgb(224, 58, 119);
 }
 
-.login-btn, .next-btn {
+.login-btn, .next-btn, .edit-btn, .delete-btn {
   border-radius: 0;
   background-color: rgb(224, 58, 119);
   color: white;
 }
 
-.login-btn:hover, .next-btn:hover {
+.login-btn:hover, .next-btn:hover, .edit-btn:hover, .delete-btn:hover {
   background-color: #312a2a;
   color: rgb(224, 58, 119);
 }
 
-.login-btn:focus, .next-btn:focus {
+.login-btn:focus, .next-btn:focus, .edit-btn:focus, .delete-btn:focus {
   background-color: #312a2a;
 }
 
@@ -598,6 +610,10 @@ ul li a i.shop-btn{
     border-bottom: 1px solid rgb(224, 58, 119);
 }
 
+.crud-button-container{
+    margin-top: 1rem;
+}
+
 /* ------------------------------------------------------*/
 
 /* ----------------- Media Queries ----------------- */
@@ -605,7 +621,7 @@ ul li a i.shop-btn{
 @media only screen and (max-width: 993px) {
   .options-container {
     position: absolute;
-    top: 30%;
+    top: 50%;
     left: 20%;
     bottom: 40%;
     right: 20%;
@@ -633,7 +649,7 @@ ul li a i.shop-btn{
 @media only screen and (max-width: 600px) {
   .options-container {
     position: absolute;
-    top: 5%;
+    top: 45%;
     left: 20%;
     bottom: 40%;
     right: 20%;

@@ -17,41 +17,42 @@
     </div>
     <!-- Container for filter -->
 
-    <div class="filter-container">
+    <div class="filter-container"></div>
       <div class="options-container">
         <div class="row">
+        <form action="{{ url_for('search')}}" method="POST">
           <div class="input-field col s12 m6 l3">
-            <select>
+            <select name="genre">
               <option value="" disabled selected>Genre</option>
               {% for gen in genre %}
-              <option id="genre" name="genre" class = "validate" value="1">{{gen.genre_name}}</option>
+              <option id="genre" name="genre" class = "validate" value="{{gen.genre_name}}">{{gen.genre_name}}</option>
               {% endfor %}
             </select>
           </div>
 
           <div class="input-field col s12 m6 l3">
-            <select>
+            <select name="age">
               <option value="" disabled selected>Age</option>
               {% for age in age_rating %}
-              <option id="age" name="age" class = "validate" value="1">{{age.rating}}</option>
+              <option id="age" name="age" class = "validate" value="{{age.rating}}">{{age.rating}}</option>
               {% endfor %}
             </select>
           </div>
 
           <div class="input-field col s12 m6 l3">
-            <select>
+            <select name="platform">
               <option value="" disabled selected>Platform</option>
               {% for plat in plat %}
-              <option id="platform" name="platform" class = "validate" value="1">{{plat.platform_name}}</option>
+              <option id="platform" name="platform" class = "validate" value="{{plat.platform_name}}">{{plat.platform_name}}</option>
               {% endfor %}
             </select>
           </div>
 
           <div class="input-field col s12 m6 l3">
-            <select>
+            <select name="developer">
               <option value="" disabled selected>Developer</option>
               {% for dev in dev %}
-              <option id="developer" name="developer" class = "validate" value="1">{{dev.dev}}</option>
+              <option id="developer" name="developer" class = "validate" value="{{dev.dev}}">{{dev.dev}}</option>
               {% endfor %}
             </select>
           </div>
@@ -62,14 +63,15 @@
             <i class="material-icons right">search</i>
           </button>
           </div>
+          </form>
 
         </div>
       </div>
-    </div>
+    
   </div>
 </div>
 
-
+<!-- Container for cards -->
 <div class="container card-container">
 {% for key in games %}
   <div class="row card-row">
@@ -87,5 +89,5 @@
   </div>
   {% endfor %}
 </div>
-<!-- Container for cards -->
+
  {% endblock %}

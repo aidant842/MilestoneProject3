@@ -21,9 +21,26 @@ def home_page():
 
 @app.route('/games')
 def games():
+
     return render_template('games.html', genre=mongo.db.genre.find(), games=mongo.db.games.find(),
                             age_rating=mongo.db.age_rating.find(), dev=mongo.db.developer.find(), plat=mongo.db.platform.find(),
                             vr=mongo.db.vr_capable.find())
+
+@app.route('/search', methods = ['POST', 'GET'])
+def search():
+    
+    games = mongo.db.games
+    query=games.find({
+        'genre_name': request.form.get('genre'),
+        'age_rating': request.form.get('age'),
+        'platform'  : request.form.get('platform'),
+        'developer' : request.form.get('developer')
+    }) 
+
+    return render_template('games.html', genre=mongo.db.genre.find(), games=query,
+                            age_rating=mongo.db.age_rating.find(), dev=mongo.db.developer.find(), plat=mongo.db.platform.find(),
+                            vr=mongo.db.vr_capable.find())
+    
 
 @app.route('/games/<game_id>')
 def game_page(game_id):
@@ -43,7 +60,7 @@ def addGame():
     return render_template('addGame.html', genre=mongo.db.genre.find(), platform=mongo.db.platform.find(),
                             vr=mongo.db.vr_capable.find(), age_rating=mongo.db.age_rating.find())
 
-@app.route('/insert_game', methods = ['POST'])  
+@app.route('/insert_game', methods=['POST'])  
 def insert_game():
     game = mongo.db.games
     game.insert_one(request.form.to_dict())
@@ -77,6 +94,13 @@ def update_game(game_id):
         'playthrough_time': request.form.get('playthrough_time'),
         'vr_capable': request.form.get('vr_capable')
     }})
+
+    return redirect(url_for('games'))
+
+@app.route('/delete_game/<game_id>')
+def delete_game(game_id):
+    game=mongo.db.games
+    game.delete_one({'_id': ObjectId(game_id)})
 
     return redirect(url_for('games'))
 

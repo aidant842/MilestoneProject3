@@ -97,9 +97,9 @@ def addGame():
 
 @app.route('/insert_game', methods=['POST'])  
 def insert_game():
+    flash('game added to database')
     game = mongo.db.games
     game.insert_one(request.form.to_dict())
-    title = request.form.get('title')
     return redirect(url_for('games'))
 
 @app.route('/edit_game/<game_id>')
@@ -130,6 +130,8 @@ def update_game(game_id):
         'playthrough_time': request.form.get('playthrough_time'),
         'vr_capable': request.form.get('vr_capable')
     }})
+
+    flash('Game Edited')
 
     return redirect(url_for('games'))
 

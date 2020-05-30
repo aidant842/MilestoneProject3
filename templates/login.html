@@ -1,34 +1,50 @@
 {% extends 'base.html' %} {% block content%}
 
 <body class="login-bg">
+  <h3 class="login-header">Login</h3>
+  {% if error %}
+  <p class="error"><strong>Error:</strong> {{ error }} {% endif %}</p>
 
-    <h3 class = "login-header" >Login</h3>
-
-    
-    <div class="contanier">
+  <div class="contanier">
     <div class="row">
-    <div class="login-container offset-l4 offset-s2 col s8 l4">
-    <form class="login-form" action="{{url_for('login')}}" method="POST">
-      
-        <div class="input-field">
-          <input id="username" name="username" type="text" class="validate" required aria-required="true">
-          <label for="username">Username</label>
-        </div>
-     
-        <div class="input-field">
-          <input id="password" name="password" type="password" class="validate" required aria-required="true">
-          <label for="password">Password</label>
-        </div>
-      
-      <button class="btn login-btn" type="submit" name="action">LOGIN
-        <i class="material-icons right">send</i>
-      </button>
-      <span class="account-check">Don't have an account? <a href="{{url_for('signup')}}">Sign up here</a></span>
-    </form>
+      <div class="login-container offset-l4 offset-s2 col s8 l4">
+        <form class="login-form" action="{{url_for('login')}}" method="POST">
+          <div class="input-field">
+            <input
+              id="username"
+              name="username"
+              type="text"
+              class="validate"
+              required
+              aria-required="true"
+            />
+            <label for="username">Username</label>
+          </div>
+
+          <div class="input-field">
+            <input
+              id="password"
+              name="password"
+              type="password"
+              class="validate"
+              required
+              aria-required="true"
+            />
+            <label for="password">Password</label>
+          </div>
+
+          <button class="btn login-btn" type="submit" name="action">
+            LOGIN
+            <i class="material-icons right">send</i>
+          </button>
+          <span class="account-check"
+            >Don't have an account?
+            <a href="{{url_for('signup')}}">Sign up here</a></span
+          >
+        </form>
+      </div>
+    </div>
   </div>
-  </div>
-  </div>
- 
-  </body>
+</body>
 
 {% endblock %}

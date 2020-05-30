@@ -22,39 +22,49 @@
   </head>
 
   <header>
-  <div class="navbar-fixed">
-    <nav>
-      <div class="nav-wrapper fix">
-        <a href="{{url_for('home_page')}}" class="brand-logo"><span>Game</span><span class="logo-db">DB</span></a>
-        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-        <ul class="right hide-on-med-and-down">
-          <li><a href="{{url_for('home_page')}}">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="{{url_for('games')}}">Games</a></li>
-          
+    <div class="navbar-fixed">
+      <nav>
+        <div class="nav-wrapper fix">
+          <a href="{{url_for('home_page')}}" class="brand-logo"
+            ><span>Game</span><span class="logo-db">DB</span></a
+          >
+          <a href="#" data-target="mobile-demo" class="sidenav-trigger"
+            ><i class="material-icons">menu</i></a
+          >
+          <ul class="right hide-on-med-and-down">
+            <li><a href="{{url_for('home_page')}}">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="{{url_for('games')}}">Games</a></li>
 
-          {% if 'username' not in session %}
+            {% if 'username' not in session %}
             <li><a href="{{url_for('login')}}" class="btn">Login</a></li>
             <li><a href="{{url_for('signup')}}" class="btn">Sign Up</a></li>
-          {% else %}
+            {% else %}
             <li><a href="{{url_for('addGame')}}">Add Game</a></li>
             <li><a href="{{url_for('logout')}}" class="btn">Logout</a></li>
-          {% endif %}  
-
-        </ul>
-        <ul class="sidenav" id="mobile-demo">
-          <h3 class="navHeader">Game<span class="side-nav-db">DB</span></h3>
-          <li><a href="{{url_for('home_page')}}">Home</a></li>
-          <li><a href="{{url_for('games')}}">Games</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="{{url_for('addGame')}}">Add Game</a></li>
-          <li><a href="{{url_for('login')}}">Login</a></li>
-          <li><a href="{{url_for('signup')}}">Sign Up</a></li>
-        </ul>
-      </div>
-    </nav>
-  </div>
+            {% endif %}
+          </ul>
+          <ul class="sidenav" id="mobile-demo">
+            <h3 class="navHeader">Game<span class="side-nav-db">DB</span></h3>
+            <li><a href="{{url_for('home_page')}}">Home</a></li>
+            <li><a href="{{url_for('games')}}">Games</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="{{url_for('addGame')}}">Add Game</a></li>
+            <li><a href="{{url_for('login')}}">Login</a></li>
+            <li><a href="{{url_for('signup')}}">Sign Up</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
   </header>
+
+  {% with messages = get_flashed_messages() %} {% if messages %}
+  <ul class="flashes">
+    {% for message in messages %}
+    <li>{{ message }}</li>
+    {% endfor %}
+  </ul>
+  {% endif %} {% endwith %}
 
   <body>
     {% block content %} {% endblock %}
@@ -68,23 +78,22 @@
     <script>
       $(document).ready(function () {
         $(".sidenav").sidenav();
-        $('select').formSelect();
-        $('.datepicker').datepicker();
+        $("select").formSelect();
+        $(".datepicker").datepicker();
       });
     </script>
     <script>
-    $(function () {
-            $(document).scroll(function () {
-            var $nav = $(".nav-wrapper");
-            $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+      $(function () {
+        $(document).scroll(function () {
+          var $nav = $(".nav-wrapper");
+          $nav.toggleClass("scrolled", $(this).scrollTop() > $nav.height());
         });
-    });
-        
+      });
     </script>
     <script>
-        $('.carousel.carousel-slider').carousel({
-            fullWidth: true
-  });
+      $(".carousel.carousel-slider").carousel({
+        fullWidth: true,
+      });
     </script>
 
     <!-- <script src="css/js/media-buttons.js"></script> -->

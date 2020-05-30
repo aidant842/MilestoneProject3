@@ -34,6 +34,17 @@ textarea.materialize-textarea{
     color: white;
 }
 
+.flashes{
+    /* background-color:#312a2a; */
+    background-color: rgba(0, 255, 0, 0.12);
+    text-align: center;
+    color: white;
+}
+
+.error{
+    background-color: red;
+}
+
 
 /* ------------------------------------------------------*/
 
@@ -265,7 +276,7 @@ nav ul a.btn {
   display: block;
   line-height: 22px;
   padding: 14px 16px;
-  color: black;
+  color: #312a2a;
 }
 
 input {
@@ -312,7 +323,7 @@ input {
 }
 
 .card {
-  color: black;
+  color: #312a2a;
   font-family: "Alfa Slab One", cursive;
   box-shadow: none;
 }
@@ -492,6 +503,7 @@ textarea.materialize-textarea:focus:not([readonly]) + label {
   font-family: "Alfa Slab One", cursive;
   margin-bottom: 0;
   text-transform: capitalize;
+  text-shadow: 5px 5px 1.2rem rgba(0, 0, 0, 0.8);
 }
 
 .image-container {
@@ -518,7 +530,7 @@ textarea.materialize-textarea:focus:not([readonly]) + label {
 }
 
 .details-header, .description-header,.review-header {
-  color: black;
+  color: #312a2a;
   padding: 30px 0 10px 0;
   margin-top: 0;
   text-transform: uppercase;
@@ -590,7 +602,7 @@ ul li a i.shop-btn{
 }
 
 .datepicker-day-button:focus{
-    background-color: black;
+    background-color: #312a2a;
 }
 
 .datepicker-cancel, .datepicker-clear, .datepicker-today, .datepicker-done{
@@ -598,7 +610,7 @@ ul li a i.shop-btn{
 }
 
 .select-year{
-    color: black;
+    color: #312a2a;
 }
 
 .add-form-container{

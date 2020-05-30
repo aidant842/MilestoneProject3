@@ -59,9 +59,9 @@ def login():
         if user_login:
             if check_password_hash(user_login['password'], request.form.get('password')):
                 session['username'] = request.form.get('username')
-                flash('you are logged in')
+                flash('You are logged in')
                 return redirect(url_for('home_page'))
-            return 'Login Failed, please check your credentials!'
+            flash('Invalid credentials')
     return render_template('login.html')
 
 @app.route('/signup', methods=['POST', 'GET'])
@@ -99,7 +99,8 @@ def addGame():
 def insert_game():
     game = mongo.db.games
     game.insert_one(request.form.to_dict())
-    return redirect(url_for('games')) 
+    title = request.form.get('title')
+    return redirect(url_for('games'))
 
 @app.route('/edit_game/<game_id>')
 def edit_game(game_id):

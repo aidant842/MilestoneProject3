@@ -16,6 +16,14 @@ app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')
 mongo = PyMongo(app)
 
 
+def convert_embed(trailer_link):
+    new_url = trailer_link.replace("watch?v=", "embed/")
+    trailer_link = new_url
+
+    return trailer_link
+
+
+
 @app.route('/')
 @app.route('/home_page')
 def home_page():
@@ -98,8 +106,10 @@ def addGame():
 @app.route('/insert_game', methods=['POST'])  
 def insert_game():
     flash('game added to database')
+    add_game_form = request.form.to_dict()
+    add_game_form['trailer_link'] = convert_embed(add_game_form['trailer_link'])
     game = mongo.db.games
-    game.insert_one(request.form.to_dict())
+    game.insert_many([request.form.to_dict(), add_game_form])
     return redirect(url_for('games'))
 
 @app.route('/edit_game/<game_id>')

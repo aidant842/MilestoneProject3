@@ -5,7 +5,7 @@
   <div class="contanier">
     <div class="row">
       <div class="login-container offset-l4 offset-s2 col s8 l4">
-        <form class="login-form" action="{{url_for('login')}}" method="POST">
+        <form class="login-form" id="login" action="{{url_for('login')}}" method="POST">
           <div class="input-field">
             <input
               id="username"
@@ -42,6 +42,13 @@
       </div>
     </div>
   </div>
+  <script>
+    var node = document.getElementById('flash-message')
+    textContent = node.textContent;
+    document.getElementById("login").onsubmit = function(){
+            M.toast({html: textContent});
+    };
+  </script>
 </body>
 
 {% endblock %}

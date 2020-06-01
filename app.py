@@ -58,16 +58,17 @@ def game_page(game_id):
 def login():
 
     if 'username' in session:
-            return 'you are already logged in'
+        flash('you are already logged in')
+        return redirect(url_for('home_page'))
        
     if request.method == 'POST':
-        users=mongo.db.users
+        users = mongo.db.users
         user_login = users.find_one({'name': request.form.get('username')})
 
         if user_login:
             if check_password_hash(user_login['password'], request.form.get('password')):
                 session['username'] = request.form.get('username')
-                flash('You are logged in')
+                #flash('You have been logged in')
                 return redirect(url_for('home_page'))
             flash('Invalid credentials')
     return render_template('login.html')
@@ -83,6 +84,7 @@ def signup():
             hashpw = generate_password_hash(request.form.get('password'))
             users.insert_one({'name': request.form.get('username'), 'password': hashpw})
             session['username'] = request.form.get('username')
+            flash('You have been logged in')
             return redirect(url_for('home_page'))
         flash('that username already exists')
 
@@ -91,8 +93,7 @@ def signup():
 @app.route('/logout')
 def logout():
     session.clear()
-    flash('You have logged out')
-    return render_template('index.html')
+    return redirect(url_for('home_page'))
 
 @app.route('/addGame')
 def addGame():
@@ -105,11 +106,10 @@ def addGame():
 
 @app.route('/insert_game', methods=['POST'])  
 def insert_game():
-    flash('game added to database')
     add_game_form = request.form.to_dict()
     add_game_form['trailer_link'] = convert_embed(add_game_form['trailer_link'])
     game = mongo.db.games
-    game.insert_many([request.form.to_dict(), add_game_form])
+    game.insert_one(add_game_form)
     return redirect(url_for('games'))
 
 @app.route('/edit_game/<game_id>')
@@ -141,13 +141,11 @@ def update_game(game_id):
         'vr_capable': request.form.get('vr_capable')
     }})
 
-    flash('Game Edited')
-
     return redirect(url_for('games'))
 
 @app.route('/delete_game/<game_id>')
 def delete_game(game_id):
-    game=mongo.db.games
+    game = mongo.db.games
     game.delete_one({'_id': ObjectId(game_id)})
 
     return redirect(url_for('games'))

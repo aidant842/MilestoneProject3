@@ -41,7 +41,7 @@
             <li><a href="{{url_for('signup')}}" class="btn">Sign Up</a></li>
             {% else %}
             <li><a href="{{url_for('addGame')}}">Add Game</a></li>
-            <li><a href="{{url_for('logout')}}" class="btn">Logout</a></li>
+            <li><a href="{{url_for('logout')}}" class="btn" id="logout-btn">Logout</a></li>
             {% endif %}
           </ul>
           <ul class="sidenav" id="mobile-demo">
@@ -59,12 +59,11 @@
   </header>
 
   {% with messages = get_flashed_messages() %} {% if messages %}
-  <ul class="flashes">
     {% for message in messages %}
-    <li>{{ message }}</li>
+    <div class="hidden" id="flash-message"> {{ message }}</div>
     {% endfor %}
-  </ul>
   {% endif %} {% endwith %}
+
 
   <body>
     {% block content %} {% endblock %}
@@ -94,6 +93,14 @@
       $(".carousel.carousel-slider").carousel({
         fullWidth: true,
       });
+    </script>
+
+    <script>
+    var node = document.getElementById('flash-message')
+    textContent = node.textContent;
+        document.getElementById('logout-btn').onclick = function(){
+            M.toast({html: textContent});
+        }
     </script>
 
     <!-- <script src="css/js/media-buttons.js"></script> -->

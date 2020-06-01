@@ -75,13 +75,19 @@
     <div class="crud-button-container">
     {% if 'username' in session %}
     <a href = "{{url_for('edit_game', game_id = game._id)}}" class="btn btn_small edit-btn">Edit <i class="material-icons right">edit</i></a>
-    <a href = "{{url_for('delete_game', game_id = game._id)}}" class="btn btn_small delete-btn">Delete <i class="material-icons right">delete</i></a>
+    <a href = "{{url_for('delete_game', game_id = game._id)}}" class="btn btn_small delete-btn" id="delete-btn">Delete <i class="material-icons right">delete</i></a>
     {% endif %}
     </div>
     </div>
 
   </div>
 </div>
+<script>
+    document.getElementById("delete-btn").onclick = function(){
+    M.toast({html: 'Game Deleted'});
+    }
+</script>
+
 <script>
 
 function videoToggle() {
@@ -111,7 +117,7 @@ function buttonToggle(){
     document.getElementById("button-con").classList.toggle("hidden");
 }
 
-document.getElementById("vid-con").onclick = function(){
+document.getElementById("game-vid").onclick = function(){
     buttonToggle();
 }
 </script>

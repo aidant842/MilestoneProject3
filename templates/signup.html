@@ -8,7 +8,7 @@
     <div class="contanier">
     <div class="row">
     <div class="login-container offset-l4 offset-s2 col s8 l4">
-    <form class="login-form" action="{{url_for('signup')}}" method="POST">
+    <form class="login-form" id="signup-form" action="{{url_for('signup')}}" method="POST">
       
         <div class="input-field">
           <input id="username" name="username" type="text" class="validate" required aria-required="true">
@@ -23,12 +23,16 @@
       <button class="btn login-btn" type="submit" name="action">Sign Up
         <i class="material-icons right">send</i>
       </button>
-      <span class="account-check">Already have an account? <a href="{{url_for('signup')}}">Login</a></span>
+      <span class="account-check">Already have an account? <a href="{{url_for('login')}}">Login</a></span>
     </form>
   </div>
   </div>
   </div>
-  
+  <script>
+    document.getElementById("signup-form").onsubmit = function(){
+            M.toast({html: 'You are logged in'});
+    };
+  </script>
   </body>
 
 {% endblock %}

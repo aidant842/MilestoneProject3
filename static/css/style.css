@@ -34,20 +34,6 @@ textarea.materialize-textarea{
     color: white;
 }
 
-.flashes{
-    /* background-color:#312a2a; */
-    background-color: rgba(0, 255, 0, 0.12);
-    text-align: center;
-    color: white;
-    position: absolute;
-    left: 50%;
-    z-index: 1000;
-}
-
-.error{
-    background-color: red;
-}
-
 
 /* ------------------------------------------------------*/
 
@@ -76,13 +62,23 @@ textarea.materialize-textarea{
 .landing-bg,
 .login-bg
  {
-  background-image: url("images/background.png");
+  background-image: url(/static/images/background.png); 
   background-repeat: no-repeat;
   background-size: auto;
 }
 
 .games-bg {
-  background-image: url(images/back.jpg);
+  background-image: url(/static/images/back.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.game-bg {
+  background-image: url(/static/images/game-bg.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   position: absolute;
@@ -92,7 +88,7 @@ textarea.materialize-textarea{
 }
 
 .addGame-bg{
-  background-image: url("images/add-game-bg.jpg");
+  background-image: url(/static/images/add-game-bg.jpg);
   background-repeat: no-repeat;
   background-size: 100% 100%;
   background-attachment: fixed;
@@ -489,16 +485,6 @@ textarea.materialize-textarea:focus:not([readonly]) + label {
   height: 20rem;
   position: relative;
   top: -4.5rem;
-}
-
-.game-bg {
-  background-image: url(images/game-bg.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: absolute;
-  top: 0;
-  height: 100%;
-  width: 100%;
 }
 
 .game-header {

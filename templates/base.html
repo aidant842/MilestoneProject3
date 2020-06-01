@@ -41,7 +41,11 @@
             <li><a href="{{url_for('signup')}}" class="btn">Sign Up</a></li>
             {% else %}
             <li><a href="{{url_for('addGame')}}">Add Game</a></li>
-            <li><a href="{{url_for('logout')}}" class="btn" id="logout-btn">Logout</a></li>
+            <li>
+              <a href="{{url_for('logout')}}" class="btn" id="logout-btn"
+                >Logout</a
+              >
+            </li>
             {% endif %}
           </ul>
           <ul class="sidenav" id="mobile-demo">
@@ -58,12 +62,12 @@
     </div>
   </header>
 
-  {% with messages = get_flashed_messages() %} {% if messages %}
-    {% for message in messages %}
-    <div class="hidden" id="flash-message"> {{ message }}</div>
-    {% endfor %}
-  {% endif %} {% endwith %}
-
+  <div class="hidden">
+    {% with messages = get_flashed_messages() %} {% if messages %} {% for 
+    message in messages %}
+    <p class="message">{{ message }}</p>
+    {% endfor %} {% endif %} {% endwith %}
+  </div>
 
   <body>
     {% block content %} {% endblock %}
@@ -95,14 +99,8 @@
       });
     </script>
 
-    <script>
-    var node = document.getElementById('flash-message')
-    textContent = node.textContent;
-        document.getElementById('logout-btn').onclick = function(){
-            M.toast({html: textContent});
-        }
-    </script>
+    <script src="/static/js/toasts.js"></script>
 
-    <!-- <script src="css/js/media-buttons.js"></script> -->
+    <script src="/static/js/media-buttons.js"></script>
   </body>
 </html>

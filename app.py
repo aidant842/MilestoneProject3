@@ -68,7 +68,7 @@ def login():
         if user_login:
             if check_password_hash(user_login['password'], request.form.get('password')):
                 session['username'] = request.form.get('username')
-                #flash('You have been logged in')
+                flash('You have been logged in ' + session['username'])
                 return redirect(url_for('home_page'))
             flash('Invalid credentials')
     return render_template('login.html')
@@ -84,15 +84,16 @@ def signup():
             hashpw = generate_password_hash(request.form.get('password'))
             users.insert_one({'name': request.form.get('username'), 'password': hashpw})
             session['username'] = request.form.get('username')
-            flash('You have been logged in')
+            flash('You have been logged in ' + session['username'])
             return redirect(url_for('home_page'))
-        flash('that username already exists')
+        flash('That username already exists')
 
     return render_template('signup.html')
 
 @app.route('/logout')
 def logout():
     session.clear()
+    flash('You have been logged out, Goodbye')
     return redirect(url_for('home_page'))
 
 @app.route('/addGame')
@@ -101,15 +102,17 @@ def addGame():
         return render_template('addGame.html', genre=mongo.db.genre.find(), platform=mongo.db.platform.find(),
                             vr=mongo.db.vr_capable.find(), age_rating=mongo.db.age_rating.find())
     else:
-        flash('you need to be logged in to add a game')
+        flash('You need to be logged in to add a game')
         return redirect(url_for('home_page'))                        
 
 @app.route('/insert_game', methods=['POST'])  
 def insert_game():
     add_game_form = request.form.to_dict()
+    title = add_game_form['title']
     add_game_form['trailer_link'] = convert_embed(add_game_form['trailer_link'])
     game = mongo.db.games
     game.insert_one(add_game_form)
+    flash("Thank you, " + title + " has been added to the database :)")
     return redirect(url_for('games'))
 
 @app.route('/edit_game/<game_id>')
@@ -121,6 +124,7 @@ def edit_game(game_id):
 @app.route('/update_game/<game_id>', methods=['POST'])
 def update_game(game_id):
     game = mongo.db.games
+    title = request.form.get('title')
     game.update_one({'_id' : ObjectId(game_id)},
     
     {"$set": 
@@ -140,14 +144,14 @@ def update_game(game_id):
         'playthrough_time': request.form.get('playthrough_time'),
         'vr_capable': request.form.get('vr_capable')
     }})
-
+    flash(title + ' has been updated')
     return redirect(url_for('games'))
 
 @app.route('/delete_game/<game_id>')
 def delete_game(game_id):
     game = mongo.db.games
+    flash(game.title + 'has been deleted')
     game.delete_one({'_id': ObjectId(game_id)})
-
     return redirect(url_for('games'))
 
 if __name__ == '__main__':

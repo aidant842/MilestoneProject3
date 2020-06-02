@@ -38,6 +38,14 @@ div.datepicker-calendar-container{
     background-color: #312a2a;
 }
 
+.datepicker-table td.is-selected{
+    background-color: white;
+}
+
+div.description-container p::first-letter,
+div.review-container p::first-letter{
+    text-transform: uppercase;
+}
 
 /* ------------------------------------------------------*/
 
@@ -600,16 +608,16 @@ ul li a i.shop-btn{
 }
 
 .datepicker-day-button:focus{
-    background-color: #312a2a;
+    background-color: rgba(255, 255, 255, 0.25)
 }
 
 .datepicker-cancel, .datepicker-clear, .datepicker-today, .datepicker-done{
     color: rgb(224, 58, 119);
 }
 
-.select-year{
-    color: #312a2a;
-}
+/* .select-year{
+    color: #312a2a !important;
+} */
 
 .add-form-container{
     position: relative;

@@ -123,9 +123,13 @@ def insert_game():
 
 @app.route('/edit_game/<game_id>')
 def edit_game(game_id):
+    if not 'username' in session:
+        flash('You need to login to edit a game')
+        return redirect(url_for('login'))
     the_game = mongo.db.games.find_one({'_id': ObjectId(game_id)})
     return render_template('edit_game.html', game=the_game, genre=mongo.db.genre.find(), platform=mongo.db.platform.find(),
                             vr=mongo.db.vr_capable.find(), age_rating=mongo.db.age_rating.find())
+
 
 @app.route('/update_game/<game_id>', methods=['POST'])
 def update_game(game_id):
@@ -157,8 +161,10 @@ def update_game(game_id):
 
 @app.route('/delete_game/<game_id>')
 def delete_game(game_id):
+    if not 'username' in session:
+        flash('You need to be logged in to delete a game')
+        return redirect(url_for('login'))
     game = mongo.db.games
-    title = request.form.get('title')
     flash('The Game has been deleted')
     game.delete_one({'_id': ObjectId(game_id)})
     return redirect(url_for('games'))

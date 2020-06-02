@@ -34,6 +34,10 @@ textarea.materialize-textarea{
     color: white;
 }
 
+div.datepicker-calendar-container{
+    background-color: #312a2a;
+}
+
 
 /* ------------------------------------------------------*/
 
@@ -242,6 +246,7 @@ nav ul a.btn {
   position: absolute;
   top: 15%;
   left: 12%;
+  width: 80%;
 }
 
 .options-container {
@@ -276,6 +281,7 @@ nav ul a.btn {
   line-height: 22px;
   padding: 14px 16px;
   color: #312a2a;
+  text-transform: capitalize;
 }
 
 input {
@@ -325,6 +331,8 @@ input {
   color: #312a2a;
   font-family: "Alfa Slab One", cursive;
   box-shadow: none;
+  width: 250px;
+  height: 361px
 }
 
 .card-link {
@@ -333,8 +341,9 @@ input {
 }
 
 .card-title {
-  white-space: nowrap;
+  /* white-space: nowrap; */
   text-transform: capitalize;
+  word-wrap: break-word;
 }
 
 .card-title:hover {

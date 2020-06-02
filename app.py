@@ -111,10 +111,14 @@ def insert_game():
     title = add_game_form['title']
     add_game_form['trailer_link'] = convert_embed(add_game_form['trailer_link'])
     game = mongo.db.games
-    if not existing_dev:
-        dev_col.insert_one({'dev': add_game_form['developer']})
-    game.insert_one(add_game_form)
-    flash("Thank you, " + title + " has been added to the database :)")
+    existing_title = game.find_one({'title': request.form.get('title')})
+    if existing_title:
+        flash('This game already exists in the database')
+    else:
+        if not existing_dev:
+            dev_col.insert_one({'dev': add_game_form['developer']})
+            game.insert_one(add_game_form)
+            flash("Thank you, " + title + " has been added to the database :)")
     return redirect(url_for('games'))
 
 @app.route('/edit_game/<game_id>')

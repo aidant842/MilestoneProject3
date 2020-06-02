@@ -22,8 +22,6 @@ def convert_embed(trailer_link):
 
     return trailer_link
 
-
-
 @app.route('/')
 @app.route('/home_page')
 def home_page():
@@ -84,9 +82,9 @@ def signup():
             hashpw = generate_password_hash(request.form.get('password'))
             users.insert_one({'name': request.form.get('username'), 'password': hashpw})
             session['username'] = request.form.get('username')
-            flash('You have been logged in ' + session['username'])
+            flash('Welcome back ' + session['username'])
             return redirect(url_for('home_page'))
-        flash('That username already exists')
+        flash('That username already exists, please try again')
 
     return render_template('signup.html')
 
@@ -107,10 +105,14 @@ def addGame():
 
 @app.route('/insert_game', methods=['POST'])  
 def insert_game():
+    dev_col = mongo.db.developer
+    existing_dev = dev_col.find_one({'dev': request.form.get('developer')})
     add_game_form = request.form.to_dict()
     title = add_game_form['title']
     add_game_form['trailer_link'] = convert_embed(add_game_form['trailer_link'])
     game = mongo.db.games
+    if not existing_dev:
+        dev_col.insert_one({'dev': add_game_form['developer']})
     game.insert_one(add_game_form)
     flash("Thank you, " + title + " has been added to the database :)")
     return redirect(url_for('games'))
@@ -125,6 +127,8 @@ def edit_game(game_id):
 def update_game(game_id):
     game = mongo.db.games
     title = request.form.get('title')
+    add_game_form = request.form.to_dict()
+    add_game_form['trailer_link'] = convert_embed(add_game_form['trailer_link'])
     game.update_one({'_id' : ObjectId(game_id)},
     
     {"$set": 
@@ -140,7 +144,7 @@ def update_game(game_id):
         'release_date': request.form.get('release_date'),
         'languages': request.form.get('languages'),
         'developer': request.form.get('developer'),
-        'trailer_link': request.form.get('trailer_link'),
+        'trailer_link': add_game_form['trailer_link'],
         'playthrough_time': request.form.get('playthrough_time'),
         'vr_capable': request.form.get('vr_capable')
     }})
@@ -150,7 +154,8 @@ def update_game(game_id):
 @app.route('/delete_game/<game_id>')
 def delete_game(game_id):
     game = mongo.db.games
-    flash(game.title + 'has been deleted')
+    title = request.form.get('title')
+    flash('The Game has been deleted')
     game.delete_one({'_id': ObjectId(game_id)})
     return redirect(url_for('games'))
 

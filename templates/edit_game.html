@@ -27,7 +27,7 @@
           </div>
 
           <div class="input-field col s12">
-            <select multiple name = "platform" required aria-required="true">
+            <select name = "platform" required aria-required="true">
               <option value="{{game.platform}}" selected>{{game.platform}}</option>
               {% for plat in platform %}
               <option value="{{plat.platform_name}}">{{plat.platform_name}}</option>
@@ -69,7 +69,7 @@
           </div>
 
           <div class="input-field col s12">
-            <input id="buyLink" name="shop_link" type="url" required aria-required="true" value="{{game.shop_link}}" />
+            <input id="buyLink" name="shop_link" type="text" required aria-required="true" value="{{game.shop_link}}" />
             <label for="buyLink">Shop Link</label>
           </div>
 
@@ -79,8 +79,8 @@
           </div>
 
           <div class="input-field col s12">
-            <input id="video" name="trailer_link" type="text" required aria-required="true" value="{{game.trailer_link}}" />
-            <label for="video">Embeded trailer link</label>
+            <input id="video" name="trailer_link" type="url" required aria-required="true" value="{{game.trailer_link}}" />
+            <label for="video">Trailer link</label>
           </div>
 
           

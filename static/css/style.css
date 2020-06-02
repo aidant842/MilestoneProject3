@@ -106,6 +106,16 @@ div.review-container p::first-letter{
   background-attachment: fixed;
 }
 
+.about-bg{
+    background-image: url(/static/images/about-bg.jpg);
+    background-repeat: no-repeat;
+   background-size: cover;
+   position: absolute;
+   top: 0;
+   height: 100%;
+   width: 100%;
+}
+
 /* ------------------------------------------------------*/
 
 /* ----------------- NavBar Styling ----------------- */
@@ -640,6 +650,24 @@ ul li a i.shop-btn{
 
 .crud-button-container{
     margin-top: 1rem;
+}
+
+/* ------------------------------------------------------*/
+
+/* ----------------- About Page ----------------- */
+
+.about-container{
+    text-align: left;
+}
+
+.about-sub-heading, .how-to-use-heading{
+    color: #312a2a;
+    font-family: "Alfa Slab One", cursive;
+}
+
+.about-paragraph, .how-to-use-paragraph{
+    color: #777777;
+    font-family: "Pontano Sans", sans-serif;
 }
 
 /* ------------------------------------------------------*/

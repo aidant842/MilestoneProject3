@@ -27,6 +27,10 @@ def convert_embed(trailer_link):
 def home_page():
     return render_template('index.html')
 
+@app.route('/about')
+def about():
+    return render_template('about.html', game=mongo.db.games.find())    
+
 @app.route('/games', methods=['POST', 'GET'])
 def games():
 
@@ -45,7 +49,6 @@ def search():
     return render_template('games.html', genre=mongo.db.genre.find(), games=query,
                             age_rating=mongo.db.age_rating.find(), dev=mongo.db.developer.find(), plat=mongo.db.platform.find(),
                             vr=mongo.db.vr_capable.find())
-    
 
 @app.route('/games/<game_id>')
 def game_page(game_id):
@@ -66,7 +69,7 @@ def login():
         if user_login:
             if check_password_hash(user_login['password'], request.form.get('password')):
                 session['username'] = request.form.get('username')
-                flash('You have been logged in ' + session['username'])
+                flash('Welcome back' + session['username'])
                 return redirect(url_for('home_page'))
             flash('Invalid credentials')
     return render_template('login.html')
@@ -82,7 +85,7 @@ def signup():
             hashpw = generate_password_hash(request.form.get('password'))
             users.insert_one({'name': request.form.get('username'), 'password': hashpw})
             session['username'] = request.form.get('username')
-            flash('Welcome back ' + session['username'])
+            flash('You have registered and been logged in as ' + session['username'])
             return redirect(url_for('home_page'))
         flash('That username already exists, please try again')
 

@@ -1,0 +1,49 @@
+{% extends 'base.html' %}{% block content %}
+<div class="game-bg-container">
+  <div class="about-bg">
+    <!-- Container for header and breadcrumbs -->
+    <div class="container crumbs">
+      <h4 class="game-header">About</h4>
+      <nav>
+        <div class="nav-wrapper">
+          <a href="{{url_for('home_page')}}" class="breadcrumb">Home</a>
+          <a href="{{url_for('games')}}" class="breadcrumb active">About</a>
+        </div>
+      </nav>
+    </div>
+  </div>
+</div>
+
+<div class="col s12 l4">
+  <div class="container">
+    <div class="row">
+      <div class="about-container z-depth-2">
+        <h6 class="about-sub-heading">About</h6>
+        <p class="about-paragraph">
+          GameDB is a website built by you. You add the information about your
+          favourite games and your own reviews. Your contributions to the
+          website will help others learn about your favourite games. Simply Sign
+          up or Login to begin
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="col s12 l4">
+<div class="container">
+  <div class="row">
+    <div class="about-container z-depth-2">
+      <h6 class="how-to-use-heading">How to use</h6>
+      <p class="how-to-use-paragraph">
+        GameDB is a website built by you. You add the information about your
+        favourite games and your own reviews. Your contributions to the website
+        will help others learn about your favourite games. Simply Sign up or
+        Login to begin
+      </p>
+    </div>
+  </div>
+</div>
+</div>
+
+{% endblock %}

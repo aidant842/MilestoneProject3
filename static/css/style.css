@@ -11,6 +11,10 @@ footer{
     margin-top: 5rem;
 }
 
+a {
+    color: rgb(224, 58, 119);
+}
+
 .logo-db,
 .landing-db,
 .side-nav-db {
@@ -103,8 +107,11 @@ div.review-container p::first-letter{
 .game-bg {
   background-image: url(/static/images/game-bg.jpg);
   background-repeat: no-repeat;
-  background-size: 100% 100%;
-  background-attachment: fixed;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
 }
 
 .addGame-bg{
@@ -214,7 +221,7 @@ nav ul a.btn {
   font-family: "Alfa Slab One", cursive;
   text-shadow: 5px 5px 1.2rem rgba(0, 0, 0, 0.8);
   text-align: center;
-  margin-top: 15rem;
+  margin-top: 13rem;
 }
 
 .landing-buttons {
@@ -431,7 +438,7 @@ input {
 .account-check{
     position: absolute;
     right: 0;
-    bottom: 0;
+    bottom: 20%;
     font-size: small;
 }
 
@@ -502,6 +509,7 @@ textarea.materialize-textarea:focus:not([readonly]) + label {
 
 .login-form {
   color: white;
+  margin-bottom: 4.7rem;
 }
 
 .textarea.materialize-textarea {
@@ -681,6 +689,47 @@ ul li a i.shop-btn{
 
 /* ------------------------------------------------------*/
 
+/* ----------------- Footer Styling ----------------- */
+
+.page-footer{
+    background-color: #312a2a;
+    color: rgb(224, 58, 119) !important;
+}
+
+.game-footer{
+    color: white;
+}
+
+.footer-logo{
+    font-family: "Alfa Slab One", cursive;
+}
+
+.designed-by{
+    margin-right: 1rem;
+}
+
+.fab{
+    font-size: x-large;
+    margin: 0 10px;
+}
+
+.facebook:hover{
+    color: #3d5a99 !important;
+    -webkit-transition: all 0.5s ease-in-out;
+}
+
+.github:hover{
+    color: #24292e !important;
+    -webkit-transition: all 0.5s ease-in-out;
+}
+
+.linkedin:hover{
+    color: #0073b0 !important;
+    -webkit-transition: all 0.5s ease-in-out;
+}
+
+/* ------------------------------------------------------*/
+
 /* ----------------- Media Queries ----------------- */
 
 @media only screen and (max-width: 993px) {
@@ -735,5 +784,16 @@ ul li a i.shop-btn{
     }
 }
 
+@media only screen and (max-height: 415px){
+    .landing-header{
+        margin-top: 5rem;
+    }
+}
+
+@media only screen and (max-height: 360px){
+    .landing-header{
+        margin-top: 2rem;
+    }
+}
 
 /* ------------------------------------------------------*/

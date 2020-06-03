@@ -7,6 +7,10 @@ body {
   color: white;
 }
 
+footer{
+    margin-top: 5rem;
+}
+
 .logo-db,
 .landing-db,
 .side-nav-db {
@@ -23,6 +27,10 @@ button {
 
 .hidden{
     display: none;
+}
+
+.test{
+    background-color: #312a2a;
 }
 
 .btn-floating, .btn-floating:focus, .btn-floating:hover{
@@ -76,8 +84,11 @@ div.review-container p::first-letter{
  {
   background-image: url(/static/images/background.png); 
   background-repeat: no-repeat;
-  background-size: auto;
-}
+  background-size: 100% 100%;
+  background-attachment: fixed;
+ }
+
+
 
 .games-bg {
   background-image: url(/static/images/back.jpg);
@@ -92,11 +103,8 @@ div.review-container p::first-letter{
 .game-bg {
   background-image: url(/static/images/game-bg.jpg);
   background-repeat: no-repeat;
-  background-size: cover;
-  position: absolute;
-  top: 0;
-  height: 100%;
-  width: 100%;
+  background-size: 100% 100%;
+  background-attachment: fixed;
 }
 
 .addGame-bg{
@@ -206,7 +214,7 @@ nav ul a.btn {
   font-family: "Alfa Slab One", cursive;
   text-shadow: 5px 5px 1.2rem rgba(0, 0, 0, 0.8);
   text-align: center;
-  margin-top: 10rem;
+  margin-top: 15rem;
 }
 
 .landing-buttons {
@@ -223,13 +231,14 @@ nav ul a.btn {
   background-color: rgb(224, 58, 119);
 }
 
-.container.landing-container {
+.landing-container {
   text-align: center;
-  width: 60%;
+  height: 15vh;
 }
 
 .landing-paragraph {
   text-shadow: 5px 5px 1.2rem rgba(0, 0, 0, 0.8);
+  text-align: center;
 }
 
 /* ------------------------------------------------------*/

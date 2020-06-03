@@ -34,7 +34,7 @@ def internal_error(error):
 @app.route('/')
 @app.route('/home_page')
 def home_page():
-    return render_template('index.html')
+    return render_template('index.html', is_index=True)
 
 @app.route('/about')
 def about():
@@ -60,7 +60,6 @@ def search():
     result = games.find(query)
     if result.count() <= 0:
         flash('No results found, please try again')
-    
     #return dumps(result)
     #return dumps(mongo.db.games.find({'genre_name': 'Adventure'}))
     
@@ -89,7 +88,7 @@ def login():
         if user_login:
             if check_password_hash(user_login['password'], request.form.get('password')):
                 session['username'] = request.form.get('username')
-                flash('Welcome back' + session['username'])
+                flash('Welcome back ' + session['username'])
                 return redirect(url_for('home_page'))
             flash('Invalid credentials')
     return render_template('login.html')

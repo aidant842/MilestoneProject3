@@ -2,12 +2,14 @@ import os
 from flask import Flask, flash, render_template, redirect, request, url_for, session
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
+from bson.json_util import dumps
 from os import path
 if os.path.exists("env.py"):
    import env
 from werkzeug.security import generate_password_hash, check_password_hash
 
 app = Flask(__name__)
+#app.register_error_handler(500, internal_error)
 
 app.config['MONGO_DBNAME'] = 'gameDB'
 app.config["MONGO_URI"] = os.getenv("MONGO_URI")
@@ -21,6 +23,13 @@ def convert_embed(trailer_link):
     trailer_link = new_url
 
     return trailer_link
+
+@app.errorhandler(500)
+def internal_error(error):
+    flash('Please fill out all fields')
+    return render_template('games.html', genre=mongo.db.genre.find(), games=mongo.db.games.find(),
+                            age_rating=mongo.db.age_rating.find(), dev=mongo.db.developer.find(), plat=mongo.db.platform.find(),
+                            vr=mongo.db.vr_capable.find()), 500
 
 @app.route('/')
 @app.route('/home_page')
@@ -42,13 +51,23 @@ def games():
 def search():
     
     games = mongo.db.games
-    query = games.find({
-        'genre_name': request.form.get('genre')
-    })
-
-    return render_template('games.html', genre=mongo.db.genre.find(), games=query,
+    query = {
+        'genre_name':{'$regex': request.form.get('genre'), '$options': 'i'},
+        'age_rating':{'$regex': request.form.get('age'), '$options': 'i'},
+        'platform':{'$regex': request.form.get('platform'), '$options': 'i'},
+        'developer':{'$regex': request.form.get('developer'), '$options': 'i'}
+    }
+    result = games.find(query)
+    if result is None:
+        flash('no results found')
+    
+    #return dumps(query)
+    #return dumps(mongo.db.games.find({'genre_name': 'Adventure'}))
+    
+    return render_template('games.html', genre=mongo.db.genre.find(), games=result,
                             age_rating=mongo.db.age_rating.find(), dev=mongo.db.developer.find(), plat=mongo.db.platform.find(),
                             vr=mongo.db.vr_capable.find())
+                            
 
 @app.route('/games/<game_id>')
 def game_page(game_id):
@@ -175,4 +194,4 @@ def delete_game(game_id):
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
         port=int(os.environ.get('PORT')),
-        debug=True)
+        debug=False)

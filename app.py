@@ -52,22 +52,23 @@ def search():
     
     games = mongo.db.games
     query = {
-        'genre_name':{'$regex': request.form.get('genre'), '$options': 'i'},
-        'age_rating':{'$regex': request.form.get('age'), '$options': 'i'},
-        'platform':{'$regex': request.form.get('platform'), '$options': 'i'},
-        'developer':{'$regex': request.form.get('developer'), '$options': 'i'}
+        'genre_name': {'$regex': request.form.get('genre'), '$options': 'i'},
+        'age_rating': {'$regex': request.form.get('age'), '$options': 'i'},
+        'platform': {'$regex': request.form.get('platform'), '$options': 'i'},
+        'developer': {'$regex': request.form.get('developer'), '$options': 'i'}
     }
     result = games.find(query)
-    if result is None:
-        flash('no results found')
+    if result.count() <= 0:
+        flash('No results found, please try again')
     
-    #return dumps(query)
+    #return dumps(result)
     #return dumps(mongo.db.games.find({'genre_name': 'Adventure'}))
     
     return render_template('games.html', genre=mongo.db.genre.find(), games=result,
                             age_rating=mongo.db.age_rating.find(), dev=mongo.db.developer.find(), plat=mongo.db.platform.find(),
                             vr=mongo.db.vr_capable.find())
-                            
+
+                       
 
 @app.route('/games/<game_id>')
 def game_page(game_id):
@@ -194,4 +195,4 @@ def delete_game(game_id):
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
         port=int(os.environ.get('PORT')),
-        debug=False)
+        debug=True)

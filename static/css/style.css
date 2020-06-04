@@ -65,6 +65,7 @@ div.review-container p::first-letter{
 
 .breadcrumb {
   font-size: 1rem;
+  text-shadow: 5px 5px 1.2rem rgba(0, 0, 0, 0.8);
 }
 
 .breadcrumb:before {
@@ -83,15 +84,23 @@ div.review-container p::first-letter{
 
 /* ----------------- Page Backgrounds ----------------- */
 
-.landing-bg,
+/* .landing-bg,
 .login-bg
  {
   background-image: url(/static/images/background.png); 
   background-repeat: no-repeat;
   background-size: 100% 100%;
   background-attachment: fixed;
- }
+ } */
 
+.landing-bg,
+.login-bg{
+   background-image: url(/static/images/landing.jpg);
+   background-position: center center;
+   background-repeat: no-repeat;
+   background-attachment: fixed;
+   background-size: cover; 
+}
 
 
 .games-bg {
@@ -122,8 +131,9 @@ div.review-container p::first-letter{
 }
 
 .about-bg{
-    background-image: url(/static/images/about-bg.jpg);
-    background-repeat: no-repeat;
+    
+   background-image: url(/static/images/about1.jpg);
+   background-repeat: no-repeat;
    background-size: cover;
    position: absolute;
    top: 0;
@@ -379,6 +389,8 @@ input {
   /* white-space: nowrap; */
   text-transform: capitalize;
   word-wrap: break-word;
+  position: relative;
+  float: left;
 }
 
 .card-title:hover {
@@ -398,10 +410,10 @@ input {
 }
 
 .card-image {
-  -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+  /* -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
     0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
-    0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+    0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2); */
   height: 325px;
   width: 250px;
 }
@@ -682,6 +694,7 @@ ul li a.buy-button:hover{
 
 .about-container{
     text-align: left;
+    padding: 20px 25px;
 }
 
 .about-sub-heading, .how-to-use-heading{
@@ -689,9 +702,22 @@ ul li a.buy-button:hover{
     font-family: "Alfa Slab One", cursive;
 }
 
-.about-paragraph, .how-to-use-paragraph{
+.about-paragraph, .how-to-use{
     color: #777777;
     font-family: "Pontano Sans", sans-serif;
+    list-style-type: upper-roman;
+    font-weight: 600;
+    font-size: 1rem;
+    text-rendering: optimizeLegibility;   
+}
+
+ol li a{
+    color: rgb(224, 58, 119);
+}
+
+ol li a:hover{
+    color: #312a2a;
+    -webkit-transition: all 0.5s ease-in-out;
 }
 
 /* ------------------------------------------------------*/

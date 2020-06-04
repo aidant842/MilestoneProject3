@@ -131,25 +131,30 @@ def addGame():
                             vr=mongo.db.vr_capable.find(), age_rating=mongo.db.age_rating.find())
     else:
         flash('You need to be logged in to add a game')
-        return redirect(url_for('home_page'))
+        return redirect(url_for('login'))
 
 
 @app.route('/insert_game', methods=['POST'])
 def insert_game():
     dev_col = mongo.db.developer
-    existing_dev = dev_col.find_one({'dev': request.form.get('developer')})
     add_game_form = request.form.to_dict()
     title = add_game_form['title']
     add_game_form['trailer_link'] = convert_embed(add_game_form['trailer_link'])
     game = mongo.db.games
     existing_title = game.find_one({'title': request.form.get('title')})
+    existing_dev = dev_col.find_one({'dev': request.form.get('developer')})
+
     if existing_title:
         flash('This game already exists in the database')
+    elif existing_dev:
+        game.insert_one(add_game_form)
+        flash("Thank you, " + title + " has been added to the database :)")  
+    elif not existing_dev:
+        dev_col.insert_one({'dev': add_game_form['developer']})
+        game.insert_one(add_game_form)
+        flash("Thank you, " + title + " has been added to the database :)")
     else:
-        if not existing_dev:
-            dev_col.insert_one({'dev': add_game_form['developer']})
-            game.insert_one(add_game_form)
-            flash("Thank you, " + title + " has been added to the database :)")
+        flash('An unexpected error has occured, please try again')
     return redirect(url_for('games'))
 
 

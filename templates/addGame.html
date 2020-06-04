@@ -51,7 +51,7 @@
           </div>
 
           <div class="input-field col s12">
-            <input id="playTime" name="playthrough_time" type="number" required aria-required="true" />
+            <input id="playTime" name="playthrough_time" type="text" required aria-required="true" />
             <label for="playTime">Playthrough Time (mins)</label>
           </div>
 
@@ -98,6 +98,11 @@
           <textarea id="review" name="review" class="materialize-textarea" required aria-required="true"></textarea>
           <label for="review">Review</label>
         </div>
+
+        <div class="input-field col s12">
+            <input id="username" name="username" type="text" required aria-required="true" />
+            <label for="username">Your username(case sensitive)</label>
+          </div>
     
           <div class="col s12">  
           <button url="{{url_for('games')}}" class="btn next-btn" type="submit" name="action">

@@ -370,6 +370,7 @@ input {
 
 .row.card-row {
   display: inline-block;
+  max-height: 368px;
 }
 
 .card {
@@ -645,6 +646,11 @@ ul li a.buy-button:hover{
     background-color: #312a2a;
     color: rgb(224, 58, 119) !important;
     -webkit-transition: all 0.5s ease-in-out;
+}
+
+.review-container{
+    max-height: 250px;
+    overflow: auto;
 }
 /* ------------------------------------------------------*/
 
@@ -925,6 +931,16 @@ a.footer-links{
 @media only screen and (max-height: 360px){
     .landing-header{
         margin-top: 2rem;
+    }
+}
+
+@media only screen and (max-width: 396px){
+    .breadcrumb{
+        font-size: 0.7rem;
+    }
+
+    .breadcrumb::before{
+        font-size: 0.9rem;
     }
 }
 

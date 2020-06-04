@@ -189,8 +189,8 @@ nav .btn:hover {
 
 nav ul a:hover {
   color: rgb(224, 58, 119);
-  /* background-color: rgba(0, 0, 0, 0.2) !important; */
-  background-color: #312a2a;
+  background-color: rgba(0, 0, 0, 0.2) !important;
+  /* background-color: #312a2a; */
   transition: 0.3s ease-in;
 }
 
@@ -456,6 +456,13 @@ input {
     font-size: small;
 }
 
+span.account-check a{
+    color: rgb(224, 58, 119);
+}
+
+span.account-check a:hover{
+    color: white;
+}
 /* input:not([type]),
 input[type="text"]:not(.browser-default),
 input[type="password"]:not(.browser-default),
@@ -768,6 +775,61 @@ a.footer-links{
 .footer-links:hover{
     color: #f5f5f5 !important;
     -webkit-transition: all 0.5s ease-in-out;
+}
+
+/* ------------------------------------------------------*/
+
+/* ----------------- Loader ----------------- */
+
+.loader-bg{
+    position: fixed;
+    z-index: 1005;
+    top: 0;
+    left: 0;
+    background: #312a2a;
+    width: 100%;
+    height: 100%;
+}
+
+.loader{
+    border: 0 solid transparent;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    top: calc(50vh - 75px);
+    left: calc(50vw - 75px);
+}
+
+.loader:before, .loader:after{
+    content: '';
+    border: 1em solid rgb(224, 58, 119);
+    border-radius: 50%;
+    width: inherit;
+    height: inherit;
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: loader 2s linear infinite;
+    opacity: 0;
+}
+
+.loader:before{
+    animation-delay: .5s;
+}
+
+@keyframes loader{
+    0%{
+        transform: scale(0);
+        opacity: 0;
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        transform: scale(1);
+        opacity: 0;
+    }
 }
 
 /* ------------------------------------------------------*/

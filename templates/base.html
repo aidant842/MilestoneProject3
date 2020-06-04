@@ -20,8 +20,12 @@
       type="text/css"
     />
 
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
-		integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+      integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP"
+      crossorigin="anonymous"
+    />
   </head>
 
   <header>
@@ -46,7 +50,8 @@
             <li><a href="{{url_for('addGame')}}">Add Game</a></li>
             <li>
               <a href="{{url_for('logout')}}" class="btn" id="logout-btn"
-                >Logout</a>
+                >Logout</a
+              >
             </li>
             {% endif %}
           </ul>
@@ -71,56 +76,78 @@
   </header>
 
   <body>
-
-  <div class="hidden">
-    {% with messages = get_flashed_messages() %} {% if messages %} {% for 
-    message in messages %}
-    <p class="message">{{ message }}</p>
-    {% endfor %} {% endif %} {% endwith %}
-  </div>
-
-  <div class="loader-bg">
-    <div class="loader">
+    <div class="hidden">
+      {% with messages = get_flashed_messages() %} {% if messages %} {% for
+      message in messages %}
+      <p class="message">{{ message }}</p>
+      {% endfor %} {% endif %} {% endwith %}
     </div>
-  </div>
 
-    {% block content %}
-     {% endblock %}
+    <div class="loader-bg">
+   
+      <div class="loading-container">
+        <span class="loading-game">Game</span><span class="landing-db">DB</span>
+        <div class="container progress-container">
+         <div class="progress">
+        <div class="indeterminate"></div>
+      </div>
+      </div>
+      </div>
+      
 
-    {% if not is_index %}
+      <!-- <div class="loader"></div> -->
+    </div>
+
+    {% block content %} {% endblock %} {% if not is_index %}
     <footer class="page-footer">
-          <div class="container">
-            <div class="row">
-              <div class="col l6 s12">
-                <h5>About Us</h5>
-                <p>GameDB is a website built by you. You add the information about your favourite games and your own reviews. Your contributions to the website will help others learn about your favourite games. Simply Sign up or Login to begin.</p>
-              </div>
-              <div class="col l4 offset-l2 s12">
-                <h5>Links</h5>
-                <ul>
-                  <li><a class="footer-links" href="#!">Home</a></li>
-                  <li><a class="footer-links" href="#!">About</a></li>
-                  <li><a class="footer-links" href="#!">Games</a></li>
-                </ul>
-              </div>
-            </div>
+      <div class="container">
+        <div class="row">
+          <div class="col l6 s12">
+            <h5>About Us</h5>
+            <p>
+              GameDB is a website built by you. You add the information about
+              your favourite games and your own reviews. Your contributions to
+              the website will help others learn about your favourite games.
+              Simply Sign up or Login to begin.
+            </p>
           </div>
-          <hr>
-          <div class="footer-copyright">
-            <div class="container">
-           <a href="{{url_for('home_page')}}" class="footer-logo">
-           <span class="game-footer">Game</span><span class="logo-db">DB</span></a> © 2020 Copyright
-           
-            <a class="grey-text text-lighten-4 right facebook" href="#!"><i class="fab fa-facebook-square"></i></a>
-            <a class="grey-text text-lighten-4 right github" href="#!"><i class="fab fa-github-square"></i></a>
-            <a class="grey-text text-lighten-4 right linkedin" href="#!"><i class="fab fa-linkedin"></i></a>
-            <span class="right designed-by">Designed and developed by: Aidan</span>
-            </div>
+          <div class="col l4 offset-l2 s12">
+            <h5>Links</h5>
+            <ul>
+              <li><a class="footer-links" href="#!">Home</a></li>
+              <li><a class="footer-links" href="#!">About</a></li>
+              <li><a class="footer-links" href="#!">Games</a></li>
+            </ul>
           </div>
-        </footer>
-        {% endif %}
+        </div>
+      </div>
+      <hr />
+      <div class="footer-copyright">
+        <div class="container">
+          <a href="{{url_for('home_page')}}" class="footer-logo">
+            <span class="game-footer">Game</span
+            ><span class="logo-db">DB</span></a
+          >
+          © 2020 Copyright
 
-<!--Import jQuery before materialize.js-->
+          <a class="grey-text text-lighten-4 right facebook" href="#!"
+            ><i class="fab fa-facebook-square"></i
+          ></a>
+          <a class="grey-text text-lighten-4 right github" href="#!"
+            ><i class="fab fa-github-square"></i
+          ></a>
+          <a class="grey-text text-lighten-4 right linkedin" href="#!"
+            ><i class="fab fa-linkedin"></i
+          ></a>
+          <span class="right designed-by"
+            >Designed and developed by: Aidan</span
+          >
+        </div>
+      </div>
+    </footer>
+    {% endif %}
+
+    <!--Import jQuery before materialize.js-->
     <script
       type="text/javascript"
       src="https://code.jquery.com/jquery-3.2.1.min.js"
@@ -150,7 +177,5 @@
     <script src="/static/js/loader.js"></script>
     <script src="/static/js/toasts.js"></script>
     <script src="/static/js/media-buttons.js"></script>
-    
   </body>
-  
 </html>

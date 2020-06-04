@@ -791,7 +791,35 @@ a.footer-links{
     height: 100%;
 }
 
-.loader{
+.loader-bg span{
+    font-family: "Alfa Slab One", cursive;
+}
+
+.loading-container{
+    text-align: center;
+    font-size: 5rem;
+    height: 100%;
+    width: 100%;
+    /* position: fixed;
+    top: 50%;
+    left: 0; */
+    margin-top: calc(40vh);
+}
+
+.progress{
+    background-color: #312a2a;
+}
+
+.progress-container{
+    width: 50%;
+}
+
+.progress .indeterminate {
+    background-color: rgb(224, 58, 119);
+}
+
+
+/* .loader{
     border: 0 solid transparent;
     border-radius: 50%;
     width: 150px;
@@ -830,7 +858,7 @@ a.footer-links{
         transform: scale(1);
         opacity: 0;
     }
-}
+} */
 
 /* ------------------------------------------------------*/
 

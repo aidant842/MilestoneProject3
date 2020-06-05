@@ -95,6 +95,7 @@ People really enjoy playing video games, and a resource like this to find review
  
 -  **User Reviews** Ability to add reviews from multiple user to a game.
 -  **Search** A more stable search function that allows blank criteria.
+-  **Delete Confirmation** A fail safe Confirmation for delete button incase accidentally pressed.
  
 ## Technologies used
 Below I have listed the programming languages, technologies, frameworks and resources used for this project.
@@ -178,7 +179,7 @@ Current errors:
 6. ~~***NOT YET FIXED*** iframe expects embed url, can't rely on user to enter embeded url  -- fixed by adding embed trailer function.~~
 7. ~~***NOT YET FIXED*** page overspilling - fixed, crumbs container width.~~
 8. ~~***NOT YET FIXED*** date picker colour -- fixed with css.~~
-9. ~~ ***NOT YET FIXED*** no visual for users that aren't logged in that its possible to edit/delete a game -- fixed by adding if block that redirects to login if not logged in.(redundent since it was changed to user only)
+9.   ***NOT YET FIXED*** no visual for users that aren't logged in that its possible to edit/delete a game -- fixed by adding if block that redirects to login if not logged in.(redundent since it was changed to user only)
 10. ~~***NOT YET FIXED*** forgot to changed mobile nav based on user logged in.~~
 11. ~~***NOT YET FIXED*** home/login/signup pages don't respond well on large screens - fixed by changing css properties.~~
 12. ~~***NOT YET FIXED*** forgot to changed mobile nav based on user logged in.~~

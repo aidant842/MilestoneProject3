@@ -11,10 +11,6 @@ footer{
     margin-top: 5rem;
 }
 
-/* a {
-    color: rgb(224, 58, 119);
-} */
-
 .logo-db,
 .landing-db,
 .side-nav-db {
@@ -61,6 +57,7 @@ div.review-container p::first-letter{
 
 /* ------------------------------------------------------*/
 
+
 /* ----------------- BreadCrumb Styling ----------------- */
 
 .breadcrumb {
@@ -84,22 +81,17 @@ div.review-container p::first-letter{
 
 /* ----------------- Page Backgrounds ----------------- */
 
-/* .landing-bg,
-.login-bg
- {
-  background-image: url(/static/images/background.png); 
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  background-attachment: fixed;
- } */
-
 .landing-bg,
 .login-bg{
    background-image: url(/static/images/landing.jpg);
    background-position: center center;
    background-repeat: no-repeat;
    background-attachment: fixed;
-   background-size: cover; 
+   background-size: cover;
+   /* position: fixed;
+   height: 100vh;
+   width: 100vw;
+   top: 0; */
 }
 
 
@@ -232,7 +224,7 @@ nav ul a.btn {
   font-family: "Alfa Slab One", cursive;
   text-shadow: 5px 5px 1.2rem rgba(0, 0, 0, 0.8);
   text-align: center;
-  margin-top: 13rem;
+  margin-top: 30vh;
 }
 
 .landing-buttons {
@@ -440,6 +432,8 @@ input {
   color: white;
   text-transform: uppercase;
   text-shadow: 5px 5px 1.2rem rgba(0, 0, 0, 0.8);
+  margin-top: 25vh;
+  margin-bottom: 0;
 }
 
 .login-container {
@@ -447,13 +441,13 @@ input {
   width: 80%;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 3rem;
+  /* margin-top: 3rem; */
 }
 
 .account-check{
     position: absolute;
     right: 0;
-    bottom: 20%;
+    bottom: 25%;
     font-size: small;
 }
 
@@ -809,7 +803,7 @@ a.footer-links{
     /* position: fixed;
     top: 50%;
     left: 0; */
-    margin-top: calc(40vh);
+    margin-top: 40vh;
 }
 
 .progress{
@@ -922,15 +916,13 @@ a.footer-links{
     }
 }
 
-@media only screen and (max-height: 415px){
+@media only screen and (max-height: 400px){
     .landing-header{
-        margin-top: 5rem;
+        margin-top: 15vh;
     }
-}
 
-@media only screen and (max-height: 360px){
-    .landing-header{
-        margin-top: 2rem;
+    .login-header{
+        margin-top: 10vh;
     }
 }
 

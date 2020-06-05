@@ -75,7 +75,11 @@
     </div>
   </header>
 
-  <body>
+{% if is_index %}
+  <body  class="landing-bg">
+  {% elif add_game %}
+  <body class="addGame-bg">
+  {% endif %}
     <div class="hidden">
       {% with messages = get_flashed_messages() %} {% if messages %} {% for
       message in messages %}

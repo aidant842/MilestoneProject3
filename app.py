@@ -65,8 +65,6 @@ def search():
     result = games.find(query)
     if result.count() <= 0:
         flash('No results found, please try again')
-    #return dumps(result)
-    #return dumps(mongo.db.games.find({'genre_name': 'Adventure'}))
 
     return render_template('games.html', genre=mongo.db.genre.find(), games=result,
                             age_rating=mongo.db.age_rating.find(), dev=mongo.db.developer.find(), plat=mongo.db.platform.find(),
@@ -96,7 +94,7 @@ def login():
                 flash('Welcome back ' + session['username'])
                 return redirect(url_for('home_page'))
             flash('Invalid credentials')
-    return render_template('login.html')
+    return render_template('login.html', is_index=True)
 
 
 @app.route('/signup', methods=['POST', 'GET'])
@@ -114,7 +112,7 @@ def signup():
             return redirect(url_for('home_page'))
         flash('That username already exists, please try again')
 
-    return render_template('signup.html')
+    return render_template('signup.html', is_index=True)
 
 
 @app.route('/logout')
@@ -128,7 +126,7 @@ def logout():
 def addGame():
     if 'username' in session:
         return render_template('addGame.html', genre=mongo.db.genre.find(), platform=mongo.db.platform.find(),
-                            vr=mongo.db.vr_capable.find(), age_rating=mongo.db.age_rating.find())
+                            vr=mongo.db.vr_capable.find(), age_rating=mongo.db.age_rating.find(), add_game=True)
     else:
         flash('You need to be logged in to add a game')
         return redirect(url_for('login'))
@@ -165,7 +163,7 @@ def edit_game(game_id):
         return redirect(url_for('login'))
     the_game = mongo.db.games.find_one({'_id': ObjectId(game_id)})
     return render_template('edit_game.html', game=the_game, genre=mongo.db.genre.find(), platform=mongo.db.platform.find(),
-                            vr=mongo.db.vr_capable.find(), age_rating=mongo.db.age_rating.find())
+                            vr=mongo.db.vr_capable.find(), age_rating=mongo.db.age_rating.find(), add_game=True)
 
 
 @app.route('/update_game/<game_id>', methods=['POST'])

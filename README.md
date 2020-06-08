@@ -25,7 +25,7 @@ GameDB</a></p>
 - [**Testing**](#Testing)
     - [Manual testing](#Testing)
     - [Errors](#Errors)
-- [**Code Notes**](#Code-Notes )
+- [**Code Notes**](#Code-Notes)
 - [**Deployment**](#Deployment)
 - [**Credits**](#Deployment)
     - [Code](#Code)
@@ -33,6 +33,8 @@ GameDB</a></p>
      - [Audio](#Audio)
 - [**Acknowledgements**](#Acknowledgements)
 - [**Disclaimer**](#Disclaimer)
+
+
 ## About
  
 The purpose of this project was to build an open source multiple page site that allow users to create an account and add their own reviews
@@ -61,6 +63,7 @@ People really enjoy playing video games, and a resource like this to find review
  
 
 ### UI
+
 * A responsive and sticky Navbar was essential.
 * A search function was necessary for users to find games based on certain criteria.
 * Forms to add and edit a game.
@@ -98,6 +101,7 @@ People really enjoy playing video games, and a resource like this to find review
 -  **Delete Confirmation** A fail safe Confirmation for delete button incase accidentally pressed.
  
 ## Technologies used
+
 Below I have listed the programming languages, technologies, frameworks and resources used for this project.
  
 * **HTML5**
@@ -122,6 +126,7 @@ Below I have listed the programming languages, technologies, frameworks and reso
 * **[Grammarly](https://www.grammarly.com/)** to correct grammar and spelling mistakes.
  
 ## Testing
+
 * [HTML validator](https://validator.w3.org/#validate_by_input)
 * [CSS validator](https://jigsaw.w3.org/css-validator/#validate_by_input)
 * [JsHint](https://jshint.com)
@@ -142,6 +147,7 @@ The website from my testing is compatible on multiple browsers.
 I had family and friends test the website also.
  
 ### Manual testing
+
 * Create an account, works as it should, passwords are hashed for security. &#9745;
 * Logging in to created account, works as it should. &#9745;
 * Add game using form, works as it should. Adding a game is only possible when logged in. &#9745;
@@ -167,6 +173,7 @@ I had family and friends test the website also.
 No automated testing was conducted.
  
 ### Errors
+
 Current errors:
  
 1. ***NOT YET FIXED*** No required field pop up when select field is left empty on add/edit game form.
@@ -187,26 +194,32 @@ Current errors:
 14. ~~***NOT YET FIXED*** had to use document.body.load for preloader javascript due to firefox support.~~
 15. ~~***NOT YET FIXED*** error with if logic in insert_game route when checking if developer already exists --- fixed.~~
 16. ***NOT YET FIXED*** no way of recovering an account.
+17. ~~***NOT YET FIXED*** Body tags in templates other than base to have full size body tags, created an if block in base to assign body tags for each page instead.~~
 
 
-## Code Notes 
+## Code Notes
+
  Some warnings/errors occuring with linter which i can't stop from being flagged.
 
 ## Deployment
+
 To deploy this project I used [Heroku](https://dashboard.heroku.com/)
  
 ### How to deploy code locally:
+
 paste this into your console:
  
 git clone https://github.com/aidant842/MilestoneProject3.git
  
 ## Credits
 ### Code
+
 * Some tutorial videos on flask i watched from pretty printed [here](https://www.youtube.com/channel/UC-QDfvrRIDB6F0bIO4I4HkQ)
 * Custom loader tutorial video [here](https://www.youtube.com/watch?v=xuA83OYTE7I&t=106s)
 * I found a template for this README in one of the channels in slack, however i can no longer remember where it was to credit the user who posted it.
 
 ### Images
+
 * All background images came from [Google-Images](https://www.google.com/imghp?hl=en)
  
 

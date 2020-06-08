@@ -512,6 +512,7 @@ textarea.materialize-textarea:focus:not([readonly]) + label {
   border-radius: 0;
   background-color: rgb(224, 58, 119);
   color: white;
+  margin-top: 2rem;
 }
 
 .login-btn:hover, .next-btn:hover, .edit-btn:hover, .delete-btn:hover {
@@ -646,6 +647,28 @@ ul li a.buy-button:hover{
     max-height: 250px;
     overflow: auto;
 }
+
+/* ---- delete modal ---- */
+
+.modal-content{
+    color: rgb(224,58,119);
+    text-align: center;
+}
+
+.modal-delete:hover{
+    background-color: rgba(255, 0, 0, 0.8);
+    color: white;
+    -webkit-transition: all 0.5s ease-in-out;
+}
+
+.modal-cancel:hover{
+    background-color: rgba(0, 0, 0, 0.2);
+    color: white;
+    -webkit-transition: all 0.5s ease-in-out;
+}
+
+/* -----------------------*/
+
 /* ------------------------------------------------------*/
 
 /* ----------------- addGame Page styling ----------------- */

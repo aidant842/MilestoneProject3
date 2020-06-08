@@ -19,6 +19,11 @@
           <input id="password" name="password" type="password" class="validate" required aria-required="true">
           <label for="password">Password</label>
         </div>
+
+        <div class="input-field">
+          <input id="confirm_password" name="confirm_password" type="password" class="validate" oninput="check(this)" required aria-required="true">
+          <label for="confirm_password">Confirm Password</label>
+        </div>
      
       <button class="btn login-btn" type="submit" name="action">Sign Up
         <i class="material-icons right">send</i>

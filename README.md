@@ -89,6 +89,7 @@ People really enjoy playing video games, and a resource like this to find review
 * A loading page.
 * If a developer that doesn't exist in the database is entered with a new game the developer is added to the database for use when searching.
 * If a game already exists in the database it won't allow a user to add it again.
+* When adding a game, function Automatically grabs username from session instead of having user input their own username in form.
 
 ### Functionality
  

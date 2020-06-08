@@ -220,6 +220,7 @@ git clone https://github.com/aidant842/MilestoneProject3.git
 * Some tutorial videos on flask i watched from pretty printed [here](https://www.youtube.com/channel/UC-QDfvrRIDB6F0bIO4I4HkQ)
 * Custom loader tutorial video [here](https://www.youtube.com/watch?v=xuA83OYTE7I&t=106s)
 * I found a template for this README in one of the channels in slack, however i can no longer remember where it was to credit the user who posted it.
+* Code for password check [here](https://stackoverflow.com/questions/9142527/can-you-require-two-form-fields-to-match-with-html5)
 
 ### Images
 

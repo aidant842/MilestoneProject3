@@ -171,7 +171,8 @@ nav .btn:hover {
 nav ul a:hover {
   color: rgb(224, 58, 119);
   background-color: rgba(0, 0, 0, 0.2) !important;
-  transition: 0.3s ease-in;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
 
 nav ul a.btn {
@@ -355,6 +356,13 @@ input {
   height: 361px;
 }
 
+.card:hover{
+    scale: 1.05;
+    color: rgb(224, 58, 119);
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
 .card-link {
   text-decoration: none;
   color: inherit;
@@ -365,12 +373,7 @@ input {
   word-wrap: break-word;
   position: relative;
   float: left;
-}
-
-.card-title:hover {
-  color: rgb(224, 58, 119);
-  -webkit-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out;
+  font-size: 1.4rem !important;
 }
 
 .genre-tag {

@@ -3,8 +3,6 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from flask import Flask, flash, render_template, redirect, request, url_for, session
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
-from bson.json_util import dumps
-from os import path
 if os.path.exists("env.py"):
    import env
 
@@ -21,6 +19,7 @@ mongo = PyMongo(app)
 """ converts users regular youtube
 link to embeded link to display in iframe """
 
+
 def convert_embed(trailer_link):
     new_url = trailer_link.replace("watch?v=", "embed/")
     trailer_link = new_url
@@ -32,6 +31,7 @@ def convert_embed(trailer_link):
 (used for error with search function
 outlined in readme) """
 
+
 @app.errorhandler(500)
 def internal_error(error):
     flash('Please fill out all fields')
@@ -42,6 +42,7 @@ def internal_error(error):
 
 """ Route for home page """
 
+
 @app.route('/')
 @app.route('/home_page')
 def home_page():
@@ -50,12 +51,14 @@ def home_page():
 
 """ route for about page """
 
+
 @app.route('/about')
 def about():
     return render_template('about.html', game=mongo.db.games.find())
 
 """ route for games page displays games image and title.
     provides a link to the individual games page and a search function """
+
 
 @app.route('/games', methods=['POST', 'GET'])
 def games():
@@ -69,6 +72,7 @@ def games():
     Search based on certain criteria
     and uses regular expression and ignores case
     if no results found returns to games page and displays message to user """
+
 
 @app.route('/search', methods=['POST', 'GET'])
 def search():
@@ -91,6 +95,7 @@ def search():
 
 """ Route to display info about the game chosen from games page """
 
+
 @app.route('/games/<game_id>')
 def game_page(game_id):
     the_game = mongo.db.games.find_one({'_id': ObjectId(game_id)})
@@ -102,6 +107,7 @@ def game_page(game_id):
     Takes username from form and checks against database
     takes password from form and checks against database(uses password hashing)
     if either username or password is wrong displays message to user """
+
 
 @app.route('/login', methods=['POST', 'GET'])
 def login():
@@ -131,6 +137,7 @@ def login():
     and redirects to home page
     otherwise if username is taken displays message to user to try again"""
 
+
 @app.route('/signup', methods=['POST', 'GET'])
 def signup():
 
@@ -152,6 +159,7 @@ def signup():
 """ Route for logout, clears session to remove login
 displays message and redirects to home page """
 
+
 @app.route('/logout')
 def logout():
     session.clear()
@@ -161,6 +169,7 @@ def logout():
 
 """ Route for add game page which displays a form to take user input
     about the game, but only if the user is logged in """
+
 
 @app.route('/addGame')
 def addGame():
@@ -178,6 +187,7 @@ def addGame():
     if not add it to developer collectio
     for search function(**case sensitive**)
     adds game to database and displays confirm message to user """
+
 
 @app.route('/insert_game', methods=['POST'])
 def insert_game():
@@ -208,6 +218,7 @@ def insert_game():
     takes game id to target specific game
     if not logged in redirect to login page """
 
+
 @app.route('/edit_game/<game_id>')
 def edit_game(game_id):
     if not 'username' in session:
@@ -221,6 +232,7 @@ def edit_game(game_id):
 """ Route to update game based on edit game form
     uses convert_embed function
     if successful displays message to user """
+
 
 @app.route('/update_game/<game_id>', methods=['POST'])
 def update_game(game_id):
@@ -254,6 +266,7 @@ def update_game(game_id):
 """ Route to delete game
     user has to be logged in
     sends success message to user """
+
 
 @app.route('/delete_game/<game_id>')
 def delete_game(game_id):

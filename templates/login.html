@@ -1,10 +1,13 @@
 {% extends 'base.html' %} {% block content%}
 
-<!-- <div class="login-bg"> -->
+
   <h3 class="login-header">Login</h3>
   <div class="contanier">
     <div class="row">
       <div class="login-container offset-l4 offset-s2 col s8 l4">
+
+    <!-- Login form, linked to login route -->
+
         <form class="login-form" id="login" action="{{url_for('login')}}" method="POST">
           <div class="input-field">
             <input
@@ -34,6 +37,9 @@
             LOGIN
             <i class="material-icons right">send</i>
           </button>
+
+        <!-- Check for user on wrong page if they don't have an account yet -->
+
           <span class="account-check"
             >Don't have an account?
             <a href="{{url_for('signup')}}">Sign up here</a></span
@@ -42,6 +48,6 @@
       </div>
     </div>
   </div>
-<!-- </div> -->
+
 
 {% endblock %}

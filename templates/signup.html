@@ -1,13 +1,13 @@
 {% extends 'base.html' %} {% block content%}
 
-<!-- <div class="login-bg"> -->
-
     <h3 class = "login-header" >Sign Up</h3>
 
-    
     <div class="contanier">
     <div class="row">
     <div class="login-container offset-l4 offset-s2 col s8 l4">
+
+    <!-- Signup form, linked to signup route to create an account -->
+
     <form class="login-form" id="signup-form" action="{{url_for('signup')}}" method="POST">
       
         <div class="input-field">
@@ -28,6 +28,4 @@
   </div>
   </div>
   </div>
-  <!-- </div> -->
-
 {% endblock %}

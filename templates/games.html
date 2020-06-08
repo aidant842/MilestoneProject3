@@ -1,21 +1,19 @@
 {% extends 'base.html' %} {% block content %}
+
+<!-- Container for image -->
 <div class="games-bg-container">
   <div class="games-bg">
-    <!-- Container for header and breadcrumbs -->
     <div class="container crumbs">
       <h4 class="games-header">Games</h4>
       <nav>
         <div class="nav-wrapper">
-          <!-- <div class="row">
-            <div class="col s12"> -->
               <a href="{{url_for('home_page')}}" class="breadcrumb">Home</a>
               <a href="{{url_for('games')}}" class="breadcrumb active">Games</a>
-            <!-- </div>
-          </div> -->
         </div>
       </nav>
     </div>
-    <!-- Container for filter -->
+
+    <!-- Container for search filter -->
 
     <div class="filter-container"></div>
       <div class="options-container">
@@ -71,7 +69,8 @@
   </div>
 </div>
 
-<!-- Container for cards -->
+<!-- Container for cards to display game image and title, also a link to individual game page -->
+
 <div class="container card-container">
 {% for key in games %}
   <div class="row card-row">

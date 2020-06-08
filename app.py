@@ -18,12 +18,19 @@ app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')
 mongo = PyMongo(app)
 
 
+""" converts users regular youtube
+link to embeded link to display in iframe """
+
 def convert_embed(trailer_link):
     new_url = trailer_link.replace("watch?v=", "embed/")
     trailer_link = new_url
 
     return trailer_link
 
+
+""" Custom 500 error page
+(used for error with search function
+outlined in readme) """
 
 @app.errorhandler(500)
 def internal_error(error):
@@ -33,16 +40,22 @@ def internal_error(error):
                             vr=mongo.db.vr_capable.find()), 500
 
 
+""" Route for home page """
+
 @app.route('/')
 @app.route('/home_page')
 def home_page():
     return render_template('index.html', is_index=True)
 
 
+""" route for about page """
+
 @app.route('/about')
 def about():
     return render_template('about.html', game=mongo.db.games.find())
 
+""" route for games page displays games image and title.
+    provides a link to the individual games page and a search function """
 
 @app.route('/games', methods=['POST', 'GET'])
 def games():
@@ -51,6 +64,11 @@ def games():
                             age_rating=mongo.db.age_rating.find(), dev=mongo.db.developer.find(), plat=mongo.db.platform.find(),
                             vr=mongo.db.vr_capable.find())
 
+
+""" Route for search function from games page
+    Search based on certain criteria
+    and uses regular expression and ignores case
+    if no results found returns to games page and displays message to user """
 
 @app.route('/search', methods=['POST', 'GET'])
 def search():
@@ -71,11 +89,19 @@ def search():
                             vr=mongo.db.vr_capable.find())
 
 
+""" Route to display info about the game chosen from games page """
+
 @app.route('/games/<game_id>')
 def game_page(game_id):
     the_game = mongo.db.games.find_one({'_id': ObjectId(game_id)})
     return render_template('game.html', genre=mongo.db.genre.find(), game=the_game, games=mongo.db.games.find())
 
+
+""" Route for login page
+    returns user to home page if already logged in
+    Takes username from form and checks against database
+    takes password from form and checks against database(uses password hashing)
+    if either username or password is wrong displays message to user """
 
 @app.route('/login', methods=['POST', 'GET'])
 def login():
@@ -97,6 +123,14 @@ def login():
     return render_template('login.html', is_index=True)
 
 
+""" Route for signup
+    takes username from form and checks if user
+    already exists in database to stop duplication of users
+    takes password from form, hashes for security
+    if successfull logs user in and displays success message
+    and redirects to home page
+    otherwise if username is taken displays message to user to try again"""
+
 @app.route('/signup', methods=['POST', 'GET'])
 def signup():
 
@@ -115,12 +149,18 @@ def signup():
     return render_template('signup.html', is_index=True)
 
 
+""" Route for logout, clears session to remove login
+displays message and redirects to home page """
+
 @app.route('/logout')
 def logout():
     session.clear()
     flash('You have been logged out, Goodbye')
     return redirect(url_for('home_page'))
 
+
+""" Route for add game page which displays a form to take user input
+    about the game, but only if the user is logged in """
 
 @app.route('/addGame')
 def addGame():
@@ -132,6 +172,13 @@ def addGame():
         return redirect(url_for('login'))
 
 
+""" Route to insert game into Database based on form input on add game page
+    checks if title already exists to stop duplicate games
+    checks if developer entered already exists
+    if not add it to developer collectio
+    for search function(**case sensitive**)
+    adds game to database and displays confirm message to user """
+
 @app.route('/insert_game', methods=['POST'])
 def insert_game():
     dev_col = mongo.db.developer
@@ -141,20 +188,25 @@ def insert_game():
     game = mongo.db.games
     existing_title = game.find_one({'title': request.form.get('title')})
     existing_dev = dev_col.find_one({'dev': request.form.get('developer')})
+    add_game_form.update({'username': session['username']})
 
     if existing_title:
         flash('This game already exists in the database')
     elif existing_dev:
-        game.insert_one(add_game_form)
-        flash("Thank you, " + title + " has been added to the database :)")  
+        game.insert(add_game_form)
+        flash("Thank you, " + title + " has been added to the database :)")
     elif not existing_dev:
         dev_col.insert_one({'dev': add_game_form['developer']})
-        game.insert_one(add_game_form)
+        game.insert(add_game_form)
         flash("Thank you, " + title + " has been added to the database :)")
     else:
         flash('An unexpected error has occured, please try again')
     return redirect(url_for('games'))
 
+
+""" Route for edit game
+    takes game id to target specific game
+    if not logged in redirect to login page """
 
 @app.route('/edit_game/<game_id>')
 def edit_game(game_id):
@@ -165,6 +217,10 @@ def edit_game(game_id):
     return render_template('edit_game.html', game=the_game, genre=mongo.db.genre.find(), platform=mongo.db.platform.find(),
                             vr=mongo.db.vr_capable.find(), age_rating=mongo.db.age_rating.find(), add_game=True)
 
+
+""" Route to update game based on edit game form
+    uses convert_embed function
+    if successful displays message to user """
 
 @app.route('/update_game/<game_id>', methods=['POST'])
 def update_game(game_id):
@@ -194,6 +250,10 @@ def update_game(game_id):
     flash(title + ' has been updated')
     return redirect(url_for('games'))
 
+
+""" Route to delete game
+    user has to be logged in
+    sends success message to user """
 
 @app.route('/delete_game/<game_id>')
 def delete_game(game_id):

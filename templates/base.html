@@ -14,12 +14,15 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
     />
+
+    <!-- link to custom css stylesheet -->
+
     <link
       rel="stylesheet"
       href="{{url_for('static', filename = 'css/style.css')}}"
       type="text/css"
     />
-
+   <!-- link to fontawesome for icons -->
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
@@ -29,6 +32,9 @@
   </head>
 
   <header>
+
+    <!-- NavBar -->
+
     <div class="navbar-fixed">
       <nav>
         <div class="nav-wrapper fix">
@@ -43,6 +49,8 @@
             <li><a href="{{url_for('about')}}">About</a></li>
             <li><a href="{{url_for('games')}}">Games</a></li>
 
+            <!-- if block to check if user is logged in to display login/signup if not logged in, and add game link if logged in -->
+
             {% if 'username' not in session %}
             <li><a href="{{url_for('login')}}" class="btn">Login</a></li>
             <li><a href="{{url_for('signup')}}" class="btn">Sign Up</a></li>
@@ -54,7 +62,11 @@
               >
             </li>
             {% endif %}
+
           </ul>
+
+        <!-- mobile NavBar -->
+
           <ul class="sidenav" id="mobile-demo">
             <h3 class="navHeader">Game<span class="side-nav-db">DB</span></h3>
             <li><a href="{{url_for('home_page')}}">Home</a></li>
@@ -75,17 +87,23 @@
     </div>
   </header>
 
+  <!-- if block to display body tags with background image depending on what page is being displayed -->
+
 {% if is_index %}
   <body  class="landing-bg">
   {% elif add_game %}
   <body class="addGame-bg">
   {% endif %}
+
+  <!-- code for Flask flash messages, passed to JS file -->
     <div class="hidden">
       {% with messages = get_flashed_messages() %} {% if messages %} {% for
       message in messages %}
       <p class="message">{{ message }}</p>
       {% endfor %} {% endif %} {% endwith %}
     </div>
+
+    <!-- Loading page so user doesn't see incomplete page -->
 
     <div class="loader-bg">
    
@@ -97,12 +115,12 @@
       </div>
       </div>
       </div>
-      
-
-      <!-- <div class="loader"></div> -->
     </div>
 
-    {% block content %} {% endblock %} {% if not is_index %}
+    {% block content %} {% endblock %} 
+    
+<!-- if block to display footer depending on page(not displayed on landing/login/signup pages) -->
+    {% if not is_index %}
     <footer class="page-footer">
       <div class="container">
         <div class="row">
@@ -151,12 +169,17 @@
     </footer>
     {% endif %}
 
+    <!-- SCRIPTS -->
+
     <!--Import jQuery before materialize.js-->
-    <script
-      type="text/javascript"
-      src="https://code.jquery.com/jquery-3.2.1.min.js"
-    ></script>
+    <!-- jQuery -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+    <!-- materialize -->
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <!-- initialization for materialize components -->
     <script>
       $(document).ready(function () {
         $(".sidenav").sidenav();
@@ -165,6 +188,8 @@
         $('.modal').modal();
       });
     </script>
+
+    <!-- Script for navbar to changed color based on scroll amount -->
     <script>
       $(function () {
         $(document).scroll(function () {
@@ -173,14 +198,17 @@
         });
       });
     </script>
+
     <script>
       $(".carousel.carousel-slider").carousel({
         fullWidth: true,
       });
     </script>
 
+    <!-- scripts for custom js files -->
     <script src="/static/js/loader.js"></script>
     <script src="/static/js/toasts.js"></script>
     <script src="/static/js/media-buttons.js"></script>
+
   </body>
 </html>

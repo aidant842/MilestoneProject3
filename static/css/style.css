@@ -7,8 +7,8 @@ body {
   color: white;
 }
 
-footer{
-    margin-top: 5rem;
+footer {
+  margin-top: 5rem;
 }
 
 .logo-db,
@@ -21,42 +21,43 @@ button {
   overflow: hidden;
 }
 
-.container{
-    width: 90%;
+.container {
+  width: 90%;
 }
 
-.hidden{
-    display: none;
+.hidden {
+  display: none;
 }
 
-.test{
-    background-color: #312a2a;
+.test {
+  background-color: #312a2a;
 }
 
-.btn-floating, .btn-floating:focus, .btn-floating:hover{
-    background-color: rgb(224, 58, 119);
-    border-radius: 0;
+.btn-floating,
+.btn-floating:focus,
+.btn-floating:hover {
+  background-color: rgb(224, 58, 119);
+  border-radius: 0;
 }
 
-textarea.materialize-textarea{
-    color: white;
+textarea.materialize-textarea {
+  color: white;
 }
 
-div.datepicker-calendar-container{
-    background-color: #312a2a;
+div.datepicker-calendar-container {
+  background-color: #312a2a;
 }
 
-.datepicker-table td.is-selected{
-    background-color: white;
+.datepicker-table td.is-selected {
+  background-color: white;
 }
 
 div.description-container p::first-letter,
-div.review-container p::first-letter{
-    text-transform: uppercase;
+div.review-container p::first-letter {
+  text-transform: uppercase;
 }
 
 /* ------------------------------------------------------*/
-
 
 /* ----------------- BreadCrumb Styling ----------------- */
 
@@ -82,18 +83,13 @@ div.review-container p::first-letter{
 /* ----------------- Page Backgrounds ----------------- */
 
 .landing-bg,
-.login-bg{
-   background-image: url(/static/images/landing.jpg);
-   background-position: center center;
-   background-repeat: no-repeat;
-   background-attachment: fixed;
-   background-size: cover;
-   /* position: fixed;
-   height: 100vh;
-   width: 100vw;
-   top: 0; */
+.login-bg {
+  background-image: url(/static/images/landing.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }
-
 
 .games-bg {
   background-image: url(/static/images/back.jpg);
@@ -115,22 +111,21 @@ div.review-container p::first-letter{
   width: 100%;
 }
 
-.addGame-bg{
+.addGame-bg {
   background-image: url(/static/images/add-game-bg.jpg);
   background-repeat: no-repeat;
   background-size: 100% 100%;
   background-attachment: fixed;
 }
 
-.about-bg{
-    
-   background-image: url(/static/images/about1.jpg);
-   background-repeat: no-repeat;
-   background-size: cover;
-   position: absolute;
-   top: 0;
-   height: 100%;
-   width: 100%;
+.about-bg {
+  background-image: url(/static/images/about1.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
 }
 
 /* ------------------------------------------------------*/
@@ -160,12 +155,6 @@ nav ul a {
   font-family: "Alfa Slab One", cursive;
 }
 
-@media only screen and (max-width: 992px) {
-  .brand-logo {
-    margin-left: 0;
-  }
-}
-
 nav .btn {
   background-color: #312a2a;
   border-radius: 25px;
@@ -182,7 +171,6 @@ nav .btn:hover {
 nav ul a:hover {
   color: rgb(224, 58, 119);
   background-color: rgba(0, 0, 0, 0.2) !important;
-  /* background-color: #312a2a; */
   transition: 0.3s ease-in;
 }
 
@@ -211,8 +199,8 @@ nav ul a.btn {
   z-index: 999;
 }
 
-.sidenav li>a {
-    font-weight: 600;
+.sidenav li > a {
+  font-weight: 600;
 }
 
 /* ------------------------------------------------------*/
@@ -295,13 +283,8 @@ nav ul a.btn {
 }
 
 .select-wrapper input.select-dropdown {
-  /* border: 2px solid white; */
   color: white;
 }
-
-/* .select-wrapper input.select-dropdown:focus {
-  border-bottom: 2px solid white;
-} */
 
 .select-wrapper .caret {
   fill: white;
@@ -322,7 +305,6 @@ nav ul a.btn {
 }
 
 input {
-  /* text-align: center; */
   font-family: "Pontano Sans", sans-serif;
   color: white;
 }
@@ -336,11 +318,11 @@ input {
 }
 
 .options-container .row .input-field.col.s12 {
-    margin-left: auto;
-    left: auto;
-    right: auto;
-    margin-top: 1px;
-    margin-bottom: 1px;
+  margin-left: auto;
+  left: auto;
+  right: auto;
+  margin-top: 1px;
+  margin-bottom: 1px;
 }
 
 .search-button {
@@ -370,7 +352,7 @@ input {
   font-family: "Alfa Slab One", cursive;
   box-shadow: none;
   width: 250px;
-  height: 361px
+  height: 361px;
 }
 
 .card-link {
@@ -379,7 +361,6 @@ input {
 }
 
 .card-title {
-  /* white-space: nowrap; */
   text-transform: capitalize;
   word-wrap: break-word;
   position: relative;
@@ -389,6 +370,7 @@ input {
 .card-title:hover {
   color: rgb(224, 58, 119);
   -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
 .genre-tag {
@@ -403,10 +385,6 @@ input {
 }
 
 .card-image {
-  /* -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
-    0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
-    0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2); */
   height: 325px;
   width: 250px;
 }
@@ -441,38 +419,22 @@ input {
   width: 80%;
   margin-left: auto;
   margin-right: auto;
-  /* margin-top: 3rem; */
 }
 
-.account-check{
-    position: absolute;
-    right: 0;
-    bottom: 25%;
-    font-size: small;
+.account-check {
+  position: absolute;
+  right: 0;
+  bottom: 25%;
+  font-size: small;
 }
 
-span.account-check a{
-    color: rgb(224, 58, 119);
+span.account-check a {
+  color: rgb(224, 58, 119);
 }
 
-span.account-check a:hover{
-    color: white;
+span.account-check a:hover {
+  color: white;
 }
-/* input:not([type]),
-input[type="text"]:not(.browser-default),
-input[type="password"]:not(.browser-default),
-input[type="email"]:not(.browser-default),
-input[type="url"]:not(.browser-default),
-input[type="time"]:not(.browser-default),
-input[type="date"]:not(.browser-default),
-input[type="datetime"]:not(.browser-default),
-input[type="datetime-local"]:not(.browser-default),
-input[type="tel"]:not(.browser-default),
-input[type="number"]:not(.browser-default),
-input[type="search"]:not(.browser-default),
-textarea.materialize-textarea {
-  border-bottom: 1px solid rgb(224, 58, 119);
-} */
 
 input:not([type]):focus:not([readonly]),
 input[type="text"]:not(.browser-default):focus:not([readonly]),
@@ -508,20 +470,30 @@ textarea.materialize-textarea:focus:not([readonly]) + label {
   color: rgb(224, 58, 119);
 }
 
-.login-btn, .next-btn, .edit-btn, .delete-btn {
+.login-btn,
+.next-btn,
+.edit-btn,
+.delete-btn {
   border-radius: 0;
   background-color: rgb(224, 58, 119);
   color: white;
   margin-top: 2rem;
 }
 
-.login-btn:hover, .next-btn:hover, .edit-btn:hover, .delete-btn:hover {
+.login-btn:hover,
+.next-btn:hover,
+.edit-btn:hover,
+.delete-btn:hover {
   background-color: #312a2a;
   color: rgb(224, 58, 119);
   -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
-.login-btn:focus, .next-btn:focus, .edit-btn:focus, .delete-btn:focus {
+.login-btn:focus,
+.next-btn:focus,
+.edit-btn:focus,
+.delete-btn:focus {
   background-color: #312a2a;
 }
 
@@ -558,9 +530,7 @@ textarea.materialize-textarea:focus:not([readonly]) + label {
 }
 
 .image-container {
-  position:relative;
-  /* max-width: 700px;
-  max-height: 400px; */
+  position: relative;
 }
 
 .details-container {
@@ -576,47 +546,49 @@ textarea.materialize-textarea:focus:not([readonly]) + label {
   min-height: 467px;
 }
 
-.details-container ul li{
-    margin-bottom: 1rem;
+.details-container ul li {
+  margin-bottom: 1rem;
 }
 
-.details-header, .description-header,.review-header {
+.details-header,
+.description-header,
+.review-header {
   color: #312a2a;
   padding: 30px 0 10px 0;
   margin-top: 0;
   text-transform: uppercase;
   font-family: "Alfa Slab One", cursive;
-  /* font-size: 1.8rem; */
 }
 
-
-.key{
-    color: rgb(224, 58, 119);
-    font-weight: 500;
-    text-transform: uppercase;
-    display: inline;
+.key {
+  color: rgb(224, 58, 119);
+  font-weight: 500;
+  text-transform: uppercase;
+  display: inline;
 }
 
-.value{
-    font-family: "Pontano Sans", sans-serif;
-    text-transform: capitalize;
-    display: inline;
+.value {
+  font-family: "Pontano Sans", sans-serif;
+  text-transform: capitalize;
+  display: inline;
 }
 
-#video-button:hover, #image-button:hover{
-    background-color: #312a2a;
+#video-button:hover,
+#image-button:hover {
+  background-color: #312a2a;
 }
 
-i.tags{
-    color: #312a2a;
+i.tags {
+  color: #312a2a;
 }
 
-.media-buttons-container{
-    position: absolute;
-    left: auto;
+.media-buttons-container {
+  position: absolute;
+  left: auto;
 }
 
-.description-container, .review-container{
+.description-container,
+.review-container {
   color: #777777;
   font-weight: 600;
   padding-left: 25px;
@@ -629,42 +601,46 @@ i.tags{
   min-height: 250px;
 }
 
-ul li a.buy-button, ul li a.buy-button:focus{
-    color: white;
-    background-color: rgb(224, 58, 119);
-    font-family: "Pontano Sans", sans-serif;
-    text-transform: capitalize;
-    font-weight: 400;
+ul li a.buy-button,
+ul li a.buy-button:focus {
+  color: white;
+  background-color: rgb(224, 58, 119);
+  font-family: "Pontano Sans", sans-serif;
+  text-transform: capitalize;
+  font-weight: 400;
 }
 
-ul li a.buy-button:hover{
-    background-color: #312a2a;
-    color: rgb(224, 58, 119) !important;
-    -webkit-transition: all 0.5s ease-in-out;
+ul li a.buy-button:hover {
+  background-color: #312a2a;
+  color: rgb(224, 58, 119) !important;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
-.review-container{
-    max-height: 250px;
-    overflow: auto;
+.review-container {
+  max-height: 250px;
+  overflow: auto;
 }
 
 /* ---- delete modal ---- */
 
-.modal-content{
-    color: rgb(224,58,119);
-    text-align: center;
+.modal-content {
+  color: rgb(224, 58, 119);
+  text-align: center;
 }
 
-.modal-delete:hover{
-    background-color: rgba(255, 0, 0, 0.8);
-    color: white;
-    -webkit-transition: all 0.5s ease-in-out;
+.modal-delete:hover {
+  background-color: rgba(255, 0, 0, 0.8);
+  color: white;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
-.modal-cancel:hover{
-    background-color: rgba(0, 0, 0, 0.2);
-    color: white;
-    -webkit-transition: all 0.5s ease-in-out;
+.modal-cancel:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+  color: white;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
 /* -----------------------*/
@@ -673,215 +649,179 @@ ul li a.buy-button:hover{
 
 /* ----------------- addGame Page styling ----------------- */
 
-
-
-.datepicker-day-button{
-    color: rgb(224, 58, 119);
+.datepicker-day-button {
+  color: rgb(224, 58, 119);
 }
 
-.datepicker-date-display{
-    background-color: rgb(224, 58, 119);
+.datepicker-date-display {
+  background-color: rgb(224, 58, 119);
 }
 
-.datepicker-day-button:focus{
-    background-color: rgba(255, 255, 255, 0.25)
+.datepicker-day-button:focus {
+  background-color: rgba(255, 255, 255, 0.25);
 }
 
-.datepicker-cancel, .datepicker-clear, .datepicker-today, .datepicker-done{
-    color: rgb(224, 58, 119);
+.datepicker-cancel,
+.datepicker-clear,
+.datepicker-today,
+.datepicker-done {
+  color: rgb(224, 58, 119);
 }
 
-/* .select-year{
-    color: #312a2a !important;
-} */
-
-.add-form-container{
-    position: relative;
+.add-form-container {
+  position: relative;
 }
 
-.add-game-header{
-    text-shadow: 5px 5px 1.2rem rgba(0, 0, 0, 0.8);
-    text-align: center;
-    font-family: "Alfa Slab One", cursive;
+.add-game-header {
+  text-shadow: 5px 5px 1.2rem rgba(0, 0, 0, 0.8);
+  text-align: center;
+  font-family: "Alfa Slab One", cursive;
 }
 
-[type="checkbox"]:checked+span:not(.lever):before {
-    border-right: 2px solid rgb(224, 58, 119);
-    border-bottom: 2px solid rgb(224, 58, 119);
+[type="checkbox"]:checked + span:not(.lever):before {
+  border-right: 2px solid rgb(224, 58, 119);
+  border-bottom: 2px solid rgb(224, 58, 119);
 }
 
 .select-wrapper input.select-dropdown:focus {
-    border-bottom: 1px solid rgb(224, 58, 119);
+  border-bottom: 1px solid rgb(224, 58, 119);
 }
 
-.crud-button-container{
-    margin-top: 1rem;
+.crud-button-container {
+  margin-top: 1rem;
 }
 
 /* ------------------------------------------------------*/
 
 /* ----------------- About Page ----------------- */
 
-.about-container{
-    text-align: left;
-    padding: 20px 25px;
+.about-container {
+  text-align: left;
+  padding: 20px 25px;
 }
 
-.about-sub-heading, .how-to-use-heading{
-    color: #312a2a;
-    font-family: "Alfa Slab One", cursive;
+.about-sub-heading,
+.how-to-use-heading {
+  color: #312a2a;
+  font-family: "Alfa Slab One", cursive;
 }
 
-.about-paragraph, .how-to-use{
-    color: #777777;
-    font-family: "Pontano Sans", sans-serif;
-    list-style-type: upper-roman;
-    font-weight: 600;
-    font-size: 1rem;
-    text-rendering: optimizeLegibility;   
+.about-paragraph,
+.how-to-use {
+  color: #777777;
+  font-family: "Pontano Sans", sans-serif;
+  list-style-type: upper-roman;
+  font-weight: 600;
+  font-size: 1rem;
+  text-rendering: optimizeLegibility;
 }
 
-ol li a{
-    color: rgb(224, 58, 119);
+ol li a {
+  color: rgb(224, 58, 119);
 }
 
-ol li a:hover{
-    color: #312a2a;
-    -webkit-transition: all 0.5s ease-in-out;
+ol li a:hover {
+  color: #312a2a;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.muted-text {
+  color: grey;
+  font-size: 0.8rem;
 }
 
 /* ------------------------------------------------------*/
 
 /* ----------------- Footer Styling ----------------- */
 
-.page-footer{
-    background-color: #312a2a;
-    color: rgb(224, 58, 119) !important;
+.page-footer {
+  background-color: #312a2a;
+  color: rgb(224, 58, 119) !important;
 }
 
-.game-footer{
-    color: white;
+.game-footer {
+  color: white;
 }
 
-.footer-logo{
-    font-family: "Alfa Slab One", cursive;
+.footer-logo {
+  font-family: "Alfa Slab One", cursive;
 }
 
-.designed-by{
-    margin-right: 1rem;
+.designed-by {
+  margin-right: 1rem;
 }
 
-.fab{
-    font-size: x-large;
-    margin: 0 10px;
+.fab {
+  font-size: x-large;
+  margin: 0 10px;
 }
 
-.facebook:hover{
-    color: #3d5a99 !important;
-    -webkit-transition: all 0.5s ease-in-out;
+.facebook:hover {
+  color: #3d5a99 !important;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
-.github:hover{
-    color: #24292e !important;
-    -webkit-transition: all 0.5s ease-in-out;
+.github:hover {
+  color: #24292e !important;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
-.linkedin:hover{
-    color: #0073b0 !important;
-    -webkit-transition: all 0.5s ease-in-out;
+.linkedin:hover {
+  color: #0073b0 !important;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
-a.footer-links{
-    color: rgb(224, 58, 119);
+a.footer-links {
+  color: rgb(224, 58, 119);
 }
 
-.footer-links:hover{
-    color: #f5f5f5 !important;
-    -webkit-transition: all 0.5s ease-in-out;
+.footer-links:hover {
+  color: #f5f5f5 !important;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
 /* ------------------------------------------------------*/
 
 /* ----------------- Loader ----------------- */
 
-.loader-bg{
-    position: fixed;
-    z-index: 1005;
-    top: 0;
-    left: 0;
-    background: #312a2a;
-    width: 100%;
-    height: 100%;
+.loader-bg {
+  position: fixed;
+  z-index: 1005;
+  top: 0;
+  left: 0;
+  background: #312a2a;
+  width: 100%;
+  height: 100%;
 }
 
-.loader-bg span{
-    font-family: "Alfa Slab One", cursive;
+.loader-bg span {
+  font-family: "Alfa Slab One", cursive;
 }
 
-.loading-container{
-    text-align: center;
-    font-size: 5rem;
-    height: 100%;
-    width: 100%;
-    /* position: fixed;
-    top: 50%;
-    left: 0; */
-    margin-top: 40vh;
+.loading-container {
+  text-align: center;
+  font-size: 5rem;
+  height: 100%;
+  width: 100%;
+  margin-top: 40vh;
 }
 
-.progress{
-    background-color: #312a2a;
+.progress {
+  background-color: #312a2a;
 }
 
-.progress-container{
-    width: 50%;
+.progress-container {
+  width: 50%;
 }
 
 .progress .indeterminate {
-    background-color: rgb(224, 58, 119);
+  background-color: rgb(224, 58, 119);
 }
-
-
-/* .loader{
-    border: 0 solid transparent;
-    border-radius: 50%;
-    width: 150px;
-    height: 150px;
-    position: absolute;
-    top: calc(50vh - 75px);
-    left: calc(50vw - 75px);
-}
-
-.loader:before, .loader:after{
-    content: '';
-    border: 1em solid rgb(224, 58, 119);
-    border-radius: 50%;
-    width: inherit;
-    height: inherit;
-    position: absolute;
-    top: 0;
-    left: 0;
-    animation: loader 2s linear infinite;
-    opacity: 0;
-}
-
-.loader:before{
-    animation-delay: .5s;
-}
-
-@keyframes loader{
-    0%{
-        transform: scale(0);
-        opacity: 0;
-    }
-    50%{
-        opacity: 1;
-    }
-    100%{
-        transform: scale(1);
-        opacity: 0;
-    }
-} */
 
 /* ------------------------------------------------------*/
 
@@ -896,22 +836,30 @@ a.footer-links{
     right: 20%;
   }
 
-  .details-container{
-      margin-top: 4rem;
-      min-height: fit-content;
+  .details-container {
+    margin-top: 4rem;
+    min-height: fit-content;
   }
 
+  .brand-logo {
+    margin-left: 0;
+  }
 }
 
-@media only screen and (max-width: 1240px){
-    .details-container, .review-container, .description-container, .image-container{
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
-  } 
+@media only screen and (max-width: 1240px) {
+  .details-container,
+  .review-container,
+  .description-container,
+  .image-container {
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
-   .details-header, .description-header, .review-header{
-      font-size: 1.6rem;
+  .details-header,
+  .description-header,
+  .review-header {
+    font-size: 1.6rem;
   }
 }
 
@@ -925,38 +873,37 @@ a.footer-links{
   }
 }
 
-
-
 @media only screen and (max-width: 388px) {
-  .login-btn, .next-btn {
+  .login-btn,
+  .next-btn {
     font-size: 0.9rem;
   }
 }
 
-@media only screen and (max-width: 480px){
-    .account-check{
-        position: relative;
-    }
+@media only screen and (max-width: 480px) {
+  .account-check {
+    position: relative;
+  }
 }
 
-@media only screen and (max-height: 400px){
-    .landing-header{
-        margin-top: 15vh;
-    }
+@media only screen and (max-height: 400px) {
+  .landing-header {
+    margin-top: 15vh;
+  }
 
-    .login-header{
-        margin-top: 10vh;
-    }
+  .login-header {
+    margin-top: 10vh;
+  }
 }
 
-@media only screen and (max-width: 396px){
-    .breadcrumb{
-        font-size: 0.7rem;
-    }
+@media only screen and (max-width: 396px) {
+  .breadcrumb {
+    font-size: 0.7rem;
+  }
 
-    .breadcrumb::before{
-        font-size: 0.9rem;
-    }
+  .breadcrumb::before {
+    font-size: 0.9rem;
+  }
 }
 
 /* ------------------------------------------------------*/

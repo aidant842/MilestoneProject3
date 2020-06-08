@@ -169,6 +169,7 @@ I had family and friends test the website also.
 * Correct data is displayed for each field in edit form. &#9745;
 * Automatically converts youtube videos to embeded to display video in iframe. &#9745;
 * Custom 505 error page. &#9745;
+* Delete modal appears when first delete button clicked, and game only deleted from database after the Confirmation delete clicked. &#9745;
  
 No automated testing was conducted.
  
@@ -195,6 +196,7 @@ Current errors:
 15. ~~***NOT YET FIXED*** error with if logic in insert_game route when checking if developer already exists --- fixed.~~
 16. ***NOT YET FIXED*** no way of recovering an account.
 17. ~~***NOT YET FIXED*** Body tags in templates other than base to have full size body tags, created an if block in base to assign body tags for each page instead.~~
+18. ***NOT YET FIXED*** error at 993 pixels wide, both mobile and desktop navbar appear.
 
 
 ## Code Notes

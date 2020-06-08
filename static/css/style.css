@@ -213,7 +213,7 @@ nav ul a.btn {
   font-family: "Alfa Slab One", cursive;
   text-shadow: 5px 5px 1.2rem rgba(0, 0, 0, 0.8);
   text-align: center;
-  margin-top: 30vh;
+  margin-top: 25vh;
 }
 
 .landing-buttons {
@@ -232,7 +232,7 @@ nav ul a.btn {
 
 .landing-container {
   text-align: center;
-  height: 15vh;
+  /* height: 15vh; */
 }
 
 .landing-paragraph {
@@ -413,7 +413,7 @@ input {
   color: white;
   text-transform: uppercase;
   text-shadow: 5px 5px 1.2rem rgba(0, 0, 0, 0.8);
-  margin-top: 25vh;
+  margin-top: 20vh;
   margin-bottom: 0;
 }
 

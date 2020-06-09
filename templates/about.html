@@ -7,7 +7,7 @@
       <nav>
         <div class="nav-wrapper">
           <a href="{{url_for('home_page')}}" class="breadcrumb">Home</a>
-          <a href="{{url_for('games')}}" class="breadcrumb active">About</a>
+          <a href="{{url_for('about')}}" class="breadcrumb active">About</a>
         </div>
       </nav>
     </div>
@@ -41,7 +41,7 @@
         
             <ol class="how-to-use">
             <li>Firstly <a href="{{url_for('signup')}}">Create an Account</a>, or if you have done already <a href="{{url_for('login')}}">Login</a>.</li>
-            <li>Click on <a href="{{url_for('addGame')}}">Add Game</a>.</li>
+            <li>Click on <a href="{{url_for('add_game')}}">Add Game</a>.</li>
             <li>Enter the details about your chosen game, all fields are required.</li>
             <li>Press submit and view your game on the <a href="{{url_for('games')}}">Games Page</a>.</li>
             <li>You can edit a game at anytime by clicking the edit button its game page.*</li>

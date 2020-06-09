@@ -171,10 +171,10 @@ def logout():
     about the game, but only if the user is logged in """
 
 
-@app.route('/addGame')
-def addGame():
+@app.route('/add_game')
+def add_game():
     if 'username' in session:
-        return render_template('addGame.html', genre=mongo.db.genre.find(), platform=mongo.db.platform.find(),
+        return render_template('add_game.html', genre=mongo.db.genre.find(), platform=mongo.db.platform.find(),
                             vr=mongo.db.vr_capable.find(), age_rating=mongo.db.age_rating.find(), add_game=True)
     else:
         flash('You need to be logged in to add a game')

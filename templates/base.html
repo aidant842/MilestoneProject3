@@ -55,7 +55,7 @@
             <li><a href="{{url_for('login')}}" class="btn">Login</a></li>
             <li><a href="{{url_for('signup')}}" class="btn">Sign Up</a></li>
             {% else %}
-            <li><a href="{{url_for('addGame')}}">Add Game</a></li>
+            <li><a href="{{url_for('add_game')}}">Add Game</a></li>
             <li>
               <a href="{{url_for('logout')}}" class="btn" id="logout-btn"
                 >Logout</a
@@ -76,7 +76,7 @@
             <li><a href="{{url_for('login')}}">Login</a></li>
             <li><a href="{{url_for('signup')}}">Sign Up</a></li>
             {% else %}
-            <li><a href="{{url_for('addGame')}}">Add Game</a></li>
+            <li><a href="{{url_for('add_game')}}">Add Game</a></li>
             <li>
               <a href="{{url_for('logout')}}">Logout</a>
             </li>
@@ -136,9 +136,9 @@
           <div class="col l4 offset-l2 s12">
             <h5>Links</h5>
             <ul>
-              <li><a class="footer-links" href="#!">Home</a></li>
-              <li><a class="footer-links" href="#!">About</a></li>
-              <li><a class="footer-links" href="#!">Games</a></li>
+              <li><a class="footer-links" href="{{url_for('home_page')}}">Home</a></li>
+              <li><a class="footer-links" href="{{url_for('about')}}">About</a></li>
+              <li><a class="footer-links" href="{{url_for('games')}}">Games</a></li>
             </ul>
           </div>
         </div>
@@ -152,13 +152,13 @@
           >
           © 2020 Copyright
 
-          <a class="grey-text text-lighten-4 right facebook" href="#!"
-            ><i class="fab fa-facebook-square"></i
+          <a class="grey-text text-lighten-4 right facebook" href="https://www.facebook.com/aidan.thorpe.1" target="_blank"
+            ><i class="fab fa-facebook-square"></i 
           ></a>
-          <a class="grey-text text-lighten-4 right github" href="#!"
+          <a class="grey-text text-lighten-4 right github" href="https://github.com/aidant842" target="_blank"
             ><i class="fab fa-github-square"></i
           ></a>
-          <a class="grey-text text-lighten-4 right linkedin" href="#!"
+          <a class="grey-text text-lighten-4 right linkedin" href="https://www.linkedin.com/in/aidan-thorpe-99a8451a5/" target="_blank"
             ><i class="fab fa-linkedin"></i
           ></a>
           <span class="right designed-by"

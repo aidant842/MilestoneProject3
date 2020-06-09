@@ -12,14 +12,14 @@ document.getElementById("image-button").onclick = function(){
     videoToggle();
     imageToggle();
     }
-}
+};
 
 document.getElementById("video-button").onclick = function(){
     if(document.getElementById("vid-con").classList.contains("hidden")){
     imageToggle();
     videoToggle();
     }
-}
+};
 
 function buttonToggle(){
     document.getElementById("button-con").classList.toggle("hidden");
@@ -27,4 +27,4 @@ function buttonToggle(){
 
 document.getElementById("game-vid").onclick = function(){
     buttonToggle();
-}
+};

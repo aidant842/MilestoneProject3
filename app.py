@@ -1,10 +1,11 @@
 import os
 from werkzeug.security import generate_password_hash, check_password_hash
-from flask import Flask, flash, render_template, redirect, request, url_for, session
+from flask import Flask, flash, render_template,\
+    redirect, request, url_for, session
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 if os.path.exists("env.py"):
-   import env
+    import env
 
 
 app = Flask(__name__)
@@ -35,9 +36,13 @@ outlined in readme) """
 @app.errorhandler(500)
 def internal_error(error):
     flash('Please fill out all fields')
-    return render_template('games.html', genre=mongo.db.genre.find(), games=mongo.db.games.find(),
-                            age_rating=mongo.db.age_rating.find(), dev=mongo.db.developer.find(), plat=mongo.db.platform.find(),
-                            vr=mongo.db.vr_capable.find()), 500
+    return render_template('games.html',
+                           genre=mongo.db.genre.find(),
+                           games=mongo.db.games.find(),
+                           age_rating=mongo.db.age_rating.find(),
+                           dev=mongo.db.developer.find(),
+                           plat=mongo.db.platform.find(),
+                           vr=mongo.db.vr_capable.find()), 500
 
 
 """ Route for home page """
@@ -56,6 +61,7 @@ def home_page():
 def about():
     return render_template('about.html', game=mongo.db.games.find())
 
+
 """ route for games page displays games image and title.
     provides a link to the individual games page and a search function """
 
@@ -63,9 +69,13 @@ def about():
 @app.route('/games', methods=['POST', 'GET'])
 def games():
 
-    return render_template('games.html', genre=mongo.db.genre.find(), games=mongo.db.games.find(),
-                            age_rating=mongo.db.age_rating.find(), dev=mongo.db.developer.find(), plat=mongo.db.platform.find(),
-                            vr=mongo.db.vr_capable.find())
+    return render_template('games.html',
+                           genre=mongo.db.genre.find(),
+                           games=mongo.db.games.find(),
+                           age_rating=mongo.db.age_rating.find(),
+                           dev=mongo.db.developer.find(),
+                           plat=mongo.db.platform.find(),
+                           vr=mongo.db.vr_capable.find())
 
 
 """ Route for search function from games page
@@ -88,9 +98,13 @@ def search():
     if result.count() <= 0:
         flash('No results found, please try again')
 
-    return render_template('games.html', genre=mongo.db.genre.find(), games=result,
-                            age_rating=mongo.db.age_rating.find(), dev=mongo.db.developer.find(), plat=mongo.db.platform.find(),
-                            vr=mongo.db.vr_capable.find())
+    return render_template('games.html',
+                           genre=mongo.db.genre.find(),
+                           games=result,
+                           age_rating=mongo.db.age_rating.find(),
+                           dev=mongo.db.developer.find(),
+                           plat=mongo.db.platform.find(),
+                           vr=mongo.db.vr_capable.find())
 
 
 """ Route to display info about the game chosen from games page """
@@ -99,7 +113,10 @@ def search():
 @app.route('/games/<game_id>')
 def game_page(game_id):
     the_game = mongo.db.games.find_one({'_id': ObjectId(game_id)})
-    return render_template('game.html', genre=mongo.db.genre.find(), game=the_game, games=mongo.db.games.find())
+    return render_template('game.html',
+                           genre=mongo.db.genre.find(),
+                           game=the_game,
+                           games=mongo.db.games.find())
 
 
 """ Route for login page
@@ -121,7 +138,8 @@ def login():
         user_login = users.find_one({'name': request.form.get('username')})
 
         if user_login:
-            if check_password_hash(user_login['password'], request.form.get('password')):
+            if check_password_hash(user_login['password'],
+                                   request.form.get('password')):
                 session['username'] = request.form.get('username')
                 flash('Welcome back ' + session['username'])
                 return redirect(url_for('home_page'))
@@ -147,9 +165,11 @@ def signup():
 
         if not existing_user:
             hashpw = generate_password_hash(request.form.get('password'))
-            users.insert_one({'name': request.form.get('username'), 'password': hashpw})
+            users.insert_one({'name': request.form.get('username'),
+                             'password': hashpw})
             session['username'] = request.form.get('username')
-            flash('You have registered and been logged in as ' + session['username'])
+            flash('You have registered and been logged in as '
+                  + session['username'])
             return redirect(url_for('home_page'))
         flash('That username already exists, please try again')
 
@@ -174,8 +194,12 @@ def logout():
 @app.route('/add_game')
 def add_game():
     if 'username' in session:
-        return render_template('add_game.html', genre=mongo.db.genre.find(), platform=mongo.db.platform.find(),
-                            vr=mongo.db.vr_capable.find(), age_rating=mongo.db.age_rating.find(), add_game=True)
+        return render_template('add_game.html',
+                               genre=mongo.db.genre.find(),
+                               platform=mongo.db.platform.find(),
+                               vr=mongo.db.vr_capable.find(),
+                               age_rating=mongo.db.age_rating.find(),
+                               add_game=True)
     else:
         flash('You need to be logged in to add a game')
         return redirect(url_for('login'))
@@ -194,7 +218,8 @@ def insert_game():
     dev_col = mongo.db.developer
     add_game_form = request.form.to_dict()
     title = add_game_form['title']
-    add_game_form['trailer_link'] = convert_embed(add_game_form['trailer_link'])
+    add_game_form['trailer_link'] = \
+        convert_embed(add_game_form['trailer_link'])
     game = mongo.db.games
     existing_title = game.find_one({'title': request.form.get('title')})
     existing_dev = dev_col.find_one({'dev': request.form.get('developer')})
@@ -221,12 +246,16 @@ def insert_game():
 
 @app.route('/edit_game/<game_id>')
 def edit_game(game_id):
-    if not 'username' in session:
+    if 'username' not in session:
         flash('You need to login to edit a game')
         return redirect(url_for('login'))
     the_game = mongo.db.games.find_one({'_id': ObjectId(game_id)})
-    return render_template('edit_game.html', game=the_game, genre=mongo.db.genre.find(), platform=mongo.db.platform.find(),
-                            vr=mongo.db.vr_capable.find(), age_rating=mongo.db.age_rating.find(), add_game=True)
+    return render_template('edit_game.html',
+                           game=the_game, genre=mongo.db.genre.find(),
+                           platform=mongo.db.platform.find(),
+                           vr=mongo.db.vr_capable.find(),
+                           age_rating=mongo.db.age_rating.find(),
+                           add_game=True)
 
 
 """ Route to update game based on edit game form
@@ -239,26 +268,30 @@ def update_game(game_id):
     game = mongo.db.games
     title = request.form.get('title')
     add_game_form = request.form.to_dict()
-    add_game_form['trailer_link'] = convert_embed(add_game_form['trailer_link'])
-    game.update_one({'_id' : ObjectId(game_id)},
+    add_game_form['trailer_link'] =\
+        convert_embed(add_game_form['trailer_link'])
+    game.update_one({'_id': ObjectId(game_id)},
 
-    {"$set":
-    {
-        'title': request.form.get('title'),
-        'genre_name': request.form.get('genre_name'),
-        'description': request.form.get('description'),
-        'shop_link': request.form.get('shop_link'),
-        'review': request.form.get('review'),
-        'age_rating': request.form.get('age_rating'),
-        'image': request.form.get('image'),
-        'platform': request.form.get('platform'),
-        'release_date': request.form.get('release_date'),
-        'languages': request.form.get('languages'),
-        'developer': request.form.get('developer'),
-        'trailer_link': add_game_form['trailer_link'],
-        'playthrough_time': request.form.get('playthrough_time'),
-        'vr_capable': request.form.get('vr_capable')
-    }})
+                    {
+                    "$set":
+                    {
+                        'title': request.form.get('title'),
+                        'genre_name': request.form.get('genre_name'),
+                        'description': request.form.get('description'),
+                        'shop_link': request.form.get('shop_link'),
+                        'review': request.form.get('review'),
+                        'age_rating': request.form.get('age_rating'),
+                        'image': request.form.get('image'),
+                        'platform': request.form.get('platform'),
+                        'release_date': request.form.get('release_date'),
+                        'languages': request.form.get('languages'),
+                        'developer': request.form.get('developer'),
+                        'trailer_link': add_game_form['trailer_link'],
+                        'playthrough_time':
+                        request.form.get('playthrough_time'),
+                        'vr_capable': request.form.get('vr_capable')
+                    }})
+
     flash(title + ' has been updated')
     return redirect(url_for('games'))
 
@@ -270,7 +303,7 @@ def update_game(game_id):
 
 @app.route('/delete_game/<game_id>')
 def delete_game(game_id):
-    if not 'username' in session:
+    if 'username' not in session:
         flash('You need to be logged in to delete a game')
         return redirect(url_for('login'))
     game = mongo.db.games
@@ -281,5 +314,5 @@ def delete_game(game_id):
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
-        port=int(os.environ.get('PORT')),
-        debug=True)
+            port=int(os.environ.get('PORT')),
+            debug=True)

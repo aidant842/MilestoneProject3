@@ -11,6 +11,10 @@ footer {
   margin-top: 5rem;
 }
 
+iframe{
+    border: none;
+}
+
 .logo-db,
 .landing-db,
 .side-nav-db {
@@ -356,7 +360,7 @@ input {
 }
 
 .card:hover{
-    scale: 1.02;
+    transform: scale(1.02);
     color: rgb(224, 58, 119);
     -webkit-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;

@@ -1,218 +1,203 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <!--Import Google Icon Font-->
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
-    <!-- Compiled and minified CSS -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
-    />
 
-    <!-- link to custom css stylesheet -->
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-    <link
-      rel="stylesheet"
-      href="{{url_for('static', filename = 'css/style.css')}}"
-      type="text/css"
-    />
-   <!-- link to fontawesome for icons -->
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
-      integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP"
-      crossorigin="anonymous"
-    />
+	<!--Import Google Icon Font-->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
 
-    <title>GameDB</title>
-    
-  </head>
+	<!-- Compiled and minified CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
 
-  <header>
+	<!-- link to custom css stylesheet -->
+	<link rel="stylesheet" href="{{url_for('static', filename = 'css/style.css')}}" type="text/css" />
 
-    <!-- NavBar -->
+	<!-- link to fontawesome for icons -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+		integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous" />
 
-    <div class="navbar-fixed">
-      <nav>
-        <div class="nav-wrapper fix">
-          <a href="{{url_for('home_page')}}" class="brand-logo"
-            ><span>Game</span><span class="logo-db">DB</span></a
-          >
-          <a href="#" data-target="mobile-demo" class="sidenav-trigger"
-            ><i class="material-icons">menu</i></a
-          >
-          <ul class="right hide-on-med-and-down">
-            <li><a href="{{url_for('home_page')}}">Home</a></li>
-            <li><a href="{{url_for('about')}}">About</a></li>
-            <li><a href="{{url_for('games')}}">Games</a></li>
 
-            <!-- if block to check if user is logged in to display login/signup if not logged in, and add game link if logged in -->
+    <!-- Favicon links -->
+	<link rel="icon" type="image/png" href="{{url_for('static', filename='images/favicon.ico')}}">
 
-            {% if 'username' not in session %}
-            <li><a href="{{url_for('login')}}" class="btn">Login</a></li>
-            <li><a href="{{url_for('signup')}}" class="btn">Sign Up</a></li>
-            {% else %}
-            <li><a href="{{url_for('add_game')}}">Add Game</a></li>
-            <li>
-              <a href="{{url_for('logout')}}" class="btn" id="logout-btn"
-                >Logout</a
-              >
-            </li>
-            {% endif %}
+	<title>GameDB</title>
 
-          </ul>
+</head>
 
-        <!-- mobile NavBar -->
+<header>
 
-          <ul class="sidenav" id="mobile-demo">
-            <h3 class="navHeader">Game<span class="side-nav-db">DB</span></h3>
-            <li><a href="{{url_for('home_page')}}">Home</a></li>
-            <li><a href="{{url_for('about')}}">About</a></li>
-            <li><a href="{{url_for('games')}}">Games</a></li>
-            {% if 'username' not in session %}
-            <li><a href="{{url_for('login')}}">Login</a></li>
-            <li><a href="{{url_for('signup')}}">Sign Up</a></li>
-            {% else %}
-            <li><a href="{{url_for('add_game')}}">Add Game</a></li>
-            <li>
-              <a href="{{url_for('logout')}}">Logout</a>
-            </li>
-            {% endif %}
-          </ul>
-        </div>
-      </nav>
-    </div>
-  </header>
+	<!-- NavBar -->
 
-  <!-- if block to display body tags with background image depending on what page is being displayed -->
+	<div class="navbar-fixed">
+		<nav>
+			<div class="nav-wrapper fix">
+				<a href="{{url_for('home_page')}}" class="brand-logo">
+					<span>Game</span><span class="logo-db">DB</span></a>
+				<a href="#" data-target="mobile-demo" class="sidenav-trigger">
+					<i class="material-icons">menu</i></a>
+				<ul class="right hide-on-med-and-down">
+					<li><a href="{{url_for('home_page')}}">Home</a></li>
+					<li><a href="{{url_for('about')}}">About</a></li>
+					<li><a href="{{url_for('games')}}">Games</a></li>
+
+					<!-- if block to check if user is logged in to display login/signup if not logged in, and add game link if logged in -->
+
+					{% if 'username' not in session %}
+					<li><a href="{{url_for('login')}}" class="btn">Login</a></li>
+					<li><a href="{{url_for('signup')}}" class="btn">Sign Up</a></li>
+					{% else %}
+					<li><a href="{{url_for('add_game')}}">Add Game</a></li>
+					<li>
+						<a href="{{url_for('logout')}}" class="btn" id="logout-btn">
+							Logout
+						</a>
+					</li>
+					{% endif %}
+
+				</ul>
+
+				<!-- mobile NavBar -->
+
+				<ul class="sidenav" id="mobile-demo">
+					<h3 class="navHeader">Game<span class="side-nav-db">DB</span></h3>
+					<li><a href="{{url_for('home_page')}}">Home</a></li>
+					<li><a href="{{url_for('about')}}">About</a></li>
+					<li><a href="{{url_for('games')}}">Games</a></li>
+					{% if 'username' not in session %}
+					<li><a href="{{url_for('login')}}">Login</a></li>
+					<li><a href="{{url_for('signup')}}">Sign Up</a></li>
+					{% else %}
+					<li><a href="{{url_for('add_game')}}">Add Game</a></li>
+					<li>
+						<a href="{{url_for('logout')}}">Logout</a>
+					</li>
+					{% endif %}
+				</ul>
+			</div>
+		</nav>
+	</div>
+</header>
+
+<!-- if block to display body tags with background image depending on what page is being displayed -->
 
 {% if is_index %}
-  <body  class="landing-bg">
-  {% elif add_game %}
-  <body class="addGame-bg">
-  {% endif %}
 
-  <!-- code for Flask flash messages, passed to JS file -->
-    <div class="hidden">
-      {% with messages = get_flashed_messages() %} {% if messages %} {% for
+<body class="landing-bg">
+
+	{% elif add_game %}
+
+	<body class="addGame-bg">
+		{% endif %}
+
+		<!-- code for Flask flash messages, passed to JS file -->
+		<div class="hidden">
+			{% with messages = get_flashed_messages() %} {% if messages %} {% for
       message in messages %}
-      <p class="message">{{ message }}</p>
-      {% endfor %} {% endif %} {% endwith %}
-    </div>
+			<p class="message">{{ message }}</p>
+			{% endfor %} {% endif %} {% endwith %}
+		</div>
 
-    <!-- Loading page so user doesn't see incomplete page -->
+		<!-- Loading page so user doesn't see incomplete page -->
 
-    <div class="loader-bg">
-   
-      <div class="loading-container">
-        <span class="loading-game">Game</span><span class="landing-db">DB</span>
-        <div class="container progress-container">
-         <div class="progress">
-        <div class="indeterminate"></div>
-      </div>
-      </div>
-      </div>
-    </div>
+		<div class="loader-bg">
 
-    {% block content %} {% endblock %} 
-    
-<!-- if block to display footer depending on page(not displayed on landing/login/signup pages) -->
-    {% if not is_index %}
-    <footer class="page-footer">
-      <div class="container">
-        <div class="row">
-          <div class="col l6 s12">
-            <h5>About Us</h5>
-            <p>
-              GameDB is a website built by you. You add the information about
-              your favourite games and your own reviews. Your contributions to
-              the website will help others learn about your favourite games.
-              Simply Sign up or Login to begin.
-            </p>
-          </div>
-          <div class="col l4 offset-l2 s12">
-            <h5>Links</h5>
-            <ul>
-              <li><a class="footer-links" href="{{url_for('home_page')}}">Home</a></li>
-              <li><a class="footer-links" href="{{url_for('about')}}">About</a></li>
-              <li><a class="footer-links" href="{{url_for('games')}}">Games</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <hr />
-      <div class="footer-copyright">
-        <div class="container">
-          <a href="{{url_for('home_page')}}" class="footer-logo">
-            <span class="game-footer">Game</span
-            ><span class="logo-db">DB</span></a
-          >
-          © 2020 Copyright
+			<div class="loading-container">
+				<span class="loading-game">Game</span><span class="landing-db">DB</span>
+				<div class="container progress-container">
+					<div class="progress">
+						<div class="indeterminate"></div>
+					</div>
+				</div>
+			</div>
+		</div>
 
-          <a class="grey-text text-lighten-4 right facebook" href="https://www.facebook.com/aidan.thorpe.1" target="_blank"
-            ><i class="fab fa-facebook-square"></i 
-          ></a>
-          <a class="grey-text text-lighten-4 right github" href="https://github.com/aidant842" target="_blank"
-            ><i class="fab fa-github-square"></i
-          ></a>
-          <a class="grey-text text-lighten-4 right linkedin" href="https://www.linkedin.com/in/aidan-thorpe-99a8451a5/" target="_blank"
-            ><i class="fab fa-linkedin"></i
-          ></a>
-          <span class="right designed-by"
-            >Designed and developed by: Aidan</span
-          >
-        </div>
-      </div>
-    </footer>
-    {% endif %}
+		{% block content %} {% endblock %}
 
-    <!-- SCRIPTS -->
+		<!-- if block to display footer depending on page(not displayed on landing/login/signup pages) -->
+		{% if not is_index %}
+		<footer class="page-footer">
+			<div class="container">
+				<div class="row">
+					<div class="col l6 s12">
+						<h5>About Us</h5>
+						<p>
+							GameDB is a website built by you. You add the information about
+							your favourite games and your own reviews. Your contributions to
+							the website will help others learn about your favourite games.
+							Simply Sign up or Login to begin.
+						</p>
+					</div>
+					<div class="col l4 offset-l2 s12">
+						<h5>Links</h5>
+						<ul>
+							<li><a class="footer-links" href="{{url_for('home_page')}}">Home</a></li>
+							<li><a class="footer-links" href="{{url_for('about')}}">About</a></li>
+							<li><a class="footer-links" href="{{url_for('games')}}">Games</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<hr />
+			<div class="footer-copyright">
+				<div class="container">
+					<a href="{{url_for('home_page')}}" class="footer-logo">
+						<span class="game-footer">Game</span><span class="logo-db">DB</span></a>
+					© 2020 Copyright
 
-    <!--Import jQuery before materialize.js-->
-    <!-- jQuery -->
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+					<a class="grey-text text-lighten-4 right facebook" href="https://www.facebook.com/aidan.thorpe.1"
+						target="_blank"><i class="fab fa-facebook-square"></i></a>
+					<a class="grey-text text-lighten-4 right github" href="https://github.com/aidant842"
+						target="_blank"><i class="fab fa-github-square"></i></a>
+					<a class="grey-text text-lighten-4 right linkedin"
+						href="https://www.linkedin.com/in/aidan-thorpe-99a8451a5/"
+						target="_blank"><i class="fab fa-linkedin"></i></a>
+					<span class="right designed-by"
+            >Designed and developed by: Aidan</span>
+				</div>
+			</div>
+		</footer>
+		{% endif %}
 
-    <!-- materialize -->
+		<!-- SCRIPTS -->
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+		<!--Import jQuery before materialize.js-->
+		<!-- jQuery -->
+		<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 
-    <!-- initialization for materialize components -->
-    <script>
-      $(document).ready(function () {
+		<!-- materialize -->
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+		<!-- initialization for materialize components -->
+		<script>
+			$(document).ready(function () {
         $(".sidenav").sidenav();
         $("select").formSelect();
         $(".datepicker").datepicker();
         $('.modal').modal();
       });
-    </script>
+		</script>
 
-    <!-- Script for navbar to changed color based on scroll amount -->
-    <script>
-      $(function () {
-        $(document).scroll(function () {
-          var $nav = $(".nav-wrapper");
-          $nav.toggleClass("scrolled", $(this).scrollTop() > $nav.height());
-        });
-      });
-    </script>
+		<!-- scripts for custom js files -->
 
-    <script>
-      $(".carousel.carousel-slider").carousel({
-        fullWidth: true,
-      });
-    </script>
+		<!-- Script for preloader -->
+		<script src="/static/js/loader.js"></script>
 
-    <!-- scripts for custom js files -->
-    <script src="/static/js/loader.js"></script>
-    <script src="/static/js/toasts.js"></script>
-    <script src="/static/js/media-buttons.js"></script>
-    <script src="/static/js/confirm_pass.js"></script>
+		<!-- Script to initialize flask toasts -->
+		<script src="/static/js/toasts.js"></script>
 
-  </body>
+		<!-- Script to manage media buttons on game page -->
+		<script src="/static/js/media-buttons.js"></script>
+
+		<!-- Script to manage confirm password on signup page -->
+		<script src="/static/js/confirm_pass.js"></script>
+
+		<!-- Script to manage navbar background changing colour on scroll -->
+		<script src="/static/js/nav-scroll.js"></script>
+
+	</body>
+
 </html>

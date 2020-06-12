@@ -3,8 +3,8 @@
 <!-- container for page -->
   <div class="container">
     <div class="row">
-      <h3 class="add-game-header">Edit Game</h3>
-      <div class="add-form-container offset-l3 col s12 l6">
+      <h3 class="edit-game-header">Edit Game</h3>
+      <div class="edit-form-container offset-l3 col s12 l6">
 
       <!-- Form for edit_game route to edit game properties based on users input -->
         <form id="edit-game-form" action="{{ url_for('update_game', game_id=game._id)}}" method="POST">
@@ -97,7 +97,7 @@
         </div>
     
         <div class="col s12">
-          <button url="{{url_for('games')}}" class="btn next-btn" type="submit" name="action">
+          <button url="{{url_for('games')}}" class="btn submit-btn" type="submit" name="action">
             Submit
             <i class="material-icons right">send</i>
           </button>

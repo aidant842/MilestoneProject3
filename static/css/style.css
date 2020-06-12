@@ -86,8 +86,9 @@ div.review-container p::first-letter {
 
 /* ----------------- Page Backgrounds ----------------- */
 
-.landing-bg,
-.login-bg {
+/* Also used for Login and signup backgrounds via variable is_index in app.py*/
+
+.landing-bg {
   background-image: url(/static/images/landing.jpg);
   background-position: center center;
   background-repeat: no-repeat;
@@ -96,7 +97,7 @@ div.review-container p::first-letter {
 }
 
 .games-bg {
-  background-image: url(/static/images/back.jpg);
+  background-image: url(/static/images/games-bg.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   position: absolute;
@@ -123,7 +124,7 @@ div.review-container p::first-letter {
 }
 
 .about-bg {
-  background-image: url(/static/images/about1.jpg);
+  background-image: url(/static/images/about-bg.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   position: absolute;
@@ -408,9 +409,9 @@ input {
 
 /* ------------------------------------------------------*/
 
-/* ----------------- Login Page ----------------- */
+/* ----------------- Login/Signup Page ----------------- */
 
-.login-header {
+.login-header, .signup-header {
   text-align: center;
   font-family: "Alfa Slab One", cursive;
   color: white;
@@ -420,7 +421,7 @@ input {
   margin-bottom: 0;
 }
 
-.login-container {
+.login-container, .signup-container {
   position: relative;
   width: 80%;
   margin-left: auto;
@@ -477,7 +478,8 @@ textarea.materialize-textarea:focus:not([readonly]) + label {
 }
 
 .login-btn,
-.next-btn,
+.signup-btn,
+.submit-btn,
 .edit-btn,
 .delete-btn {
   border-radius: 0;
@@ -487,7 +489,8 @@ textarea.materialize-textarea:focus:not([readonly]) + label {
 }
 
 .login-btn:hover,
-.next-btn:hover,
+.signup-btn:hover,
+.submit-btn:hover,
 .edit-btn:hover,
 .delete-btn:hover {
   background-color: #312a2a;
@@ -497,13 +500,14 @@ textarea.materialize-textarea:focus:not([readonly]) + label {
 }
 
 .login-btn:focus,
-.next-btn:focus,
+.signup-btn:focus,
+.submit-btn:focus,
 .edit-btn:focus,
 .delete-btn:focus {
   background-color: #312a2a;
 }
 
-.login-form {
+.login-form, .signup-form {
   color: white;
   margin-bottom: 4.7rem;
 }
@@ -517,6 +521,8 @@ textarea.materialize-textarea:focus:not([readonly]) + label {
 }
 
 /* ------------------------------------------------------*/
+
+
 
 /* ----------------- Game Page Styling ----------------- */
 
@@ -699,7 +705,36 @@ ul li a.buy-button:hover {
 
 /* ------------------------------------------------------*/
 
+/* ----------------- Edit Page ----------------- */
+
+.edit-game-header {
+  text-shadow: 5px 5px 1.2rem rgba(0, 0, 0, 0.8);
+  text-align: center;
+  font-family: "Alfa Slab One", cursive;
+}
+
+.edit-form-container {
+  position: relative;
+}
+
+/* ------------------------------------------------------*/
+
 /* ----------------- About Page ----------------- */
+
+.about-bg-container {
+  width: 100%;
+  height: 20rem;
+  position: relative;
+  top: -4.5rem;
+}
+
+.about-header {
+  margin-top: 80px;
+  font-family: "Alfa Slab One", cursive;
+  margin-bottom: 0;
+  text-transform: capitalize;
+  text-shadow: 5px 5px 1.2rem rgba(0, 0, 0, 0.8);
+}
 
 .about-container {
   text-align: left;
@@ -881,7 +916,8 @@ a.footer-links {
 
 @media only screen and (max-width: 388px) {
   .login-btn,
-  .next-btn {
+  .signup-btn,
+  .submit-btn {
     font-size: 0.9rem;
   }
 }
@@ -899,6 +935,10 @@ a.footer-links {
 
   .login-header {
     margin-top: 10vh;
+  }
+
+  .signup-header{
+      margin-top: 10vh;
   }
 }
 

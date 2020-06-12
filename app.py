@@ -53,7 +53,7 @@ def internal_error(error):
 @app.route('/')
 @app.route('/home_page')
 def home_page():
-    return render_template('index.html', is_index=True)
+    return render_template('index.html', is_index=True, index='')
 
 
 """ route for about page """

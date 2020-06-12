@@ -82,18 +82,8 @@
 </header>
 
 <!-- if block to display body tags with background image depending on what page is being displayed -->
-{% if add_game %}
-<body class="addgame-bg">
-{% endif %}
-    
-<!-- {% if is_index %}
 
-<body class="landing-bg">
-
-	{% elif add_game %}
-
-	<body class="addGame-bg">
-		{% endif %} -->
+<body class="{{ 'landing-bg' if is_index }} {{ 'addgame-bg' if add_game }}">
 
 		<!-- code for Flask flash messages, passed to JS file -->
 		<div class="hidden">

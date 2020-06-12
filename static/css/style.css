@@ -90,11 +90,10 @@ div.review-container p::first-letter {
 
 .landing-bg {
   background-image: url(/static/images/landing.jpg);
-  background-size: 100% 100%;
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  /* background-size: cover; */
+  background-size: cover;
 }
 
 .games-bg {

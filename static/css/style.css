@@ -88,12 +88,25 @@ div.review-container p::first-letter {
 
 /* Also used for Login and signup backgrounds via variable is_index in app.py*/
 
-.landing-bg {
+/* .landing-bg {
   background-image: url(/static/images/landing.jpg);
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
+} */
+
+.landing-bg{
+    background-image: url(/static/images/landing.jpg);
+    background-position: top left;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
 }
 
 .games-bg {
@@ -116,12 +129,25 @@ div.review-container p::first-letter {
   width: 100%;
 }
 
-.addGame-bg {
+.addgame-bg {
   background-image: url(/static/images/add-game-bg.jpg);
   background-repeat: no-repeat;
   background-size: 100% 100%;
   background-attachment: fixed;
 }
+
+/* .addgame-bg{
+    background-image: url(/static/images/add-game-bg.jpg);
+    background-position: top left;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+} */
 
 .about-bg {
   background-image: url(/static/images/about-bg.jpg);

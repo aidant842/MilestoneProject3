@@ -4,6 +4,8 @@ from flask import Flask, flash, render_template,\
     redirect, request, url_for, session
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
+""" import env being flagged as an error due it being unused
+even though it is being used """
 if os.path.exists("env.py"):
     import env
 
@@ -293,7 +295,8 @@ def update_game(game_id):
                     }})
 
     flash(title + ' has been updated')
-    return redirect(url_for('games'))
+    """ return redirect(url_for('games')) """
+    return render_template('game.html')
 
 
 """ Route to delete game

@@ -62,7 +62,7 @@
 				<!-- mobile NavBar -->
 
 				<ul class="sidenav" id="mobile-demo">
-					<h3 class="navHeader">Game<span class="side-nav-db">DB</span></h3>
+					<li class="navHeader">Game<span class="side-nav-db">DB</span></li>
 					<li><a href="{{url_for('home_page')}}">Home</a></li>
 					<li><a href="{{url_for('about')}}">About</a></li>
 					<li><a href="{{url_for('games')}}">Games</a></li>
@@ -81,7 +81,7 @@
 	</div>
 </header>
 
-<!-- if block to display body tags with background image depending on what page is being displayed -->
+<!-- if block to change class depending on what page is being displayed -->
 
 <body class="{{ 'landing-bg' if is_index }} {{ 'addgame-bg' if add_game }}">
 

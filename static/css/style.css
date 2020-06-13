@@ -190,6 +190,8 @@ nav ul a.btn {
   color: rgba(0, 0, 0, 0.87);
   text-align: center;
   font-family: "Alfa Slab One", cursive;
+  font-size: 2.9rem;
+  margin: 3rem 0;
 }
 
 .nav-wrapper.fix.scrolled {

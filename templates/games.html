@@ -19,38 +19,39 @@
       <div class="options-container">
         <div class="row">
         <form action="{{url_for('search')}}" method="POST">
+
           <div class="input-field col s12 m6 l3">
-            <select name="genre">
+            <select name="genre" required>
               <option value="" disabled selected>Genre</option>
               {% for gen in genre %}
-              <option class = "validate" value="{{gen.genre_name}}">{{gen.genre_name}}</option>
+              <option value="{{gen.genre_name}}">{{gen.genre_name}}</option>
               {% endfor %}
             </select>
           </div>
 
           <div class="input-field col s12 m6 l3">
-            <select name="age">
+            <select name="age" required>
               <option value="" disabled selected>Age</option>
               {% for age in age_rating %}
-              <option class = "validate" value="{{age.rating}}">{{age.rating}}</option>
+              <option value="{{age.rating}}">{{age.rating}}</option>
               {% endfor %}
             </select>
           </div>
 
           <div class="input-field col s12 m6 l3">
-            <select name="platform">
+            <select name="platform" required>
               <option value="" disabled selected>Platform</option>
               {% for plat in plat %}
-              <option class = "validate" value="{{plat.platform_name}}">{{plat.platform_name}}</option>
+              <option value="{{plat.platform_name}}">{{plat.platform_name}}</option>
               {% endfor %}
             </select>
           </div>
 
           <div class="input-field col s12 m6 l3">
-            <select name="developer">
+            <select name="developer" required>
               <option value="" disabled selected>Developer</option>
               {% for dev in dev %}
-              <option class = "validate" value="{{dev.dev}}">{{dev.dev}}</option>
+              <option value="{{dev.dev}}">{{dev.dev}}</option>
               {% endfor %}
             </select>
           </div>

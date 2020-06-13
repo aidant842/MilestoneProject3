@@ -170,8 +170,8 @@ def signup():
             users.insert_one({'name': request.form.get('username'),
                              'password': hashpw})
             session['username'] = request.form.get('username')
-            flash('You have registered and been logged in as '
-                  + session['username'])
+            flash('You have registered and been logged in as ' +
+                  session['username'])
             return redirect(url_for('home_page'))
         flash('That username already exists, please try again')
 

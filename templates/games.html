@@ -23,7 +23,7 @@
             <select name="genre">
               <option value="" disabled selected>Genre</option>
               {% for gen in genre %}
-              <option id="genre" name="genre" class = "validate" value="{{gen.genre_name}}">{{gen.genre_name}}</option>
+              <option class = "validate" value="{{gen.genre_name}}">{{gen.genre_name}}</option>
               {% endfor %}
             </select>
           </div>
@@ -32,7 +32,7 @@
             <select name="age">
               <option value="" disabled selected>Age</option>
               {% for age in age_rating %}
-              <option id="age" name="age" class = "validate" value="{{age.rating}}">{{age.rating}}</option>
+              <option class = "validate" value="{{age.rating}}">{{age.rating}}</option>
               {% endfor %}
             </select>
           </div>
@@ -41,7 +41,7 @@
             <select name="platform">
               <option value="" disabled selected>Platform</option>
               {% for plat in plat %}
-              <option id="platform" name="platform" class = "validate" value="{{plat.platform_name}}">{{plat.platform_name}}</option>
+              <option class = "validate" value="{{plat.platform_name}}">{{plat.platform_name}}</option>
               {% endfor %}
             </select>
           </div>
@@ -50,7 +50,7 @@
             <select name="developer">
               <option value="" disabled selected>Developer</option>
               {% for dev in dev %}
-              <option id="developer" name="developer" class = "validate" value="{{dev.dev}}">{{dev.dev}}</option>
+              <option class = "validate" value="{{dev.dev}}">{{dev.dev}}</option>
               {% endfor %}
             </select>
           </div>
@@ -78,7 +78,7 @@
       <div class="card">
         <a class="card-link" href="{{url_for('game_page', game_id=key._id)}}">
           <div class="card-image z-depth-4">
-            <img src="{{key.image}}" />
+            <img src="{{key.image}}" alt="Game Image" />
             <span class="genre-tag">{{key.genre_name}}</span>
           </div>
           <span class="card-title">{{key.title}}</span>

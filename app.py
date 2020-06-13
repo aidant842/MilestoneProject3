@@ -53,7 +53,7 @@ def internal_error(error):
 @app.route('/')
 @app.route('/home_page')
 def home_page():
-    return render_template('index.html', is_index=True, index='')
+    return render_template('index.html', is_index=True)
 
 
 """ route for about page """
@@ -295,8 +295,7 @@ def update_game(game_id):
                     }})
 
     flash(title + ' has been updated')
-    """ return redirect(url_for('games')) """
-    return render_template('game.html')
+    return redirect(url_for('games'))
 
 
 """ Route to delete game

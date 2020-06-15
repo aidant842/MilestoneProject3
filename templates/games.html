@@ -21,61 +21,80 @@
         <form action="{{url_for('search')}}" method="GET">
         <div class="search-row row">
 
-        <div class="input-field col s9">
+        <div class="category input-field col s12 m9">
           <input placeholder="Spiderman" id="search" name="search" type="search" class="validate">
           <label for="search">Search</label>
         </div>
 
-        <div class="input-field col s3">
+        <div class="col s3">
           <button class="btn search-button" type="submit" name="action">
             Search
             <i class="material-icons right">search</i>
           </button>
-          </div>
+        </div>
 
         </div>
 
         <div class="row">
 
-          <div class="input-field col s6 m3">
+          <div class="category input-field col s6 m3">
             <select name="genre">
-              <option value="" disabled selected>Genre</option>
+              <option value="">Genre</option>
               {% for gen in genre %}
-              <option value="{{gen.genre_name}}">{{gen.genre_name}}</option>
+              {% if request.args.get('genre') and (request.args.get('genre') == gen.genre_name) %}
+                <option value="{{gen.genre_name}}" selected>{{gen.genre_name}}</option>
+              {% else %}
+                <option value="{{gen.genre_name}}">{{gen.genre_name}}</option>  
+              {% endif %}  
               {% endfor %}
             </select>
           </div>
 
-          <div class="input-field col s6 m3">
+          <div class="category input-field col s6 m3">
             <select name="age">
-              <option value="" disabled selected>Age</option>
+              <option value="">Age</option>
               {% for age in age_rating %}
-              <option value="{{age.rating}}">{{age.rating}}</option>
+              {% if request.args.get('age') and (request.args.get('age') == age.rating) %}
+                <option value="{{age.rating}}" selected>{{age.rating}}</option>
+              {% else %}
+                <option value="{{age.rating}}">{{age.rating}}</option>
+              {% endif %}  
               {% endfor %}
             </select>
           </div>
 
-          <div class="input-field col s6 m3">
+          <div class="category input-field col s6 m3">
             <select name="platform">
-              <option value="" disabled selected>Platform</option>
+              <option value="">Platform</option>
               {% for plat in plat %}
-              <option value="{{plat.platform_name}}">{{plat.platform_name}}</option>
+              {% if request.args.get('platform') and (request.args.get('platform') == plat.platform_name) %}
+                <option value="{{plat.platform_name}}" selected>{{plat.platform_name}}</option>
+              {% else %}
+                <option value="{{plat.platform_name}}">{{plat.platform_name}}</option>
+              {% endif %}
               {% endfor %}
             </select>
           </div>
 
-          <div class="input-field col s6 m3">
+          <div class="category input-field col s6 m3">
             <select name="developer">
               <option value="">Developer</option>
               {% for dev in dev %}
               {% if request.args.get('developer') and (request.args.get('developer') == dev.dev) %}
                     <option value="{{dev.dev}}" selected>{{dev.dev}}</option>
               {% else %}      
-              <option value="{{dev.dev}}">{{dev.dev}}</option>
+                    <option value="{{dev.dev}}">{{dev.dev}}</option>
               {% endif %}
               {% endfor %}
             </select>
           </div>
+        </div>
+
+        <div class="col s3">
+          <button class="btn mobile-search-button hidden" type="submit" name="action">
+            Search
+            <i class="material-icons right">search</i>
+          </button>
         </div>
     
           </form>

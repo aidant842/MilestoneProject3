@@ -78,6 +78,12 @@ People really enjoy playing video games, and a resource like this to find review
 * Each page has a nice image background, either full screen or partial.
 * Links and buttons have a hover effect.
 * Text containers have a background shadow to stand out from the page.
+
+### Database Schema
+I began by planning out for a few different ideas, and then decided on a games Database.
+My Database schema was first planned out roughly in notepad, and with the help of a friend, we decided which parts were needed,
+and what needed to be in seperate collections.
+* [Database-Schema](schema/gameDBSchema.pdf)
  
  
 ## Features

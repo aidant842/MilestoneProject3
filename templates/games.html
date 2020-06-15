@@ -21,17 +21,17 @@
         <form action="{{url_for('search')}}" method="GET">
         <div class="search-row row">
 
-        <div class="category input-field col s12 m9">
-          <input placeholder="Spiderman" id="search" name="search" type="search" class="validate">
-          <label for="search">Search</label>
+        <div class="category input-field col s12">
+          <input id="search" name="search" type="search" class="validate">
+          <label for="search">Search Game</label>
         </div>
 
-        <div class="col s3">
+        <!-- <div class="col s3">
           <button class="btn search-button" type="submit" name="action">
             Search
             <i class="material-icons right">search</i>
           </button>
-        </div>
+        </div> -->
 
         </div>
 
@@ -91,7 +91,7 @@
         </div>
 
         <div class="col s3">
-          <button class="btn mobile-search-button hidden" type="submit" name="action">
+          <button class="btn search-button" type="submit" name="action">
             Search
             <i class="material-icons right">search</i>
           </button>

@@ -283,7 +283,7 @@ nav ul a.btn {
 
 .options-container {
   position: absolute;
-  top: 50%;
+  top: 53%;
   left: 20%;
   bottom: 40%;
   right: 20%;
@@ -345,20 +345,18 @@ input {
     color: white;
 }
 
-.mobile-search-button,
 .search-button {
   background-color: white;
   color: rgb(224, 58, 119);
   border-radius: 0;
+  text-align: left;
 }
 
-.mobile-search-button:hover,
 .search-button:hover {
   background-color: #312a2a;
   color: rgb(224, 58, 119);
 }
 
-.mobile-search-button:focus,
 .search-button:focus {
   background-color: #312a2a;
 }
@@ -893,13 +891,13 @@ a.footer-links {
 /* ----------------- Media Queries ----------------- */
 
 @media only screen and (max-width: 993px) {
-  .options-container {
+  /* .options-container {
     position: absolute;
     top: 55%;
     left: 20%;
     bottom: 40%;
     right: 20%;
-  }
+  } */
 
   .details-container {
     margin-top: 4rem;
@@ -930,8 +928,7 @@ a.footer-links {
 
 @media only screen and (max-width: 600px) {
   .options-container {
-    position: absolute;
-    top: 45%;
+    top: 47%;
     left: 20%;
     bottom: 40%;
     right: 20%;
@@ -976,7 +973,7 @@ a.footer-links {
   }
 }
 
-@media only screen and (max-width: 602px){
+/* @media only screen and (max-width: 602px){
     .search-button{
         display: none;
     }
@@ -985,6 +982,12 @@ a.footer-links {
         display: block;
     }
 }
+
+@media only screen and (max-width: 930px){
+    .search-button{
+        font-size: 0.8rem;
+    }
+} */
 
 /* ------------------------------------------------------*/
 

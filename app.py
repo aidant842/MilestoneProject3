@@ -86,16 +86,20 @@ def games():
     if no results found returns to games page and displays message to user """
 
 
-@app.route('/search', methods=['POST', 'GET'])
+@app.route('/search')
 def search():
 
     games = mongo.db.games
-    query = {
-        'genre_name': {'$regex': request.form.get('genre'), '$options': 'i'},
-        'age_rating': {'$regex': request.form.get('age'), '$options': 'i'},
-        'platform': {'$regex': request.form.get('platform'), '$options': 'i'},
-        'developer': {'$regex': request.form.get('developer'), '$options': 'i'}
-    }
+    query = {"title": {'$regex': request.args.get('search', ''), '$options': 'i'}}
+    if request.args.get('genre'):
+        query['genre_name'] = {'$regex': request.args.get('genre'), '$options': 'i'}
+    if request.args.get('age'):
+        query['age_rating'] = {'$regex': request.args.get('age'), '$options': 'i'}
+    if request.args.get('platform'):
+        query['platform'] = {'$regex': request.args.get('platform'), '$options': 'i'}   
+    if request.args.get('developer'):
+        query['developer'] = {'$regex': request.args.get('developer'), '$options': 'i'}
+    print(query)
     result = games.find(query)
     if result.count() <= 0:
         flash('No results found, please try again')

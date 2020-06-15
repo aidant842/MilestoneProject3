@@ -18,7 +18,7 @@
 
             <div class="input-field col s12">
             <select name="genre_name" required >
-              <option value="" disabled selected>Genre</option>
+              <option value="">Genre</option>
               {% for gen in genre %}
               <option value="{{gen.genre_name}}">{{gen.genre_name}}</option>
               {% endfor %}

@@ -283,10 +283,14 @@ nav ul a.btn {
 
 .options-container {
   position: absolute;
-  top: 60%;
+  top: 50%;
   left: 20%;
   bottom: 40%;
   right: 20%;
+}
+
+div .search-row.row{
+    margin-bottom: 0;
 }
 
 .select-wrapper input.select-dropdown {
@@ -331,6 +335,15 @@ input {
   margin-top: 1px;
   margin-bottom: 1px;
 }
+
+.input-field input[type="search"]:focus:not(.browser-default){
+    background-color: transparent;
+    color: white;
+}
+
+/* input #search{
+    color: white;
+} */
 
 .search-button {
   background-color: white;
@@ -545,6 +558,11 @@ textarea.materialize-textarea:focus:not([readonly]) + label {
 
 .image-container {
   position: relative;
+}
+
+img.responsive-img{
+    width: 100%;
+    max-height: 467px;
 }
 
 .details-container {
@@ -867,6 +885,7 @@ a.footer-links {
 }
 
 /* ------------------------------------------------------*/
+
 
 /* ----------------- Media Queries ----------------- */
 

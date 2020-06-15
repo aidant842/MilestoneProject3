@@ -90,15 +90,20 @@ def games():
 def search():
 
     games = mongo.db.games
-    query = {"title": {'$regex': request.args.get('search', ''), '$options': 'i'}}
+    query = {"title": {'$regex': request.args.get('search', ''),
+             '$options': 'i'}}
     if request.args.get('genre'):
-        query['genre_name'] = {'$regex': request.args.get('genre'), '$options': 'i'}
+        query['genre_name'] = {'$regex': request.args.get('genre'),
+                               '$options': 'i'}
     if request.args.get('age'):
-        query['age_rating'] = {'$regex': request.args.get('age'), '$options': 'i'}
+        query['age_rating'] = {'$regex': request.args.get('age'),
+                               '$options': 'i'}
     if request.args.get('platform'):
-        query['platform'] = {'$regex': request.args.get('platform'), '$options': 'i'}   
+        query['platform'] = {'$regex': request.args.get('platform'),
+                             '$options': 'i'}
     if request.args.get('developer'):
-        query['developer'] = {'$regex': request.args.get('developer'), '$options': 'i'}
+        query['developer'] = {'$regex': request.args.get('developer'),
+                              '$options': 'i'}
     print(query)
     result = games.find(query)
     if result.count() <= 0:

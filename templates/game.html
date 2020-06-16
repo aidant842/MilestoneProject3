@@ -48,7 +48,13 @@
         <li class="content"> <i class="tiny material-icons tags">desktop_windows</i> <div class="key">Developer:</div> <div class="value">{{game.developer}}</div></li>
         <li class="content"> <i class="tiny material-icons tags">language</i> <div class="key">Languages:</div> <div class="value">{{game.languages}}</div></li>
         <li class="content"> <i class="tiny material-icons tags">play_arrow</i> <div class="key">Playthrough Time:</div> <div class="value">{{game.playthrough_time}} mins</div></li>
-        <li class="content"> <i class="tiny material-icons tags">camera</i> <div class="key">VR Capable:</div> <div class="value">{{game.vr_capable}}</div></li>
+        <li class="content"> <i class="tiny material-icons tags">camera</i> <div class="key">VR Capable:</div> 
+        {% if game.vr_capable == 'True' %}
+            <div class="value">Yes</div>
+        {% else %} 
+            <div class="value">No</div> 
+        {% endif %}      
+        </li>
         <li class="content"> <i class="tiny material-icons tags">person</i> <div class="key">Age Rating:</div> <div class="value">{{game.age_rating}}</div></li>
         <li class="content"> <a class="btn buy-button" href="{{game.shop_link}}" target="_blank"><i class="material-icons right shop-btn">shopping_cart</i>Buy Here</a></li>
         </ul>

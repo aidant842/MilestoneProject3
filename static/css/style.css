@@ -563,7 +563,8 @@ textarea.materialize-textarea:focus:not([readonly]) + label {
 
 img.responsive-img{
     width: 100%;
-    max-height: 467px;
+    /* max-height: 467px; */
+    height: 467px;
 }
 
 .details-container {

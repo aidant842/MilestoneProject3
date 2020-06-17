@@ -13,14 +13,14 @@ GameDB</a></p>
 - [**About**](#About)
 - [**Demo**](#Demo)
 - [**UX**](#UX)
-    - [User Stories](#User-Stories)
-  - [Research](#Research)
-  - [Wireframes](#Wireframes)
+  - [User Stories](#User-Stories)
+  - [UI](#ui)
   - [Design](#Design)
+  - [Database Schema](#database-schema)
+  - [Database Model](#database-model)
+  - [Wireframes](#Wireframes)
 - [**Features**](#Features)
-    - [Functionality](#Functionality)
-    - [Existing features](#Existing-features)
-    - [Future features](#Future-features)
+    - [Future features](#Future-updates)
 - [**Technologies used**](#Technologies-used)
 - [**Testing**](#Testing)
     - [Manual testing](#Testing)
@@ -30,9 +30,7 @@ GameDB</a></p>
 - [**Credits**](#Deployment)
     - [Code](#Code)
      - [Images](#Images)
-     - [Audio](#Audio)
 - [**Acknowledgements**](#Acknowledgements)
-- [**Disclaimer**](#Disclaimer)
 
 
 ## About
@@ -59,9 +57,7 @@ People really enjoy playing video games, and a resource like this to find review
 * I want the to be able to access the website both on my laptop/desktop and any of my mobile devices.
 * I want to be able to to search games based on certain criteria.
  
-### Research
  
-
 ### UI
 
 * A responsive and sticky Navbar was essential.
@@ -80,13 +76,21 @@ People really enjoy playing video games, and a resource like this to find review
 * Text containers have a background shadow to stand out from the page.
 
 ### Database Schema
+
 I began by planning out for a few different ideas, and then decided on a games Database.
 My Database schema was first planned out roughly in notepad, and with the help of a friend, we decided which parts were needed,
 and what needed to be in seperate collections.
+
 * [Database-Schema](schema/gameDBSchema.pdf)
 
+### Database Model
+
+* [Database-Model](schema/data-model.pdf)
+
 ### Wireframes
-* [Wireframes](wireframes/msp3-landing.pdf)
+The Wireframes are my initial idea for the website, the final product is very similar to these wireframes, however there are a few slight differences.
+There are some mobile wireframes but not for all pages as some will be very similar on both desktop and mobile.
+* [Wireframes](wireframes/msp3-wireframes.pdf)
  
  
 ## Features
@@ -100,10 +104,6 @@ and what needed to be in seperate collections.
 * If a game already exists in the database it won't allow a user to add it again.
 * When adding a game, function Automatically grabs username from session instead of having user input their own username in form.
 * A fully functioning search.
-
-### Functionality
- 
-* 
  
 ###  Future updates
  
@@ -158,6 +158,10 @@ The website from my testing is compatible on multiple browsers.
 I had family and friends test the website also.
  
 ### Manual testing
+<details>
+<summary>
+Testing conducted
+</summary>
 
 * Create an account, works as it should, passwords are hashed for security. &#9745;
 * Logging in to created account, works as it should. &#9745;
@@ -186,10 +190,13 @@ I had family and friends test the website also.
   Also saves your search criteria after search is complete. &#9745;
  
 No automated testing was conducted.
+</details>
  
 ### Errors
-
+<details>
+<summary>
 Current errors:
+</summary>
  
 1. ***NOT YET FIXED*** No required field pop up when select field is left empty on add/edit game form.
 2. ~~***NOT YET FIXED***  issue with static directory, images have to be in static/css -- fixed, file structure error.~~
@@ -214,7 +221,7 @@ SEARCH NOW FULLY WORKING WITH TEXT SEARCH ASWELL
 18. ***NOT YET FIXED*** error at 993 pixels wide, both mobile and desktop navbar appear.
 19. ***NOT YET FIXED*** Select fields don't show alert when not filled out and form is submitted, having looked into this with my mentor,
 it was deemed a framework issue.
-
+</details>
 
 ## Code Notes
 
@@ -222,6 +229,11 @@ it was deemed a framework issue.
  - When talking to my mentor, we came to the decision to remove the multiple attribute from the platform select as it most likely wouldn't be made use of by most users anyway.
 
 ## Deployment
+
+<details>
+<summary>
+Deployment
+</summary>
 
 To deploy this project I used [Heroku](https://dashboard.heroku.com/)
 
@@ -317,10 +329,13 @@ The following steps were used for deployment on Heroku:
 
 
 13. Click on Open app. The App is now deployed.
+</details>
 
 ### Local development
-
+<details>
+<summary>
 If you want to run this project locally, you will need to follow these steps.
+</summary>
 
 1. Clone or download this repository.
 
@@ -417,7 +432,7 @@ I used Gitpod for development, so the following steps will be specific to Gitpod
 
 8. Run the app.py file and open it in your browser.   
     The application is now running locally.
-
+</details>
  
 ## Credits
 ### Code

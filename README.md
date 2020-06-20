@@ -49,13 +49,13 @@ People really enjoy playing video games, and a resource like this to find review
 
 ### User Stories
  
-* I want a website where i can go to find reviews about games before i buy them.
-* I want a website where i can go to upload my own reviews about games i've played.
-* I want the ability to be able to edit or delete a game review i've posted.
+* I want a website where I can go to find reviews about games before I buy them.
+* I want a website where I can go to upload my own reviews about games I've played.
+* I want the ability to be able to edit or delete a game review I've posted.
 * I don't want other people to be able to edit or delete my reviews.
-* I want the website to look apealing and have nice visuals and layout.
-* I want the to be able to access the website both on my laptop/desktop and any of my mobile devices.
-* I want to be able to to search games based on certain criteria.
+* I want the website to look appealing and have nice visuals and layout.
+* I want them to be able to access the website both on my laptop/desktop and any of my mobile devices.
+* I want to be able to search games based on certain criteria.
  
  
 ### UI
@@ -70,7 +70,7 @@ People really enjoy playing video games, and a resource like this to find review
  
 ### Design
 
-* The design of this page is minimilistic but eye catching using 3 main colours, white, dark grey and pink.
+* The design of this page is minimalistic but eye catching using 3 main colours, white, dark grey and pink.
 * Each page has a nice image background, either full screen or partial.
 * Links and buttons have a hover effect.
 * Text containers have a background shadow to stand out from the page.
@@ -79,7 +79,7 @@ People really enjoy playing video games, and a resource like this to find review
 
 I began by planning out for a few different ideas, and then decided on a games Database.
 My Database schema was first planned out roughly in notepad, and with the help of a friend, we decided which parts were needed,
-and what needed to be in seperate collections.
+and what needed to be in separate collections.
 
 * [Database-Schema](schema/gameDBSchema.pdf)
 
@@ -102,14 +102,14 @@ There are some mobile wireframes but not for all pages as some will be very simi
 * A loading page.
 * If a developer that doesn't exist in the database is entered with a new game the developer is added to the database for use when searching.
 * If a game already exists in the database it won't allow a user to add it again.
-* When adding a game, function Automatically grabs username from session instead of having user input their own username in form.
+* When adding a game, function Automatically grabs username from session instead of having the user input their own username in the form.
 * A fully functioning search.
  
 ###  Future updates
  
--  **User Reviews** Ability to add reviews from multiple user to a game.
+-  **User Reviews** Ability to add reviews from multiple users to a game.
 -  **Search** A more stable search function that allows blank criteria.
--  **Delete Confirmation** A fail safe Confirmation for delete button incase accidentally pressed.
+-  **Delete Confirmation** A fail safe Confirmation for delete button in case accidentally pressed.
  
 ## Technologies used
 
@@ -164,29 +164,29 @@ Testing conducted
 </summary>
 
 * Create an account, works as it should, passwords are hashed for security. &#9745;
-* Logging in to created account, works as it should. &#9745;
-* Add game using form, works as it should. Adding a game is only possible when logged in. &#9745;
-* Game is displayed on games page, works well. &#9745;
-* Game info is displayed on seperate page when clicked into. Works as it should. &#9745;
+* Logging in to the created account, works as it should. &#9745;
+* Adding a game using form, works as it should. Adding a game is only possible when logged in. &#9745;
+* Game is displayed on the games page, works well. &#9745;
+* Game info is displayed on a separate page when clicked into. Works as it should. &#9745;
 * Edit game, works as it should, only editable by the user that submitted it. &#9745;
-* Delete game, works as it should, only able to delete if you submitted the review. &#9745;
-* Add game button on visible in nav if user is logged in. &#9745;
-* Edit/Delete game buttons on visible if you are the user who entered the review. &#9745;
-* Login and Singup buttons only visible if you are not signed in. &#9745;
-* If username already exists in database, prompts user that it already exists. &#9745;
-* If user enters login url when already logged in it will redirect to home with flash message. &#9745;
-* Search function, not 100%, returns 505 if no criteria specified(caught with custom 505) &#9745;
+* Delete game works as it should, only able to delete if you submitted the review. &#9745;
+* Add a game button visible in nav if the user is logged in. &#9745;
+* Edit/Delete game buttons visible if you are the user who entered the review. &#9745;
+* Login and Singup buttons are only visible if you are not signed in. &#9745;
+* If the username already exists in the database, prompts the user that it already exists. &#9745;
+* If a user enters a login url when already logged in it will redirect to home with a flash message. &#9745;
+* Search function, not 100%, returns 505 if no criteria specified(caught with custom 505). [**NOW CORRECTED**]
 * All links work. &#9745;
-* Game can only be entered once on database. (checks title) &#9745;
-* Developer being added to seperate collection when user submits game review if it doesn't alread exist in database. works &#9745;
-* Flash messages appear when appropriate to ensure completed action to user, or if errors occur. &#9745;
-* All fields required when adding/editing games so no fields are empty on game description page. &#9745;
+* Games can only be entered once on the database. (checks title) &#9745;
+* Developer being added to a separate collection when the user submits a game review if it doesn't already exist in the database. works &#9745;
+* Flash messages appear when appropriate to ensure completed action to the user, or if errors occur. &#9745;
+* All fields required when adding/editing games so no fields are empty on the game description page. &#9745;
 * Correct data is displayed for each field in edit form. &#9745;
-* Automatically converts youtube videos to embeded to display video in iframe. &#9745;
+* Automatically converts youtube videos to embed to display video in iframe. &#9745;
 * Custom 505 error page. &#9745;
-* Delete modal appears when first delete button clicked, and game only deleted from database after the Confirmation delete clicked. &#9745;
-* Confirm password on singup page works as expected. &#9745;
-* Search function works as expected, empty search returns all entries, each criteria can be search seperately.
+* Delete modal appears when the first delete button clicked, and the game only deleted from the database after the Confirmation delete clicked. &#9745;
+* Confirm password on signup page works as expected. &#9745;
+* Search function works as expected, empty search returns all entries, each criteria can be searched separately.
   Also saves your search criteria after search is complete. &#9745;
  
 No automated testing was conducted.
@@ -201,18 +201,18 @@ Current errors:
 1. ***NOT YET FIXED*** No required field pop up when select field is left empty on add/edit game form.
 2. ~~***NOT YET FIXED***  issue with static directory, images have to be in static/css -- fixed, file structure error.~~
 3. ~~***NOT YET FIXED***  can't read js from file has to be on page -- fixed, file structure issue.~~
-4. ***NOT YET FIXED***  video/image buttons not disapearing when video iframe is clicked.
-5. ~~***NOT YET FIXED***  search doesn't work -- partilaly fixed, figured out on own by importing from bson.json_util import dumps and testing query results by: return dumps(query)
-    return dumps(mongo.db.games.find({'genre_name': 'Adventure'})).
-    search not complete, needs to fash a message when result is empty (done &#9745;) and ignore null fields if some fields are left empty~~
-SEARCH NOW FULLY WORKING WITH TEXT SEARCH ASWELL
-6. ~~***NOT YET FIXED*** iframe expects embed url, can't rely on user to enter embeded url  -- fixed by adding embed trailer function.~~
+4. ***NOT YET FIXED***  video/image buttons not disappearing when video iframe is clicked.
+5. ~~***NOT YET FIXED***  search doesn't work -- partially fixed, figured out on own by importing from bson.json_util import dumps and testing query results by: return dumps(query)
+    return dumps(mongodb.games.find({'genre_name': 'Adventure'})).
+    search not complete, needs to flash a message when result is empty (done &#9745;) and ignore null fields if some fields are left empty~~
+SEARCH NOW FULLY WORKING WITH TEXT SEARCH AS WELL
+6. ~~***NOT YET FIXED*** iframe expects embed url, can't rely on user to enter embedded url  -- fixed by adding embed trailer function.~~
 7. ~~***NOT YET FIXED*** page overspilling - fixed, crumbs container width.~~
 8. ~~***NOT YET FIXED*** date picker colour -- fixed with css.~~
-9. ~~***NOT YET FIXED*** no visual for users that aren't logged in that its possible to edit/delete a game -- fixed by adding if block that redirects to login if not logged in.~~(redundent since it was changed to user only)
-10. ~~***NOT YET FIXED*** forgot to changed mobile nav based on user logged in.~~
+9. ~~***NOT YET FIXED*** no visual for users that aren't logged in that it's possible to edit/delete a game -- fixed by adding an if block that redirects to login if not logged in.~~(redundant since it was changed to user only)
+10. ~~***NOT YET FIXED*** forgot to change mobile nav based on user logged in.~~
 11. ~~***NOT YET FIXED*** home/login/signup pages don't respond well on large screens - fixed by changing css properties.~~
-12. ~~***NOT YET FIXED*** forgot to changed mobile nav based on user logged in.~~
+12. ~~***NOT YET FIXED*** forgot to change mobile nav based on user logged in.~~
 13. ~~***NOT YET FIXED*** card title pushes up card image if its too long -- fixed by adding set height to card.~~
 14. ~~***NOT YET FIXED*** had to use document.body.load for preloader javascript due to firefox support.~~
 15. ~~***NOT YET FIXED*** error with if logic in insert_game route when checking if developer already exists --- fixed.~~
@@ -227,7 +227,7 @@ it was deemed a framework issue.
 
  - Some warnings/errors occuring with linter which i can't stop from being flagged.
  - When talking to my mentor, we came to the decision to remove the multiple attribute from the platform select as it most likely wouldn't be made use of by most users anyway.
- - For the game images on the website that are user inputted, because they could be many different resolutions, myself and my mentor came to the descision it would be best to set the image as a background of the card div, and center the image to stop any stretching.
+ - For the game images on the website that are user inputted, because they could be many different resolutions, myself and my mentor came to the decision it would be best to set the image as a background of the card div, and center the image to stop any stretching.
  - this may crop part of the image on the games page, but we decided it looks better this way.
 
 ## Deployment
@@ -252,7 +252,7 @@ The following steps were used for deployment on Heroku:
 
    to create a `requirements.txt` file containing project dependencies.
 
-2. In Gitpod project workspace root directory, create a new file called Procfile, with capital 'P'.  
+2. In the Gitpod project workspace root directory, create a new file called Procfile, with capital 'P'.  
    Open the Procfile. Inside the file, enter:  
 
    `web: python3 app.py`
@@ -333,7 +333,7 @@ The following steps were used for deployment on Heroku:
 13. Click on Open app. The App is now deployed.
 </details>
 
-### Local development
+### Local Deployment
 <details>
 <summary>
 If you want to run this project locally, you will need to follow these steps.
@@ -455,4 +455,5 @@ I used Gitpod for development, so the following steps will be specific to Gitpod
 A thank you to my friends and family for testing the game for me.
 Also a thank you to my mentor for the help and support.
  
-[Back to top ↑](#Snake-Game)
+[Back to top ↑](#game-db)
+

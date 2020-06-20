@@ -11,8 +11,8 @@ footer {
   margin-top: 5rem;
 }
 
-iframe{
-    border: none;
+iframe {
+  border: none;
 }
 
 .logo-db,
@@ -289,12 +289,12 @@ nav ul a.btn {
   right: 20%;
 }
 
-div .search-row.row{
-    margin-bottom: 0;
+div .search-row.row {
+  margin-bottom: 0;
 }
 
-div .category.input-field{
-    margin-bottom: 0;
+div .category.input-field {
+  margin-bottom: 0;
 }
 
 .select-wrapper input.select-dropdown {
@@ -340,9 +340,9 @@ input {
   margin-bottom: 1px;
 }
 
-.input-field input[type="search"]:focus:not(.browser-default){
-    background-color: transparent;
-    color: white;
+.input-field input[type="search"]:focus:not(.browser-default) {
+  background-color: transparent;
+  color: white;
 }
 
 .search-button {
@@ -376,11 +376,11 @@ input {
   height: 361px;
 }
 
-.card:hover{
-    transform: scale(1.02);
-    color: rgb(224, 58, 119);
-    -webkit-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out;
+.card:hover {
+  transform: scale(1.02);
+  color: rgb(224, 58, 119);
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 .card-link {
@@ -413,7 +413,6 @@ input {
   overflow: hidden;
   background-position: center;
   background-size: cover;
-
 }
 
 .card .card-image img {
@@ -431,7 +430,8 @@ input {
 
 /* ----------------- Login/Signup Page ----------------- */
 
-.login-header, .signup-header {
+.login-header,
+.signup-header {
   text-align: center;
   font-family: "Alfa Slab One", cursive;
   color: white;
@@ -441,7 +441,8 @@ input {
   margin-bottom: 0;
 }
 
-.login-container, .signup-container {
+.login-container,
+.signup-container {
   position: relative;
   width: 80%;
   margin-left: auto;
@@ -527,7 +528,8 @@ textarea.materialize-textarea:focus:not([readonly]) + label {
   background-color: #312a2a;
 }
 
-.login-form, .signup-form {
+.login-form,
+.signup-form {
   color: white;
   margin-bottom: 4.7rem;
 }
@@ -541,8 +543,6 @@ textarea.materialize-textarea:focus:not([readonly]) + label {
 }
 
 /* ------------------------------------------------------*/
-
-
 
 /* ----------------- Game Page Styling ----------------- */
 
@@ -567,8 +567,8 @@ textarea.materialize-textarea:focus:not([readonly]) + label {
   overflow: auto;
 }
 
-img.responsive-img{
-    width: 100%;
+img.responsive-img {
+  width: 100%;
 }
 
 .details-container {
@@ -611,14 +611,14 @@ img.responsive-img{
   display: inline;
 }
 
-li.content i.material-icons{
-    position: relative;
-    top: 12% !important;
-    padding-right: 3px;
+li.content i.material-icons {
+  position: relative;
+  top: 12% !important;
+  padding-right: 3px;
 }
 
-.details-content{
-    margin-top: 2rem;
+.details-content {
+  margin-top: 2rem;
 }
 
 #video-button:hover,
@@ -902,7 +902,6 @@ a.footer-links {
 
 /* ------------------------------------------------------*/
 
-
 /* ----------------- Media Queries ----------------- */
 
 @media only screen and (max-width: 993px) {
@@ -973,8 +972,8 @@ a.footer-links {
     margin-top: 10vh;
   }
 
-  .signup-header{
-      margin-top: 10vh;
+  .signup-header {
+    margin-top: 10vh;
   }
 }
 
@@ -989,9 +988,9 @@ a.footer-links {
 }
 
 @media only screen and (min-width: 993px) {
-    .image-container{
-        height: 467px;
-    }
+  .image-container {
+    height: 467px;
+  }
 }
 
 /* @media only screen and (max-width: 602px){
@@ -1011,4 +1010,3 @@ a.footer-links {
 } */
 
 /* ------------------------------------------------------*/
-

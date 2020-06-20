@@ -7,8 +7,8 @@
       <h4 class="games-header">Games</h4>
       <nav>
         <div class="nav-wrapper">
-              <a href="{{url_for('home_page')}}" class="breadcrumb">Home</a>
-              <a href="{{url_for('games')}}" class="breadcrumb active">Games</a>
+          <a href="{{url_for('home_page')}}" class="breadcrumb">Home</a>
+          <a href="{{url_for('games')}}" class="breadcrumb active">Games</a>
         </div>
       </nav>
     </div>
@@ -16,76 +16,74 @@
     <!-- Container for search filter -->
 
     <div class="filter-container"></div>
-      <div class="options-container">
-        
-        <form action="{{url_for('search')}}" method="GET">
+    <div class="options-container">
+      <form action="{{url_for('search')}}" method="GET">
         <div class="search-row row">
+          <div class="category input-field col s12">
+            <input id="search" name="search" type="search" class="validate" />
+            <label for="search">Search Game</label>
+          </div>
 
-        <div class="category input-field col s12">
-          <input id="search" name="search" type="search" class="validate">
-          <label for="search">Search Game</label>
-        </div>
-
-        <!-- <div class="col s3">
+          <!-- <div class="col s3">
           <button class="btn search-button" type="submit" name="action">
             Search
             <i class="material-icons right">search</i>
           </button>
         </div> -->
-
         </div>
 
         <div class="row">
-
           <div class="category input-field col s6 l3">
             <select name="genre">
               <option value="">Genre</option>
-              {% for gen in genre %}
-              {% if request.args.get('genre') and (request.args.get('genre') == gen.genre_name) %}
-                <option value="{{gen.genre_name}}" selected>{{gen.genre_name}}</option>
+              {% for gen in genre %} {% if request.args.get('genre') and
+              (request.args.get('genre') == gen.genre_name) %}
+              <option value="{{gen.genre_name}}" selected
+                >{{gen.genre_name}}</option
+              >
               {% else %}
-                <option value="{{gen.genre_name}}">{{gen.genre_name}}</option>  
-              {% endif %}  
-              {% endfor %}
+              <option value="{{gen.genre_name}}">{{gen.genre_name}}</option>
+              {% endif %} {% endfor %}
             </select>
           </div>
 
           <div class="category input-field col s6 l3">
             <select name="age">
               <option value="">Age</option>
-              {% for age in age_rating %}
-              {% if request.args.get('age') and (request.args.get('age') == age.rating) %}
-                <option value="{{age.rating}}" selected>{{age.rating}}</option>
+              {% for age in age_rating %} {% if request.args.get('age') and
+              (request.args.get('age') == age.rating) %}
+              <option value="{{age.rating}}" selected>{{age.rating}}</option>
               {% else %}
-                <option value="{{age.rating}}">{{age.rating}}</option>
-              {% endif %}  
-              {% endfor %}
+              <option value="{{age.rating}}">{{age.rating}}</option>
+              {% endif %} {% endfor %}
             </select>
           </div>
 
           <div class="category input-field col s6 l3">
             <select name="platform">
               <option value="">Platform</option>
-              {% for plat in plat %}
-              {% if request.args.get('platform') and (request.args.get('platform') == plat.platform_name) %}
-                <option value="{{plat.platform_name}}" selected>{{plat.platform_name}}</option>
+              {% for plat in plat %} {% if request.args.get('platform') and
+              (request.args.get('platform') == plat.platform_name) %}
+              <option value="{{plat.platform_name}}" selected
+                >{{plat.platform_name}}</option
+              >
               {% else %}
-                <option value="{{plat.platform_name}}">{{plat.platform_name}}</option>
-              {% endif %}
-              {% endfor %}
+              <option value="{{plat.platform_name}}"
+                >{{plat.platform_name}}</option
+              >
+              {% endif %} {% endfor %}
             </select>
           </div>
 
           <div class="category input-field col s6 l3">
             <select name="developer">
               <option value="">Developer</option>
-              {% for dev in dev %}
-              {% if request.args.get('developer') and (request.args.get('developer') == dev.dev) %}
-                    <option value="{{dev.dev}}" selected>{{dev.dev}}</option>
-              {% else %}      
-                    <option value="{{dev.dev}}">{{dev.dev}}</option>
-              {% endif %}
-              {% endfor %}
+              {% for dev in dev %} {% if request.args.get('developer') and
+              (request.args.get('developer') == dev.dev) %}
+              <option value="{{dev.dev}}" selected>{{dev.dev}}</option>
+              {% else %}
+              <option value="{{dev.dev}}">{{dev.dev}}</option>
+              {% endif %} {% endfor %}
             </select>
           </div>
         </div>
@@ -96,23 +94,23 @@
             <i class="material-icons right">search</i>
           </button>
         </div>
-    
-          </form>
-
-      </div>
-    
+      </form>
+    </div>
   </div>
 </div>
 
 <!-- Container for cards to display game image and title, also a link to individual game page -->
 
 <div class="container card-container">
-{% for key in games %}
+  {% for key in games %}
   <div class="row card-row">
     <div class="col s12 m3 l2">
       <div class="card">
         <a class="card-link" href="{{url_for('game_page', game_id=key._id)}}">
-          <div class="card-image z-depth-4" style="background-image:url('{{ key.image }}');">
+          <div
+            class="card-image z-depth-4"
+            style="background-image:url('{{ key.image }}');"
+          >
             <!-- <img src="{{key.image}}" alt="Game Image" /> -->
             <span class="genre-tag">{{key.genre_name}}</span>
           </div>
@@ -124,4 +122,4 @@
   {% endfor %}
 </div>
 
- {% endblock %}
+{% endblock %}

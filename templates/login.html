@@ -1,53 +1,55 @@
 {% extends 'base.html' %} {% block content%}
 
+<h3 class="login-header">Login</h3>
+<div class="contanier">
+  <div class="row">
+    <div class="login-container offset-l4 offset-s2 col s8 l4">
+      <!-- Login form, linked to login route -->
 
-  <h3 class="login-header">Login</h3>
-  <div class="contanier">
-    <div class="row">
-      <div class="login-container offset-l4 offset-s2 col s8 l4">
+      <form
+        class="login-form"
+        id="login"
+        action="{{url_for('login')}}"
+        method="POST"
+      >
+        <div class="input-field">
+          <input
+            id="username"
+            name="username"
+            type="text"
+            class="validate"
+            required
+            aria-required="true"
+          />
+          <label for="username">Username</label>
+        </div>
 
-    <!-- Login form, linked to login route -->
+        <div class="input-field">
+          <input
+            id="password"
+            name="password"
+            type="password"
+            class="validate"
+            required
+            aria-required="true"
+          />
+          <label for="password">Password</label>
+        </div>
 
-        <form class="login-form" id="login" action="{{url_for('login')}}" method="POST">
-          <div class="input-field">
-            <input
-              id="username"
-              name="username"
-              type="text"
-              class="validate"
-              required
-              aria-required="true"
-            />
-            <label for="username">Username</label>
-          </div>
-
-          <div class="input-field">
-            <input
-              id="password"
-              name="password"
-              type="password"
-              class="validate"
-              required
-              aria-required="true"
-            />
-            <label for="password">Password</label>
-          </div>
-
-          <button class="btn login-btn" type="submit" name="action">
-            LOGIN
-            <i class="material-icons right">send</i>
-          </button>
+        <button class="btn login-btn" type="submit" name="action">
+          LOGIN
+          <i class="material-icons right">send</i>
+        </button>
 
         <!-- Check for user on wrong page if they don't have an account yet -->
 
-          <span class="account-check"
-            >Don't have an account?
-            <a href="{{url_for('signup')}}">Sign up here</a></span
-          >
-        </form>
-      </div>
+        <span class="account-check"
+          >Don't have an account?
+          <a href="{{url_for('signup')}}">Sign up here</a></span
+        >
+      </form>
     </div>
   </div>
-
+</div>
 
 {% endblock %}

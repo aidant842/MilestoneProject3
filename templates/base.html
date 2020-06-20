@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -46,7 +45,6 @@
   <!-- if block to change class depending on what page is being displayed -->
 
   <body class="{{ 'landing-bg' if is_index }} {{ 'addgame-bg' if add_game }}">
-  
     <!-- code for Flask flash messages, passed to JS file -->
     <div class="hidden">
       {% with messages = get_flashed_messages() %} {% if messages %} {% for
@@ -193,9 +191,7 @@
 
     <!--Import jQuery before materialize.js-->
     <!-- jQuery -->
-    <script
-      src="https://code.jquery.com/jquery-3.2.1.min.js"
-    ></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 
     <!-- materialize -->
 
@@ -221,7 +217,7 @@
 
     <!-- Script to manage media buttons on game page -->
     {% if is_game_page %}
-        <script src="/static/js/media-buttons.js"></script>
+    <script src="/static/js/media-buttons.js"></script>
     {% endif %}
 
     <!-- Script to manage confirm password on signup page -->

@@ -1,36 +1,65 @@
 {% extends 'base.html' %} {% block content%}
 
-    <h3 class = "signup-header" >Sign Up</h3>
+<h3 class="signup-header">Sign Up</h3>
 
-    <div class="contanier">
-    <div class="row">
+<div class="contanier">
+  <div class="row">
     <div class="signup-container offset-l4 offset-s2 col s8 l4">
+      <!-- Signup form, linked to signup route to create an account -->
 
-    <!-- Signup form, linked to signup route to create an account -->
-
-    <form class="signup-form" id="signup-form" action="{{url_for('signup')}}" method="POST">
-      
+      <form
+        class="signup-form"
+        id="signup-form"
+        action="{{url_for('signup')}}"
+        method="POST"
+      >
         <div class="input-field">
-          <input id="username" name="username" type="text" class="validate" required aria-required="true">
+          <input
+            id="username"
+            name="username"
+            type="text"
+            class="validate"
+            required
+            aria-required="true"
+          />
           <label for="username">Username</label>
         </div>
-     
+
         <div class="input-field">
-          <input id="password" name="password" type="password" class="validate" required aria-required="true">
+          <input
+            id="password"
+            name="password"
+            type="password"
+            class="validate"
+            required
+            aria-required="true"
+          />
           <label for="password">Password</label>
         </div>
 
         <div class="input-field">
-          <input id="confirm_password" name="confirm_password" type="password" class="validate" oninput="check(this)" required aria-required="true">
+          <input
+            id="confirm_password"
+            name="confirm_password"
+            type="password"
+            class="validate"
+            oninput="check(this)"
+            required
+            aria-required="true"
+          />
           <label for="confirm_password">Confirm Password</label>
         </div>
-     
-      <button class="btn signup-btn" type="submit" name="action">Sign Up
-        <i class="material-icons right">send</i>
-      </button>
-      <span class="account-check">Already have an account? <a href="{{url_for('login')}}">Login</a></span>
-    </form>
+
+        <button class="btn signup-btn" type="submit" name="action">
+          Sign Up
+          <i class="material-icons right">send</i>
+        </button>
+        <span class="account-check"
+          >Already have an account?
+          <a href="{{url_for('login')}}">Login</a></span
+        >
+      </form>
+    </div>
   </div>
-  </div>
-  </div>
+</div>
 {% endblock %}

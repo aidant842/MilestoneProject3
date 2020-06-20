@@ -1,114 +1,188 @@
 {% extends 'base.html' %} {% block content %}
 
 <!-- container for page -->
-  <div class="container">
-    <div class="row">
-      <h3 class="edit-game-header">Edit Game</h3>
-      <div class="edit-form-container offset-l3 col s12 l6">
-
+<div class="container">
+  <div class="row">
+    <h3 class="edit-game-header">Edit Game</h3>
+    <div class="edit-form-container offset-l3 col s12 l6">
       <!-- Form for edit_game route to edit game properties based on users input -->
-        <form id="edit-game-form" action="{{ url_for('update_game', game_id=game._id)}}" method="POST">
-        
-            <div class="input-field col s12">
-            <input id="title" name="title" type="text" maxlength="28" required  value="{{ game.title }}" />
-            <label for="title">Game Title</label>
-            </div>
-
-            <div class="input-field col s12">
-            <select name="genre_name" required >
-              <option value="{{game.genre_name}}" selected>{{game.genre_name}}</option>
-              {% for gen in genre %}
-              <option value="{{gen.genre_name}}">{{gen.genre_name}}</option>
-              {% endfor %}
-            </select>
-            <label for="genre_name">Genre</label>
-          </div>
-
-          <div class="input-field col s12">
-            <input type="text" class="datepicker" id="releaseDate" name="release_date" value="{{game.release_date}}" required />
-            <label for="releaseDate">Release Date</label>
-          </div>
-
-          <div class="input-field col s12">
-            <select name = "platform" required >
-              <option value="{{game.platform}}" selected>{{game.platform}}</option>
-              {% for plat in platform %}
-              <option value="{{plat.platform_name}}">{{plat.platform_name}}</option>
-              {% endfor %}
-            </select>
-            <label for="platform">Platform</label>
-          </div>
-
-          <div class="input-field col s12">
-            <input id="developer" name="developer" type="text" value="{{game.developer}}" required  />
-            <label for="developer">Developer</label>
-          </div>
-
-          <div class="input-field col s12">
-            <input id="language" name="languages" type="text" required  value="{{game.languages}}" />
-            <label for="language">Language(s)</label>
-          </div>
-
-          <div class="input-field col s12">
-            <input id="playTime" name="playthrough_time" type="text" required  value="{{game.playthrough_time}}" />
-            <label for="playTime">Playthrough Time (mins)</label>
-          </div>
-
-          <div class="input-field col s12">
-            <select name="vr_capable" required >
-              <option value="{{game.vr_capable}}" selected>{{game.vr_capable}}</option>
-              {% for vr in vr %}
-              <option value="{{vr.vr}}">{{vr.vr}}</option>
-              {% endfor %}
-            </select>
-            <label for="vr_capable">VR Capable?</label>
-          </div>
-
-          <div class="input-field col s12">
-            <select name="age_rating" required >
-              <option value="{{game.age_rating}}" selected>{{game.age_rating}}</option>
-              {% for age in age_rating %}
-              <option value="{{age.rating}}">{{age.rating}}</option>
-              {% endfor %}
-            </select>
-            <label for="are_rating">Age Rating</label>
-          </div>
-
-          <div class="input-field col s12">
-            <input id="buyLink" name="shop_link" type="text" required  value="{{game.shop_link}}" />
-            <label for="buyLink">Shop Link</label>
-          </div>
-
-          <div class="input-field col s12">
-            <input id="image" name="image" type="text" required  value="{{game.image}}" />
-            <label for="image">Image URL</label>
-          </div>
-
-          <div class="input-field col s12">
-            <input id="video" name="trailer_link" type="url" required  value="{{game.trailer_link}}" />
-            <label for="video">Trailer link(Youtube)</label>
-          </div>
-
-          
+      <form
+        id="edit-game-form"
+        action="{{ url_for('update_game', game_id=game._id)}}"
+        method="POST"
+      >
         <div class="input-field col s12">
-          <textarea id="description" name="description" class="materialize-textarea" required >{{game.description}}</textarea>
+          <input
+            id="title"
+            name="title"
+            type="text"
+            maxlength="28"
+            required
+            value="{{ game.title }}"
+          />
+          <label for="title">Game Title</label>
+        </div>
+
+        <div class="input-field col s12">
+          <select name="genre_name" required>
+            <option value="{{game.genre_name}}" selected
+              >{{game.genre_name}}</option
+            >
+            {% for gen in genre %}
+            <option value="{{gen.genre_name}}">{{gen.genre_name}}</option>
+            {% endfor %}
+          </select>
+          <label for="genre_name">Genre</label>
+        </div>
+
+        <div class="input-field col s12">
+          <input
+            type="text"
+            class="datepicker"
+            id="releaseDate"
+            name="release_date"
+            value="{{game.release_date}}"
+            required
+          />
+          <label for="releaseDate">Release Date</label>
+        </div>
+
+        <div class="input-field col s12">
+          <select name="platform" required>
+            <option value="{{game.platform}}" selected
+              >{{game.platform}}</option
+            >
+            {% for plat in platform %}
+            <option value="{{plat.platform_name}}"
+              >{{plat.platform_name}}</option
+            >
+            {% endfor %}
+          </select>
+          <label for="platform">Platform</label>
+        </div>
+
+        <div class="input-field col s12">
+          <input
+            id="developer"
+            name="developer"
+            type="text"
+            value="{{game.developer}}"
+            required
+          />
+          <label for="developer">Developer</label>
+        </div>
+
+        <div class="input-field col s12">
+          <input
+            id="language"
+            name="languages"
+            type="text"
+            required
+            value="{{game.languages}}"
+          />
+          <label for="language">Language(s)</label>
+        </div>
+
+        <div class="input-field col s12">
+          <input
+            id="playTime"
+            name="playthrough_time"
+            type="text"
+            required
+            value="{{game.playthrough_time}}"
+          />
+          <label for="playTime">Playthrough Time (mins)</label>
+        </div>
+
+        <div class="input-field col s12">
+          <select name="vr_capable" required>
+            <option value="{{game.vr_capable}}" selected
+              >{{game.vr_capable}}</option
+            >
+            {% for vr in vr %}
+            <option value="{{vr.vr}}">{{vr.vr}}</option>
+            {% endfor %}
+          </select>
+          <label for="vr_capable">VR Capable?</label>
+        </div>
+
+        <div class="input-field col s12">
+          <select name="age_rating" required>
+            <option value="{{game.age_rating}}" selected
+              >{{game.age_rating}}</option
+            >
+            {% for age in age_rating %}
+            <option value="{{age.rating}}">{{age.rating}}</option>
+            {% endfor %}
+          </select>
+          <label for="are_rating">Age Rating</label>
+        </div>
+
+        <div class="input-field col s12">
+          <input
+            id="buyLink"
+            name="shop_link"
+            type="text"
+            required
+            value="{{game.shop_link}}"
+          />
+          <label for="buyLink">Shop Link</label>
+        </div>
+
+        <div class="input-field col s12">
+          <input
+            id="image"
+            name="image"
+            type="text"
+            required
+            value="{{game.image}}"
+          />
+          <label for="image">Image URL</label>
+        </div>
+
+        <div class="input-field col s12">
+          <input
+            id="video"
+            name="trailer_link"
+            type="url"
+            required
+            value="{{game.trailer_link}}"
+          />
+          <label for="video">Trailer link(Youtube)</label>
+        </div>
+
+        <div class="input-field col s12">
+          <textarea
+            id="description"
+            name="description"
+            class="materialize-textarea"
+            required
+          >
+{{game.description}}</textarea
+          >
           <label for="description">Description</label>
         </div>
 
         <div class="input-field col s12">
-          <textarea id="review" name="review" class="materialize-textarea" required >{{game.review}}</textarea>
+          <textarea
+            id="review"
+            name="review"
+            class="materialize-textarea"
+            required
+          >
+{{game.review}}</textarea
+          >
           <label for="review">Review</label>
         </div>
-    
+
         <div class="col s12">
           <button class="btn submit-btn" type="submit" name="action">
             Submit
             <i class="material-icons right">send</i>
           </button>
-          </div>
-
-        </form>
-      </div>
+        </div>
+      </form>
     </div>
   </div>
+</div>
 {% endblock %}

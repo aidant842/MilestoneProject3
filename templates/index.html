@@ -1,30 +1,37 @@
 {% extends 'base.html' %} {% block content %}
 <!-- Main Container -->
 
-  <div class="container">
-    <div class="row">
-      <h1 class="landing-header">Game<span class="landing-db" >DB</span></h1>
-      <div class="container landing-container">
+<div class="container">
+  <div class="row">
+    <h1 class="landing-header">Game<span class="landing-db">DB</span></h1>
+    <div class="container landing-container">
       <div class="row">
+        <!-- paragraph for intro to website -->
 
-      <!-- paragraph for intro to website -->
+        <p class="landing-paragraph">
+          GameDB is a website built by you. You add the information about your
+          favourite games and your own reviews. Your contributions to the
+          website will help others learn about your favourite games. Simply Sign
+          up or Login to begin
+        </p>
 
-      <p class="landing-paragraph">
-      GameDB is a website built by you. You add the information about your favourite games and your own reviews.
-    Your contributions to the website will help others learn about your favourite games.
-    Simply Sign up or Login to begin</p>
+        <!-- if block to display login/signup buttons based on if user is logged in or not -->
 
-    <!-- if block to display login/signup buttons based on if user is logged in or not -->
-
-    {% if 'username' not in session %}
-    <a href = "{{url_for('login')}}" class="waves-effect waves-light btn landing-buttons">Login</a>
-    <a href="{{url_for('signup')}}" class="waves-effect waves-light btn landing-buttons">Sign Up</a>
-    {% endif %}
-    
-      </div>
+        {% if 'username' not in session %}
+        <a
+          href="{{url_for('login')}}"
+          class="waves-effect waves-light btn landing-buttons"
+          >Login</a
+        >
+        <a
+          href="{{url_for('signup')}}"
+          class="waves-effect waves-light btn landing-buttons"
+          >Sign Up</a
+        >
+        {% endif %}
       </div>
     </div>
   </div>
-  
-{% endblock %}
+</div>
 
+{% endblock %}

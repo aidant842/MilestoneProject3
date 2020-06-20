@@ -21,18 +21,38 @@
   <div class="row">
     <div class="col s12 l8">
       <div class="image-container">
-      <div class="media-buttons-container" id="button-con">
-      <div>
-      <a class="btn-floating btn-small waves-effect waves-light" id="image-button"><i class="material-icons">image</i></a>
-      </div>
-      <div>
-      <a class="btn-floating btn-small waves-effect waves-light" id="video-button"><i class="material-icons">videocam</i></a>
-      </div>
-      </div>
-        <img src="{{game.image}}" alt="image of {{game.title}}" class="responsive-img" id="game-img"/>
+        <div class="media-buttons-container" id="button-con">
+          <div>
+            <a
+              class="btn-floating btn-small waves-effect waves-light"
+              id="image-button"
+              ><i class="material-icons">image</i></a
+            >
+          </div>
+          <div>
+            <a
+              class="btn-floating btn-small waves-effect waves-light"
+              id="video-button"
+              ><i class="material-icons">videocam</i></a
+            >
+          </div>
+        </div>
+        <img
+          src="{{game.image}}"
+          alt="image of {{game.title}}"
+          class="responsive-img"
+          id="game-img"
+        />
         <div class="video-container hidden" id="vid-con">
-        <iframe width="853" height="480" src="{{game.trailer_link}}" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen id="game-vid"></iframe>
-      </div>
+          <iframe
+            width="853"
+            height="480"
+            src="{{game.trailer_link}}"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            id="game-vid"
+          ></iframe>
+        </div>
       </div>
     </div>
 
@@ -40,25 +60,65 @@
 
     <div class="col s12 l4">
       <div class="details-container z-depth-3">
-        <h5 class="details-header"><span>Game</span> <span class="landing-db">Details</span></h5>
+        <h5 class="details-header">
+          <span>Game</span> <span class="landing-db">Details</span>
+        </h5>
         <div class="details-content">
-        <ul>
-        <li class="content"> <i class="tiny material-icons tags">label</i> <div class="key">Genre:</div> <div class="value">{{game.genre_name}}</div></li>
-        <li class="content"> <i class="tiny material-icons tags">access_time</i> <div class="key">Release Date:</div> <div class="value">{{game.release_date}}</div></li>
-        <li class="content"> <i class="tiny material-icons tags">videogame_asset</i> <div class="key">Platform:</div> <div class="value">{{game.platform}}</div></li>
-        <li class="content"> <i class="tiny material-icons tags">desktop_windows</i> <div class="key">Developer:</div> <div class="value">{{game.developer}}</div></li>
-        <li class="content"> <i class="tiny material-icons tags">language</i> <div class="key">Languages:</div> <div class="value">{{game.languages}}</div></li>
-        <li class="content"> <i class="tiny material-icons tags">play_arrow</i> <div class="key">Playthrough Time:</div> <div class="value">{{game.playthrough_time}} mins</div></li>
-        <li class="content"> <i class="tiny material-icons tags">camera</i> <div class="key">VR Capable:</div> 
-        {% if game.vr_capable == 'True' %}
-            <div class="value">Yes</div>
-        {% else %} 
-            <div class="value">No</div> 
-        {% endif %}      
-        </li>
-        <li class="content"> <i class="tiny material-icons tags">person</i> <div class="key">Age Rating:</div> <div class="value">{{game.age_rating}}</div></li>
-        <li class=""> <a class="btn buy-button" href="{{game.shop_link}}" target="_blank"><i class="material-icons right shop-btn">shopping_cart</i>Buy Here</a></li>
-        </ul>
+          <ul>
+            <li class="content">
+              <i class="tiny material-icons tags">label</i>
+              <div class="key">Genre:</div>
+              <div class="value">{{game.genre_name}}</div>
+            </li>
+            <li class="content">
+              <i class="tiny material-icons tags">access_time</i>
+              <div class="key">Release Date:</div>
+              <div class="value">{{game.release_date}}</div>
+            </li>
+            <li class="content">
+              <i class="tiny material-icons tags">videogame_asset</i>
+              <div class="key">Platform:</div>
+              <div class="value">{{game.platform}}</div>
+            </li>
+            <li class="content">
+              <i class="tiny material-icons tags">desktop_windows</i>
+              <div class="key">Developer:</div>
+              <div class="value">{{game.developer}}</div>
+            </li>
+            <li class="content">
+              <i class="tiny material-icons tags">language</i>
+              <div class="key">Languages:</div>
+              <div class="value">{{game.languages}}</div>
+            </li>
+            <li class="content">
+              <i class="tiny material-icons tags">play_arrow</i>
+              <div class="key">Playthrough Time:</div>
+              <div class="value">{{game.playthrough_time}} mins</div>
+            </li>
+            <li class="content">
+              <i class="tiny material-icons tags">camera</i>
+              <div class="key">VR Capable:</div>
+              {% if game.vr_capable == 'True' %}
+              <div class="value">Yes</div>
+              {% else %}
+              <div class="value">No</div>
+              {% endif %}
+            </li>
+            <li class="content">
+              <i class="tiny material-icons tags">person</i>
+              <div class="key">Age Rating:</div>
+              <div class="value">{{game.age_rating}}</div>
+            </li>
+            <li class="">
+              <a
+                class="btn buy-button"
+                href="{{game.shop_link}}"
+                target="_blank"
+                ><i class="material-icons right shop-btn">shopping_cart</i>Buy
+                Here</a
+              >
+            </li>
+          </ul>
         </div>
       </div>
     </div>
@@ -66,47 +126,59 @@
     <!-- container for game description -->
 
     <div class="col s12 l8">
-        <div class="description-container z-depth-3">
-        <h5 class="description-header"><span>About </span><span class="landing-db">{{game.title}}</span></h5>
-            <p>{{game.description}}</p>
-        </div>
+      <div class="description-container z-depth-3">
+        <h5 class="description-header">
+          <span>About </span><span class="landing-db">{{game.title}}</span>
+        </h5>
+        <p>{{game.description}}</p>
+      </div>
     </div>
 
     <!-- container for game review -->
 
     <div class="col s12 l4">
-        <div class="review-container z-depth-3">
-        <h5 class="review-header"><span>{{game.title}}</span><span class="landing-db"> review</span></h5>
-            <p>{{game.review}}</p>
-        </div>
+      <div class="review-container z-depth-3">
+        <h5 class="review-header">
+          <span>{{game.title}}</span><span class="landing-db"> review</span>
+        </h5>
+        <p>{{game.review}}</p>
+      </div>
     </div>
 
-<!-- if block to display edit/delete buttons based on if user is logged in, and if the review belongs to the user(to try stop malicious activity) -->
+    <!-- if block to display edit/delete buttons based on if user is logged in, and if the review belongs to the user(to try stop malicious activity) -->
 
-    {% if 'username' in session %}
-        {% if session['username'] == game.username %}
-        <div class="col s12 l8">
-        <div class="crud-button-container">
-        
-        <a href = "{{url_for('edit_game', game_id = game._id)}}" class="btn btn_small edit-btn">Edit <i class="material-icons right">edit</i></a>
-        <a href = "#modal1" class="btn btn_small delete-btn modal-trigger" id="delete-btn">Delete <i class="material-icons right">delete</i></a>
-    
-        </div>
-        </div>
-        {% endif %}
-    {% endif %}    
+    {% if 'username' in session %} {% if session['username'] == game.username %}
+    <div class="col s12 l8">
+      <div class="crud-button-container">
+        <a
+          href="{{url_for('edit_game', game_id = game._id)}}"
+          class="btn btn_small edit-btn"
+          >Edit <i class="material-icons right">edit</i></a
+        >
+        <a
+          href="#modal1"
+          class="btn btn_small delete-btn modal-trigger"
+          id="delete-btn"
+          >Delete <i class="material-icons right">delete</i></a
+        >
+      </div>
+    </div>
+    {% endif %} {% endif %}
 
     <!-- Modal for delete fail safe to stop accidental deletion of review -->
-  <div id="modal1" class="modal">
-    <div class="modal-content">
-      <h4>Are you sure you want to delete this?</h4>
+    <div id="modal1" class="modal">
+      <div class="modal-content">
+        <h4>Are you sure you want to delete this?</h4>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class="modal-close modal-cancel btn-flat">Cancel</a>
+        <a
+          href="{{url_for('delete_game', game_id = game._id)}}"
+          class="modal-close modal-delete btn-flat"
+          >Delete</a
+        >
+      </div>
     </div>
-    <div class="modal-footer">
-      <a href="#!" class="modal-close modal-cancel btn-flat">Cancel</a>
-      <a href = "{{url_for('delete_game', game_id = game._id)}}" class="modal-close modal-delete btn-flat">Delete</a>
-    </div>
-  </div>
-
   </div>
 </div>
 {% endblock %}

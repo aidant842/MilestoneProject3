@@ -563,7 +563,7 @@ textarea.materialize-textarea:focus:not([readonly]) + label {
 
 .image-container {
   position: relative;
-  height: 467px;
+  /* height: 467px; */
   overflow: auto;
 }
 
@@ -609,6 +609,16 @@ img.responsive-img{
   font-family: "Pontano Sans", sans-serif;
   text-transform: capitalize;
   display: inline;
+}
+
+li.content i.material-icons{
+    position: relative;
+    top: 12% !important;
+    padding-right: 3px;
+}
+
+.details-content{
+    margin-top: 2rem;
 }
 
 #video-button:hover,
@@ -976,6 +986,12 @@ a.footer-links {
   .breadcrumb::before {
     font-size: 0.9rem;
   }
+}
+
+@media only screen and (min-width: 993px) {
+    .image-container{
+        height: 467px;
+    }
 }
 
 /* @media only screen and (max-width: 602px){

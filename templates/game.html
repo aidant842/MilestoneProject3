@@ -41,6 +41,7 @@
     <div class="col s12 l4">
       <div class="details-container z-depth-3">
         <h5 class="details-header"><span>Game</span> <span class="landing-db">Details</span></h5>
+        <div class="details-content">
         <ul>
         <li class="content"> <i class="tiny material-icons tags">label</i> <div class="key">Genre:</div> <div class="value">{{game.genre_name}}</div></li>
         <li class="content"> <i class="tiny material-icons tags">access_time</i> <div class="key">Release Date:</div> <div class="value">{{game.release_date}}</div></li>
@@ -56,8 +57,9 @@
         {% endif %}      
         </li>
         <li class="content"> <i class="tiny material-icons tags">person</i> <div class="key">Age Rating:</div> <div class="value">{{game.age_rating}}</div></li>
-        <li class="content"> <a class="btn buy-button" href="{{game.shop_link}}" target="_blank"><i class="material-icons right shop-btn">shopping_cart</i>Buy Here</a></li>
+        <li class=""> <a class="btn buy-button" href="{{game.shop_link}}" target="_blank"><i class="material-icons right shop-btn">shopping_cart</i>Buy Here</a></li>
         </ul>
+        </div>
       </div>
     </div>
 

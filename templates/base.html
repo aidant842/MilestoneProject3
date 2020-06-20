@@ -11,7 +11,7 @@
       rel="stylesheet"
     />
 
-    <!-- Compiled and minified CSS -->
+    <!-- Compiled and minified Materialize CSS -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
@@ -45,6 +45,7 @@
   <!-- if block to change class depending on what page is being displayed -->
 
   <body class="{{ 'landing-bg' if is_index }} {{ 'addgame-bg' if add_game }}">
+
     <!-- code for Flask flash messages, passed to JS file -->
     <div class="hidden">
       {% with messages = get_flashed_messages() %} {% if messages %} {% for
@@ -67,6 +68,7 @@
     </div>
 
     <header>
+    
       <!-- NavBar -->
 
       <div class="navbar-fixed">

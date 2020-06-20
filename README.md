@@ -227,6 +227,8 @@ it was deemed a framework issue.
 
  - Some warnings/errors occuring with linter which i can't stop from being flagged.
  - When talking to my mentor, we came to the decision to remove the multiple attribute from the platform select as it most likely wouldn't be made use of by most users anyway.
+ - For the game images on the website that are user inputted, because they could be many different resolutions, myself and my mentor came to the descision it would be best to set the image as a background of the card div, and center the image to stop any stretching.
+ - this may crop part of the image on the games page, but we decided it looks better this way.
 
 ## Deployment
 

@@ -130,7 +130,8 @@ def game_page(game_id):
     return render_template('game.html',
                            genre=mongo.db.genre.find(),
                            game=the_game,
-                           games=mongo.db.games.find())
+                           games=mongo.db.games.find(),
+                           is_game_page=True)
 
 
 """ Route for login page

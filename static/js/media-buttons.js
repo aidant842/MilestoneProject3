@@ -21,10 +21,10 @@ document.getElementById("video-button").onclick = function(){
     }
 };
 
-function buttonToggle(){
+/* function buttonToggle(){
     document.getElementById("button-con").classList.toggle("hidden");
-}
+} */
 
-document.getElementById("game-vid").onclick = function(){
+/* document.getElementById("game-vid").onclick = function(){
     buttonToggle();
-};
+}; */

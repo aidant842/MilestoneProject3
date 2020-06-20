@@ -410,6 +410,10 @@ input {
 .card-image {
   height: 325px;
   width: 250px;
+  overflow: hidden;
+  background-position: center;
+  background-size: cover;
+
 }
 
 .card .card-image img {
@@ -559,12 +563,12 @@ textarea.materialize-textarea:focus:not([readonly]) + label {
 
 .image-container {
   position: relative;
+  height: 467px;
+  overflow: auto;
 }
 
 img.responsive-img{
     width: 100%;
-    /* max-height: 467px; */
-    height: 467px;
 }
 
 .details-container {

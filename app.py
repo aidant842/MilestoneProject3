@@ -4,17 +4,20 @@ from flask import Flask, flash, render_template,\
     redirect, request, url_for, session
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
-""" import env being flagged as an error due it being unused
-even though it is being used """
-if os.path.exists("env.py"):
-    import env
-
 
 app = Flask(__name__)
 
+if os.path.exists("env.py"):
+    import env
+    app.config["MONGO_URI"] = env.MONGO_URI
+    app.config['SECRET_KEY'] = env.SECRET_KEY
+else:
+    app.config["MONGO_URI"] = os.getenv('MONGO_URI')
+    app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')
+
+
 app.config['MONGO_DBNAME'] = 'gameDB'
-app.config["MONGO_URI"] = os.getenv("MONGO_URI")
-app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')
+
 
 mongo = PyMongo(app)
 

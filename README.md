@@ -104,6 +104,12 @@ There are some mobile wireframes but not for all pages as some will be very simi
 * If a game already exists in the database it won't allow a user to add it again.
 * When adding a game, function Automatically grabs username from session instead of having the user input their own username in the form.
 * A fully functioning search.
+* The project contains a few security features, such as:
+   - validating login.
+   - hashing passwords.
+   - environment variables are hidden.
+   - debug is turned off in the production version.
+
  
 ###  Future updates
  

@@ -11,7 +11,6 @@ GameDB</a></p>
 ## Table of Contents
  
 - [**About**](#About)
-- [**Demo**](#Demo)
 - [**UX**](#UX)
   - [User Stories](#User-Stories)
   - [UI](#ui)

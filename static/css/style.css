@@ -122,9 +122,10 @@ div.review-container p::first-letter {
 
 .addgame-bg {
   background-image: url(/static/images/add-game-bg.jpg);
+  background-position: center center;
   background-repeat: no-repeat;
-  background-size: 100% 100%;
   background-attachment: fixed;
+  background-size: cover;
 }
 
 .about-bg {

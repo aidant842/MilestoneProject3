@@ -33,23 +33,6 @@ def convert_embed(trailer_link):
     return trailer_link
 
 
-""" Custom 500 error page
-(used for error with search function
-outlined in readme) """
-
-
-@app.errorhandler(500)
-def internal_error(error):
-    flash('Please fill out all fields')
-    return render_template('games.html',
-                           genre=mongo.db.genre.find(),
-                           games=mongo.db.games.find(),
-                           age_rating=mongo.db.age_rating.find(),
-                           dev=mongo.db.developer.find(),
-                           plat=mongo.db.platform.find(),
-                           vr=mongo.db.vr_capable.find()), 500
-
-
 """ Route for home page """
 
 

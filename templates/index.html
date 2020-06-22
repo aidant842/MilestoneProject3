@@ -19,12 +19,12 @@
 
         {% if 'username' not in session %}
         <a
-          href="{{url_for('login')}}"
+          href="{{ url_for('login') }}"
           class="waves-effect waves-light btn landing-buttons"
           >Login</a
         >
         <a
-          href="{{url_for('signup')}}"
+          href="{{ url_for('signup') }}"
           class="waves-effect waves-light btn landing-buttons"
           >Sign Up</a
         >

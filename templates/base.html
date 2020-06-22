@@ -20,7 +20,7 @@
     <!-- link to custom css stylesheet -->
     <link
       rel="stylesheet"
-      href="{{url_for('static', filename = 'css/style.css')}}"
+      href="{{ url_for('static', filename = 'css/style.css') }}"
       type="text/css"
     />
 
@@ -36,7 +36,7 @@
     <link
       rel="icon"
       type="image/png"
-      href="{{url_for('static', filename='images/favicon.ico')}}"
+      href="{{ url_for('static', filename='images/favicon.ico') }}"
     />
 
     <title>GameDB</title>
@@ -74,26 +74,26 @@
       <div class="navbar-fixed">
         <nav>
           <div class="nav-wrapper fix">
-            <a href="{{url_for('home_page')}}" class="brand-logo">
+            <a href="{{ url_for('home_page') }}" class="brand-logo">
               <span>Game</span><span class="logo-db">DB</span></a
             >
             <a href="#" data-target="mobile-demo" class="sidenav-trigger">
               <i class="material-icons">menu</i></a
             >
             <ul class="right hide-on-med-and-down">
-              <li><a href="{{url_for('home_page')}}">Home</a></li>
-              <li><a href="{{url_for('about')}}">About</a></li>
-              <li><a href="{{url_for('games')}}">Games</a></li>
+              <li><a href="{{ url_for('home_page') }}">Home</a></li>
+              <li><a href="{{ url_for('about') }}">About</a></li>
+              <li><a href="{{ url_for('games') }}">Games</a></li>
 
               <!-- if block to check if user is logged in to display login/signup if not logged in, and add game link if logged in -->
 
               {% if 'username' not in session %}
-              <li><a href="{{url_for('login')}}" class="btn">Login</a></li>
-              <li><a href="{{url_for('signup')}}" class="btn">Sign Up</a></li>
+              <li><a href="{{ url_for('login') }}" class="btn">Login</a></li>
+              <li><a href="{{ url_for('signup') }}" class="btn">Sign Up</a></li>
               {% else %}
-              <li><a href="{{url_for('add_game')}}">Add Game</a></li>
+              <li><a href="{{ url_for('add_game') }}">Add Game</a></li>
               <li>
-                <a href="{{url_for('logout')}}" class="btn" id="logout-btn">
+                <a href="{{ url_for('logout') }}" class="btn" id="logout-btn">
                   Logout
                 </a>
               </li>
@@ -104,16 +104,16 @@
 
             <ul class="sidenav" id="mobile-demo">
               <li class="navHeader">Game<span class="side-nav-db">DB</span></li>
-              <li><a href="{{url_for('home_page')}}">Home</a></li>
-              <li><a href="{{url_for('about')}}">About</a></li>
-              <li><a href="{{url_for('games')}}">Games</a></li>
+              <li><a href="{{ url_for('home_page') }}">Home</a></li>
+              <li><a href="{{ url_for('about') }}">About</a></li>
+              <li><a href="{{ url_for('games') }}">Games</a></li>
               {% if 'username' not in session %}
-              <li><a href="{{url_for('login')}}">Login</a></li>
-              <li><a href="{{url_for('signup')}}">Sign Up</a></li>
+              <li><a href="{{ url_for('login') }}">Login</a></li>
+              <li><a href="{{ url_for('signup') }}">Sign Up</a></li>
               {% else %}
-              <li><a href="{{url_for('add_game')}}">Add Game</a></li>
+              <li><a href="{{ url_for('add_game') }}">Add Game</a></li>
               <li>
-                <a href="{{url_for('logout')}}">Logout</a>
+                <a href="{{ url_for('logout') }}">Logout</a>
               </li>
               {% endif %}
             </ul>
@@ -142,13 +142,13 @@
             <h5>Links</h5>
             <ul>
               <li>
-                <a class="footer-links" href="{{url_for('home_page')}}">Home</a>
+                <a class="footer-links" href="{{ url_for('home_page') }}">Home</a>
               </li>
               <li>
-                <a class="footer-links" href="{{url_for('about')}}">About</a>
+                <a class="footer-links" href="{{ url_for('about') }}">About</a>
               </li>
               <li>
-                <a class="footer-links" href="{{url_for('games')}}">Games</a>
+                <a class="footer-links" href="{{ url_for('games') }}">Games</a>
               </li>
             </ul>
           </div>
@@ -157,7 +157,7 @@
       <hr />
       <div class="footer-copyright">
         <div class="container">
-          <a href="{{url_for('home_page')}}" class="footer-logo">
+          <a href="{{ url_for('home_page') }}" class="footer-logo">
             <span class="game-footer">Game</span
             ><span class="logo-db">DB</span></a
           >

@@ -7,9 +7,9 @@
       <h4 class="game-header">{{game.title}}</h4>
       <nav>
         <div class="nav-wrapper">
-          <a href="{{url_for('home_page')}}" class="breadcrumb">Home</a>
-          <a href="{{url_for('games')}}" class="breadcrumb">Games</a>
-          <a href="" class="breadcrumb active">{{game.title}}</a>
+          <a href="{{ url_for('home_page') }}" class="breadcrumb">Home</a>
+          <a href="{{ url_for('games') }}" class="breadcrumb">Games</a>
+          <a href="" class="breadcrumb active">{{ game.title }}</a>
         </div>
       </nav>
     </div>
@@ -38,8 +38,8 @@
           </div>
         </div>
         <img
-          src="{{game.image}}"
-          alt="image of {{game.title}}"
+          src="{{ game.image }}"
+          alt="image of {{ game.title }}"
           class="responsive-img"
           id="game-img"
         />
@@ -47,7 +47,7 @@
           <iframe
             width="853"
             height="480"
-            src="{{game.trailer_link}}"
+            src="{{ game.trailer_link }}"
             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen
             id="game-vid"
@@ -68,32 +68,32 @@
             <li class="content">
               <i class="tiny material-icons tags">label</i>
               <div class="key">Genre:</div>
-              <div class="value">{{game.genre_name}}</div>
+              <div class="value">{{ game.genre_name }}</div>
             </li>
             <li class="content">
               <i class="tiny material-icons tags">access_time</i>
               <div class="key">Release Date:</div>
-              <div class="value">{{game.release_date}}</div>
+              <div class="value">{{ game.release_date }}</div>
             </li>
             <li class="content">
               <i class="tiny material-icons tags">videogame_asset</i>
               <div class="key">Platform:</div>
-              <div class="value">{{game.platform}}</div>
+              <div class="value">{{ game.platform }}</div>
             </li>
             <li class="content">
               <i class="tiny material-icons tags">desktop_windows</i>
               <div class="key">Developer:</div>
-              <div class="value">{{game.developer}}</div>
+              <div class="value">{{ game.developer }}</div>
             </li>
             <li class="content">
               <i class="tiny material-icons tags">language</i>
               <div class="key">Languages:</div>
-              <div class="value">{{game.languages}}</div>
+              <div class="value">{{ game.languages }}</div>
             </li>
             <li class="content">
               <i class="tiny material-icons tags">play_arrow</i>
               <div class="key">Playthrough Time:</div>
-              <div class="value">{{game.playthrough_time}} mins</div>
+              <div class="value">{{ game.playthrough_time }} mins</div>
             </li>
             <li class="content">
               <i class="tiny material-icons tags">camera</i>
@@ -107,12 +107,12 @@
             <li class="content">
               <i class="tiny material-icons tags">person</i>
               <div class="key">Age Rating:</div>
-              <div class="value">{{game.age_rating}}</div>
+              <div class="value">{{ game.age_rating }}</div>
             </li>
             <li class="">
               <a
                 class="btn buy-button"
-                href="{{game.shop_link}}"
+                href="{{ game.shop_link }}"
                 target="_blank"
                 ><i class="material-icons right shop-btn">shopping_cart</i>Buy
                 Here</a
@@ -128,9 +128,9 @@
     <div class="col s12 l8">
       <div class="description-container z-depth-3">
         <h5 class="description-header">
-          <span>About </span><span class="landing-db">{{game.title}}</span>
+          <span>About </span><span class="landing-db">{{ game.title }}</span>
         </h5>
-        <p>{{game.description}}</p>
+        <p>{{ game.description }}</p>
       </div>
     </div>
 
@@ -139,7 +139,7 @@
     <div class="col s12 l4">
       <div class="review-container z-depth-3">
         <h5 class="review-header">
-          <span>{{game.title}}</span><span class="landing-db"> review</span>
+          <span>{{ game.title }}</span><span class="landing-db"> review</span>
         </h5>
         <p>{{game.review}}</p>
       </div>
@@ -151,7 +151,7 @@
     <div class="col s12 l8">
       <div class="crud-button-container">
         <a
-          href="{{url_for('edit_game', game_id = game._id)}}"
+          href="{{ url_for('edit_game', game_id = game._id) }}"
           class="btn btn_small edit-btn"
           >Edit <i class="material-icons right">edit</i></a
         >
@@ -173,7 +173,7 @@
       <div class="modal-footer">
         <a href="#!" class="modal-close modal-cancel btn-flat">Cancel</a>
         <a
-          href="{{url_for('delete_game', game_id = game._id)}}"
+          href="{{ url_for('delete_game', game_id = game._id) }}"
           class="modal-close modal-delete btn-flat"
           >Delete</a
         >

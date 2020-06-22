@@ -8,7 +8,7 @@
       <!-- Form for edit_game route to edit game properties based on users input -->
       <form
         id="edit-game-form"
-        action="{{ url_for('update_game', game_id=game._id)}}"
+        action="{{ url_for('update_game', game_id=game._id) }}"
         method="POST"
       >
         <div class="input-field col s12">
@@ -25,11 +25,11 @@
 
         <div class="input-field col s12">
           <select name="genre_name" required>
-            <option value="{{game.genre_name}}" selected
-              >{{game.genre_name}}</option
+            <option value="{{ game.genre_name }}" selected
+              >{{ game.genre_name }}</option
             >
             {% for gen in genre %}
-            <option value="{{gen.genre_name}}">{{gen.genre_name}}</option>
+            <option value="{{ gen.genre_name }}">{{ gen.genre_name }}</option>
             {% endfor %}
           </select>
           <label for="genre_name">Genre</label>
@@ -41,7 +41,7 @@
             class="datepicker"
             id="releaseDate"
             name="release_date"
-            value="{{game.release_date}}"
+            value="{{ game.release_date }}"
             required
           />
           <label for="releaseDate">Release Date</label>
@@ -49,12 +49,12 @@
 
         <div class="input-field col s12">
           <select name="platform" required>
-            <option value="{{game.platform}}" selected
-              >{{game.platform}}</option
+            <option value="{{ game.platform }}" selected
+              >{{ game.platform }}</option
             >
             {% for plat in platform %}
-            <option value="{{plat.platform_name}}"
-              >{{plat.platform_name}}</option
+            <option value="{{ plat.platform_name }}"
+              >{{ plat.platform_name }}</option
             >
             {% endfor %}
           </select>
@@ -66,7 +66,7 @@
             id="developer"
             name="developer"
             type="text"
-            value="{{game.developer}}"
+            value="{{ game.developer }}"
             required
           />
           <label for="developer">Developer</label>
@@ -78,7 +78,7 @@
             name="languages"
             type="text"
             required
-            value="{{game.languages}}"
+            value="{{ game.languages }}"
           />
           <label for="language">Language(s)</label>
         </div>
@@ -89,18 +89,18 @@
             name="playthrough_time"
             type="text"
             required
-            value="{{game.playthrough_time}}"
+            value="{{ game.playthrough_time }}"
           />
           <label for="playTime">Playthrough Time (mins)</label>
         </div>
 
         <div class="input-field col s12">
           <select name="vr_capable" required>
-            <option value="{{game.vr_capable}}" selected
-              >{{game.vr_capable}}</option
+            <option value="{{ game.vr_capable }}" selected
+              >{{ game.vr_capable }}</option
             >
             {% for vr in vr %}
-            <option value="{{vr.vr}}">{{vr.vr}}</option>
+            <option value="{{ vr.vr }}">{{ vr.vr }}</option>
             {% endfor %}
           </select>
           <label for="vr_capable">VR Capable?</label>
@@ -108,11 +108,11 @@
 
         <div class="input-field col s12">
           <select name="age_rating" required>
-            <option value="{{game.age_rating}}" selected
-              >{{game.age_rating}}</option
+            <option value="{{ game.age_rating }}" selected
+              >{{ game.age_rating }}</option
             >
             {% for age in age_rating %}
-            <option value="{{age.rating}}">{{age.rating}}</option>
+            <option value="{{ age.rating }}">{{ age.rating }}</option>
             {% endfor %}
           </select>
           <label for="are_rating">Age Rating</label>
@@ -124,7 +124,7 @@
             name="shop_link"
             type="text"
             required
-            value="{{game.shop_link}}"
+            value="{{ game.shop_link }}"
           />
           <label for="buyLink">Shop Link</label>
         </div>
@@ -135,7 +135,7 @@
             name="image"
             type="text"
             required
-            value="{{game.image}}"
+            value="{{ game.image }}"
           />
           <label for="image">Image URL</label>
         </div>
@@ -146,7 +146,7 @@
             name="trailer_link"
             type="url"
             required
-            value="{{game.trailer_link}}"
+            value="{{ game.trailer_link }}"
           />
           <label for="video">Trailer link(Youtube)</label>
         </div>
@@ -156,7 +156,7 @@
             id="description"
             name="description"
             class="materialize-textarea"
-            required>{{game.description}}</textarea>
+            required>{{ game.description }}</textarea>
           <label for="description">Description</label>
         </div>
 
@@ -165,7 +165,7 @@
             id="review"
             name="review"
             class="materialize-textarea"
-            required>{{game.review}}</textarea>
+            required>{{ game.review }}</textarea>
           <label for="review">Review</label>
         </div>
 

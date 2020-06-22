@@ -10,7 +10,7 @@
       <!-- Form for insert game route, to add a game based on users input, all required fields. -->
       <form
         id="add-game-form"
-        action="{{ url_for('insert_game')}}"
+        action="{{ url_for('insert_game') }}"
         method="POST"
       >
         <div class="input-field col s12">
@@ -22,7 +22,7 @@
           <select name="genre_name" required>
             <option value="">Genre</option>
             {% for gen in genre %}
-            <option value="{{gen.genre_name}}">{{gen.genre_name}}</option>
+            <option value="{{ gen.genre_name }}">{{ gen.genre_name }}</option>
             {% endfor %}
           </select>
         </div>
@@ -42,8 +42,8 @@
           <select name="platform" required>
             <option value="" disabled selected>Platform</option>
             {% for plat in platform %}
-            <option value="{{plat.platform_name}}"
-              >{{plat.platform_name}}</option
+            <option value="{{ plat.platform_name }}"
+              >{{ plat.platform_name }}</option
             >
             {% endfor %}
           </select>
@@ -68,7 +68,7 @@
           <select name="vr_capable" required>
             <option value="" disabled selected>VR Capable?</option>
             {% for vr in vr %}
-            <option value="{{vr.vr}}">{{vr.vr}}</option>
+            <option value="{{ vr.vr }}">{{ vr.vr }}</option>
             {% endfor %}
           </select>
         </div>
@@ -77,7 +77,7 @@
           <select name="age_rating" required>
             <option value="" disabled selected>Age Rating</option>
             {% for age in age_rating %}
-            <option value="{{age.rating}}">{{age.rating}}</option>
+            <option value="{{ age.rating }}">{{ age.rating }}</option>
             {% endfor %}
           </select>
         </div>

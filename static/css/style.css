@@ -1,4 +1,8 @@
+/* ----------------- Font Imports ----------------- */
+
 @import url("https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Pontano+Sans&display=swap");
+
+/* ------------------------------------------------------*/
 
 /* ----------------- Global Styling ----------------- */
 
@@ -86,7 +90,7 @@ div.review-container p::first-letter {
 
 /* ----------------- Page Backgrounds ----------------- */
 
-/* Also used for Login and signup backgrounds via variable is_index in app.py*/
+/* landing-bg also used for Login and signup backgrounds via variable is_index in app.py*/
 
 .landing-bg {
   background-image: url(/static/images/landing.jpg);
@@ -572,7 +576,6 @@ textarea.materialize-textarea:focus:not([readonly]) + label {
 
 .image-container {
   position: relative;
-  /* height: 467px; */
   overflow: auto;
 }
 
@@ -914,14 +917,6 @@ a.footer-links {
 /* ----------------- Media Queries ----------------- */
 
 @media only screen and (max-width: 993px) {
-  /* .options-container {
-    position: absolute;
-    top: 55%;
-    left: 20%;
-    bottom: 40%;
-    right: 20%;
-  } */
-
   .details-container {
     margin-top: 4rem;
     min-height: fit-content;
@@ -1005,21 +1000,4 @@ a.footer-links {
     font-size: smaller;
   }
 }
-
-/* @media only screen and (max-width: 602px){
-    .search-button{
-        display: none;
-    }
-
-    .mobile-search-button{
-        display: block;
-    }
-}
-
-@media only screen and (max-width: 930px){
-    .search-button{
-        font-size: 0.8rem;
-    }
-} */
-
 /* ------------------------------------------------------*/

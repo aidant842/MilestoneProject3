@@ -452,15 +452,24 @@ input {
 .account-check {
   position: absolute;
   right: 0;
-  bottom: 25%;
+  bottom: 23%;
   font-size: small;
 }
 
-span.account-check a {
+.signup-account-check {
+  position: absolute;
+  right: 0;
+  bottom: 18%;
+  font-size: small;
+}
+
+span.account-check a,
+span.signup-account-check a {
   color: rgb(224, 58, 119);
 }
 
-span.account-check a:hover {
+span.account-check a:hover,
+span.signup-account-check a:hover {
   color: white;
 }
 
@@ -957,12 +966,6 @@ a.footer-links {
   }
 }
 
-@media only screen and (max-width: 480px) {
-  .account-check {
-    position: relative;
-  }
-}
-
 @media only screen and (max-height: 400px) {
   .landing-header {
     margin-top: 15vh;
@@ -990,6 +993,16 @@ a.footer-links {
 @media only screen and (min-width: 993px) {
   .image-container {
     height: 467px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .account-check,
+  .signup-account-check {
+    position: relative;
+    display: block;
+    margin-top: 1rem;
+    font-size: smaller;
   }
 }
 
